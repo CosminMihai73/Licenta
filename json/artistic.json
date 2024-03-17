@@ -1,0 +1,364 @@
+{
+    "artistic": [
+        {
+            "text": "Să cânți pe o scenă?",
+            "text_poza": "/poze/pisica1.jpg",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": "/poze/nu.png"
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să fii artist?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să scrii scurte povestiri?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să faci desene animate?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să predai muzica în școli?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să scrii un roman?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să organizezi/regizezi piese de teatru?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să fii cântăreț de jazz?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să citești articole despre muzică și artă?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să fii designerul reclamelor pentru reviste sau TV?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să studiezi operele marilor muzicieni?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să scrii o piesă de teatru?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să compui muzică sau să faci aranjamente muzicale?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să dirijezi o orchestră simfonică?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să scrii reportaje pentru reviste?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să pictezi peisaje?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să scrii scenarii TV?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să faci scenografie pentru piesele de teatru?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să aranjezi muzica de fond pentru film?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să faci recenzii de cărți ca un critic literar?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "Nu": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "Poate": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+                "Da": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+.informatii-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 4vw;
+  background-color: #f0f5ff; /* Albastru deschis */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #add8e6; /* Albastru deschis */
+}
+
+.content {
+  text-align: left; /* Alinierea textului la stânga */
+}
+
+.informatii-container h1 {
+  font-size: 2.8vw;
+  margin-bottom: 2vw;
+  color: #000; /* Negru */
+}
+
+.informatii-container h2 {
+  font-size: 2.3vw;
+  margin-bottom: 1.5vw;
+  color: #000; /* Negru */
+}
+
+.informatii-container p {
+  font-size: 1.8vw;
+  margin-bottom: 1.5vw;
+  color: #000; /* Negru */
+}
+
+.informatii-container ol {
+  margin-left: 4vw;
+}
+
+.informatii-container li {
+  font-size: 1.8vw;
+  margin-bottom: 1vw;
+  color: #000; /* Negru */
+}
+
+.button-container {
+  margin-top: 2vw;
+  text-align: center; /* Centrare orizontală */
+}
+
+.link-button {
+  display: inline-block;
+  padding: 8px 16px; /* Dimensiuni mai mici */
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.link-button:hover {
+  background-color: #0056b3;
+}

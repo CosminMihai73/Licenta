@@ -1,0 +1,480 @@
+{
+    "intreprinzator": [
+        {
+            "text": "Să conduci un departament administrativ?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să cumperi marfă pentru un magazin mare?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să fii manager de vânzări?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să înregistrezi muncitori care au nemulțumiri la locul de muncă?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să câștigi bani din comerț sau la bursa de valori?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să conduci un restaurant mare?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să te ocupi de politica administrativă?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să fii vicepreședinte de bancă?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să fii jurisconsultul unei firme?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să ocupi o poziție de lider?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să fii agent imobiliar?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să lucrezi pentru a convinge guvernul să adopte o anumită măsură?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să promovezi dezvoltarea unei noi piețe de aprovizionare a populației?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        },
+        {
+            "text": "Să faci afaceri, comerț?",
+            "text_poza": "",
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
+        }
+    ]
+}

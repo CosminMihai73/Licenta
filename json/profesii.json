@@ -1,0 +1,91 @@
+{
+  "profesii": [
+    {
+      "Realist-Investigativ":"Tehnic, meşteşugăresc, ştiinţe matematice"
+    },
+    {
+      "Realist-Artistic":"Meşteşugăresc, activitate artistică, tehnic"
+    },
+    {
+      "Realist-Social":"Meşteşugăresc, activitate cu publicul, management"
+    },
+    {
+      "Realist-Intreprinzator":"Stiinte matematice, tehnic, meşteşugăresc"
+    },
+    {
+      "Realist-Conventional":"Activ cu publicul, depan, de personal, meşteşugărese"
+    },
+    {
+      "Investigativ-Realist":"Stiinte matematice, tehnico-demar, munca hterană, muncă artistică"
+    },
+    {
+      "Investigativ-Artistic":"Spectacole, management, muncă artistică"
+    },
+    {
+      "Investigativ-Social":"Servicii sociale, administrativ, management"
+    },
+    {
+      "Investigativ-Conventional":"Analiza de date, stiinte matematice, activit, administr"
+    },
+    {
+      "Artistic-Realist":"Meşteşugăresc, activitate artistică, tehnic"
+    },
+    {
+      "Artistic-Investigativ":"Spectacole, management, muncă artistică"
+    },
+    {
+      "Artistic-Social":"Servicii sociale, activitate muzicală, muncă educativă"
+    },
+    {
+      "Artistic-Intreprinzator":"Activități legale, spectacole, management"
+    },
+    {
+      "Artistic-Conventional":"Muncă artistică, administrative, literară"
+    },
+    {
+      "Social-Realist":"Meşteşugăresc, activitate cu publicul, management"
+    },
+    {
+      "Social-Investigativ":"Servicii sociale, medico-dentar, ştiinţe matematice"
+    },
+    {
+      "Social-Artistic":"Servicii sociale, activitate muzicală, muncă educativă"
+    },
+    {
+      "Social-Intreprinzator":"Management, activităţi de vânzare, servicii sociale. activități legale"
+    },
+    {
+      "Social-Conventional":"Servicii sociale, activitate cu publicul, management"
+    },
+    {
+      "Intreprinzator-Realist":"Stiinte matematice, management, tehnic"
+    },
+    {
+      "Intreprinzator-Investigativ":"Analiza de date, stiinte matematice, activit, administr"
+    },
+    {
+      "Intreprinzator-Artistic":"Activități legale, spectacole, management"
+    },
+    {
+      "Intreprinzator-Social":"Servicii sociale, activitate muzicală, muncă educativă"
+    },
+    {
+      "Intreprinzator-Conventional":"Management, vânzări, analiză de date, activități admin"
+    },
+    {
+      "Conventional-Realist":"Activ cu publicul, depan, de personal, meşteşugărese"
+    },
+    {
+      "Conventional-Investigativ":"Analiza de date, stiinte matematice, activit, administr"
+    },
+    {
+      "Conventional-Artistic":"Muncă artistică, administrative, literară"
+    },
+    {
+      "Conventional-Social":"Servicii sociale, activitate cu publicul, management"
+    },
+    {
+      "Conventional-Intreprinzator":"Management, meşteşugăresc, activitate cu publicul"
+    }
+  ]
+}

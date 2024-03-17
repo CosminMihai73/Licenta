@@ -5,7 +5,7 @@ import './QuestionsPage.css';
 const QuestionsPage = () => {
   const [questions, setQuestions] = useState([]);
   const [email, setEmail] = useState('');
-  const [tempResponses, setTempResponses] = useState({}); // Obiect pentru stocarea temporară a răspunsurilor
+  const [tempResponses, setTempResponses] = useState({});
   const [errorDetails, setErrorDetails] = useState(null);
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,7 +30,13 @@ const QuestionsPage = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeRemaining((prevTime) => prevTime - 1);
+      setTimeRemaining((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(timer);
+          window.location.href = '/'; // Redirecționează utilizatorul către pagina de acasă
+        }
+        return prevTime - 1;
+      });
     }, 1000);
 
     return () => clearInterval(timer);
@@ -47,19 +53,13 @@ const QuestionsPage = () => {
     setEmail(event.target.value);
   };
 
-  const goToPreviousPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1)); // Nu permite pagini < 1
-  };
-
   const goToNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages)); // Nu permite pagini > totalPages
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    window.scrollTo(0, 0); // Facem scroll în partea de sus a paginii
   };
 
   const handleSubmit = async () => {
     if (currentPage !== totalPages) {
-      // Salvăm răspunsurile temporare într-un fișier sau în altă formă de stocare temporară
-      // Puteți folosi localStorage, sessionStorage sau puteți crea un serviciu de stocare temporară pe backend
-      // Aici puteți folosi și alte metode pentru stocarea temporară a datelor
       console.log('Răspunsurile au fost salvate temporar:', tempResponses);
       return;
     }
@@ -67,7 +67,7 @@ const QuestionsPage = () => {
     try {
       const formattedResponses = Object.keys(tempResponses).map(id => ({
         id,
-        categorie: 'string', // Schimbă valoarea 'string' dacă este necesar
+        categorie: 'string',
         raspuns: tempResponses[id]
       }));
 
@@ -76,7 +76,7 @@ const QuestionsPage = () => {
         email: email
       };
 
-      const response = await axios.post('http://localhost:8000/actualizeaza_si_calculeaza_punctaje', payload);
+      await axios.post('http://localhost:8000/actualizeaza_si_calculeaza_punctaje', payload);
 
       setSubmissionSuccess(true);
       setErrorDetails(null);
@@ -86,48 +86,58 @@ const QuestionsPage = () => {
     }
   };
 
+  // Calculăm minutele și secundele rămase din timpul total
+  const minutes = Math.floor(timeRemaining / 60);
+  const seconds = timeRemaining % 60;
+
   return (
     <div className="questions-container">
-      <h1>Întrebări</h1>
-      <div className="timer">
-        <p>Timp rămas: {timeRemaining} secunde</p>
+      <h1 className="questions-title">Întrebări</h1>
+      <div className="timer-container">
+        <p className="timer-text">Timp rămas: {minutes} minute și {seconds} secunde</p>
       </div>
       <div className="questions-content">
         <div className="email-input">
-          <label>Email:</label>
-          <input type="email" value={email} onChange={handleEmailChange} />
+          <label className="email-label">Email:</label>
+          <input type="email" value={email} onChange={handleEmailChange} className="email-input-field" />
         </div>
-        {questions.map((question) => (
-          <div key={question.id} className="question-div">
-            <p>{question.text}</p>
-            {question.image_path && <img src={question.image_path} alt="Imagine asociată întrebării" />}
-            <div className="radio-container" key={`radio-container-${question.id}`}>
-              {question.responses.map((response) => (
-                <label key={`${question.id}-${response.value}`}>
+        {questions.map((question, index) => (
+          <div key={question.id} className={`question-div-${index}`}>
+            <p className={`question-text-${index}`}>{question.text}</p>
+            {question.image_path && <img src={question.image_path} alt={`Imagine asociată întrebării ${index}`} className={`question-image-${index}`} />}
+            <div className={`radio-container-${index}`} key={`radio-container-${question.id}`}>
+              {question.responses.map((response, subIndex) => (
+                <label key={`${question.id}-${response.value}`} className={`response-label-${subIndex}`}>
                   <input
                     type="radio"
                     name={`response-${question.id}`}
                     value={response.value}
                     checked={tempResponses[question.id] === response.value}
                     onChange={() => handleResponseChange(question.id, response.value)}
+                    className={`response-input-${subIndex}`}
                   />
-                  <span className="custom-radio"></span>
-                  <span>{response.value}</span>
-                  {response.response_image && <img src={response.response_image} alt="Imagine asociată răspunsului" />}
+                  <span className={`custom-radio-${subIndex}`}></span>
+                  <span className={`response-value-${subIndex}`}>{response.value}</span>
+                  {response.response_image && <img src={response.response_image} alt={`Imagine asociată răspunsului ${subIndex}`} className={`response-image-${subIndex}`} />}
                 </label>
               ))}
             </div>
           </div>
         ))}
       </div>
-      <div className="pagination">
-        <button onClick={goToPreviousPage} disabled={currentPage === 1}>Pagina anterioară</button>
-        <span>Pagina {currentPage} din {totalPages}</span>
-        <button onClick={goToNextPage} disabled={currentPage === totalPages}>Pagina următoare</button>
+      <div className="pagination-container">
+        <span className="pagination-text">Pagina {currentPage} din {totalPages}</span>
+        {currentPage !== totalPages && (
+          <button onClick={goToNextPage} className="next-page-button">Pagina următoare</button>
+        )}
       </div>
-      {errorDetails && <p style={{ color: 'red' }}>{errorDetails}</p>}
-      {submissionSuccess && <p style={{ color: 'green' }}>Răspunsurile au fost trimise cu succes!</p>}
-      <button onClick={handleSubmit}>Trimite</button>
+      {currentPage === totalPages && (
+        <div className="submit-container">
+          {errorDetails && <p className="error-details">{errorDetails}</p>}
+          {submissionSuccess && <p className="submission-success">Răspunsurile au fost trimise cu succes!</p>}
+          <button onClick={handleSubmit} className="submit-button">Trimite</button>
+        </div>
+      )}
     </div>
   );
 };

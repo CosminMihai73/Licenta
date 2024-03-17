@@ -597,41 +597,42 @@
         },
         {
     "text": "Să studiezi psihologia?",
-    "text_poza": "",
-    "variante_raspuns": {
-        "6": {
-            "voturi": 6,
-            "raspuns_poza": ""
+     "timer": 15,
+            "variante_raspuns": {
+                "0": {
+                    "voturi": 0,
+                    "raspuns_poza": ""
+                },
+                "1": {
+                    "voturi": 1,
+                    "raspuns_poza": ""
+                },
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
+                    "raspuns_poza": ""
+                }
+            }
         },
-        "5": {
-            "voturi": 5,
-            "raspuns_poza": ""
-        },
-        "4": {
-            "voturi": 4,
-            "raspuns_poza": ""
-        },
-        "3": {
-            "voturi": 3,
-            "raspuns_poza": ""
-        },
-        "2": {
-            "voturi": 2,
-            "raspuns_poza": ""
-        },
-        "1": {
-            "voturi": 1,
-            "raspuns_poza": ""
-        },
-        "0": {
-            "voturi": 0,
-            "raspuns_poza": ""
-        }
-    }
-},
         {
             "text": "Să coordonezi programul sportiv pe un teren de sport?",
-           "text_poza": "",
+            "text_poza": "/poze/pisica1.jpg",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,

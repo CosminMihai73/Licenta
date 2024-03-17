@@ -1,8 +1,10 @@
 {
     "investigativ": [
+
         {
             "text": "Să faci experienţe ştiinţifice?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -37,6 +39,7 @@
         {
             "text": "Să foloseşti microscopul pentru a studia celule şi bacterii?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -71,6 +74,7 @@
         {
             "text": "Să citeşti cărţi, reviste ştiinţifice?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -105,6 +109,7 @@
         {
             "text": "Să faci muncă de cercetare într-un laborator fizic?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -139,6 +144,7 @@
         {
             "text": "Să faci studii ştiinţifice despre Soare, Lună, planetă, stele?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -173,6 +179,7 @@
         {
             "text": "Să studiezi cauzele bolilor de inimă?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -207,6 +214,7 @@
         {
             "text": "Să utilizezi matematica pentru a rezolva o problemă tehnică şi ştiinţifică?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -241,6 +249,7 @@
         {
             "text": "Să fii medic chirurg?",
          "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -275,6 +284,7 @@
         {
             "text": "Să fii biolog marin?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -309,6 +319,7 @@
         {
             "text": "Să examinezi efectele aerului poluat asupra mediului?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -343,6 +354,7 @@
         {
             "text": "Să faci cercetare ştiinţifică cu privire la utilizarea energiei solare?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -377,6 +389,7 @@
         {
             "text": "Să lucrezi la realizarea unei inimi artificiale?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -411,6 +424,7 @@
         {
             "text": "Să fii asistent medical de laborator?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -445,6 +459,7 @@
         {
             "text": "Să urmezi un curs de biologie la o şcoală sau universitate?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -479,6 +494,7 @@
         {
             "text": "Să cercetezi, să cauţi un remediu contra cancerului?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -513,6 +529,7 @@
         {
             "text": "Să conduci studii ştiinţifice privind controlul bolilor plantelor?",
         "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -547,6 +564,7 @@
         {
             "text": "Să fii medic care să ajute la prevenirea bolilor?",
          "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -581,6 +599,7 @@
         {
             "text": "Să inventezi un nou tip de echipament tehnic?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -615,6 +634,7 @@
         {
             "text": "Să faci studii ştiinţifice despre natură?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -649,6 +669,7 @@
         {
             "text": "Să ajuţi cercetătorii ştiinţifici în laboratoarele lor experimentale?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,

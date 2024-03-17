@@ -3,6 +3,7 @@
     "id": 1,
     "text": "Să cânți pe o scenă?",
     "text_poza": "/poze/pisica1.jpg",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -23,6 +24,7 @@
     "id": 2,
     "text": "Să fii artist?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -43,6 +45,7 @@
     "id": 3,
     "text": "Să scrii scurte povestiri?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -63,6 +66,7 @@
     "id": 4,
     "text": "Să faci desene animate?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -83,6 +87,7 @@
     "id": 5,
     "text": "Să predai muzica în școli?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -103,6 +108,7 @@
     "id": 6,
     "text": "Să scrii un roman?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -123,6 +129,7 @@
     "id": 7,
     "text": "Să organizezi/regizezi piese de teatru?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -143,6 +150,7 @@
     "id": 8,
     "text": "Să fii cântăreț de jazz?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -163,6 +171,7 @@
     "id": 9,
     "text": "Să citești articole despre muzică și artă?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -183,6 +192,7 @@
     "id": 10,
     "text": "Să fii designerul reclamelor pentru reviste sau TV?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -203,6 +213,7 @@
     "id": 11,
     "text": "Să studiezi operele marilor muzicieni?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -223,6 +234,7 @@
     "id": 12,
     "text": "Să scrii o piesă de teatru?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -243,6 +255,7 @@
     "id": 13,
     "text": "Să compui muzică sau să faci aranjamente muzicale?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -263,6 +276,7 @@
     "id": 14,
     "text": "Să dirijezi o orchestră simfonică?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -283,6 +297,7 @@
     "id": 15,
     "text": "Să scrii reportaje pentru reviste?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -303,6 +318,7 @@
     "id": 16,
     "text": "Să pictezi peisaje?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -323,6 +339,7 @@
     "id": 17,
     "text": "Să scrii scenarii TV?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -343,6 +360,7 @@
     "id": 18,
     "text": "Să faci scenografie pentru piesele de teatru?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -363,6 +381,7 @@
     "id": 19,
     "text": "Să aranjezi muzica de fond pentru film?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -383,6 +402,7 @@
     "id": 20,
     "text": "Să faci recenzii de cărți ca un critic literar?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -403,6 +423,7 @@
     "id": 21,
     "text": "Să fii numărător de bani (de exemplu persoana care să primească şi să dea bani la o bancă)'?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -439,6 +460,7 @@
     "id": 22,
     "text": "Să înregistrezi datele financiare ale unei firme?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -475,6 +497,7 @@
     "id": 23,
     "text": "Să lucrezi cu calculatorul sau cu un copiator într-un birou?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -511,6 +534,7 @@
     "id": 24,
     "text": "Să faci rezervări pentru zboruri de avioane, pentru hoteluri într-un birou de voiaj?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -547,6 +571,7 @@
     "id": 25,
     "text": "Să fii expert contabil (verificare)?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -583,6 +608,7 @@
     "id": 26,
     "text": "Să verifici bugetul unei firme?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -619,6 +645,7 @@
     "id": 27,
     "text": "Să ţii evidenţa mărfurilor, a ceea ce se consumă la o firmă?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -655,6 +682,7 @@
     "id": 28,
     "text": "Să lucrezi cu cifre într-un birou de afaceri?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -691,6 +719,7 @@
     "id": 29,
     "text": "Să studiezi o firmă şi să elaborezi un sistem contabil pentru nevoile sale financiare?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -727,6 +756,7 @@
     "id": 30,
     "text": "Să supervizezi personalul administrativ al unui oficiu?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -763,6 +793,7 @@
     "id": 31,
     "text": "Să urmezi un curs de matematică pentru afaceri?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -799,6 +830,7 @@
     "id": 32,
     "text": "Să controlezi actele băncilor pentru a descoperi greşeli?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -835,6 +867,7 @@
     "id": 33,
     "text": "Să utilizezi calculatorul pentru a prelucra date contabile?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -871,6 +904,7 @@
     "id": 34,
     "text": "Să urmezi un curs de contabilitate?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -907,6 +941,7 @@
     "id": 35,
     "text": "Să introduci informaţii în calculator?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -943,6 +978,7 @@
     "id": 36,
     "text": "Să ţii evidenţa încasărilor pentru lucrările efectuate?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -979,6 +1015,7 @@
     "id": 37,
     "text": "Să operezi într-un registru de încasări?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -1015,6 +1052,7 @@
     "id": 38,
     "text": "Să fii recepţioner la un hotel?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -1051,6 +1089,7 @@
     "id": 39,
     "text": "Să fii funcţionar administrativ?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -1087,6 +1126,7 @@
     "id": 40,
     "text": "Să operezi cu cifre pe computer?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "conventional",
     "variante_raspuns": {
       "0": {
@@ -1123,6 +1163,7 @@
     "id": 41,
     "text": "Să conduci un departament administrativ?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1159,6 +1200,7 @@
     "id": 42,
     "text": "Să cumperi marfă pentru un magazin mare?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1195,6 +1237,7 @@
     "id": 43,
     "text": "Să fii manager de vânzări?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1229,8 +1272,9 @@
   },
   {
     "id": 44,
-    "text": "Să înregistrezi muncitori care au nemulțumiri la locul de muncă?",
+    "text": "Să înregistrezi muncitori care au nemulţumiri la locul de muncă?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1265,8 +1309,9 @@
   },
   {
     "id": 45,
-    "text": "Să câștigi bani din comerț sau la bursa de valori?",
+    "text": "Să câştigi bani din comerţ sau la bursa de valori?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1303,6 +1348,7 @@
     "id": 46,
     "text": "Să conduci un restaurant mare?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1339,6 +1385,7 @@
     "id": 47,
     "text": "Să te ocupi de politica administrativă?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1373,8 +1420,9 @@
   },
   {
     "id": 48,
-    "text": "Să fii vicepreședinte de bancă?",
+    "text": "Să fii vicepreşedinte de bancă??",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1411,6 +1459,7 @@
     "id": 49,
     "text": "Să fii jurisconsultul unei firme?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1445,8 +1494,9 @@
   },
   {
     "id": 50,
-    "text": "Să ocupi o poziție de lider?",
+    "text": "Să ocupi o poziţie de lider?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1483,6 +1533,7 @@
     "id": 51,
     "text": "Să fii agent imobiliar?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1519,6 +1570,7 @@
     "id": 52,
     "text": "Să lucrezi pentru a convinge guvernul să adopte o anumită măsură?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1553,8 +1605,9 @@
   },
   {
     "id": 53,
-    "text": "Să promovezi dezvoltarea unei noi piețe de aprovizionare a populației?",
+    "text": "Să promovezi dezvoltarea unei noi pieţe de aprovizionare a populaţiei?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1589,8 +1642,9 @@
   },
   {
     "id": 54,
-    "text": "Să faci afaceri, comerț?",
+    "text": "Să faci afaceri, comerţ?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
@@ -1625,9 +1679,10 @@
   },
   {
     "id": 55,
-    "text": "Să faci experienţe ştiinţifice?",
+    "text": "Să fii legiuitorul care să medieze disputele dintre sindicate şi patronat?",
     "text_poza": "",
-    "categorie": "investigativ",
+    "timer": 15,
+    "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -1661,9 +1716,10 @@
   },
   {
     "id": 56,
-    "text": "Să foloseşti microscopul pentru a studia celule şi bacterii?",
+    "text": "Să fii judecător?",
     "text_poza": "",
-    "categorie": "investigativ",
+    "timer": 15,
+    "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -1697,9 +1753,10 @@
   },
   {
     "id": 57,
-    "text": "Să citeşti cărţi, reviste ştiinţifice?",
+    "text": "Să recrutezi şi să angajezi oameni pentru o mare firmă?",
     "text_poza": "",
-    "categorie": "investigativ",
+    "timer": 15,
+    "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -1733,9 +1790,10 @@
   },
   {
     "id": 58,
-    "text": "Să faci muncă de cercetare într-un laborator fizic?",
+    "text": "Să călătoreşti prin ţară pentru a vinde produsele firmei?",
     "text_poza": "",
-    "categorie": "investigativ",
+    "timer": 15,
+    "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -1769,9 +1827,10 @@
   },
   {
     "id": 59,
-    "text": "Să faci studii ştiinţifice despre Soare, Lună, planetă, stele?",
+    "text": "Să organizezi şi să coordonezi afaceri?",
     "text_poza": "",
-    "categorie": "investigativ",
+    "timer": 15,
+    "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -1805,9 +1864,10 @@
   },
   {
     "id": 60,
-    "text": "Să studiezi cauzele bolilor de inimă?",
+    "text": "Să fii manager de producţie?",
     "text_poza": "",
-    "categorie": "investigativ",
+    "timer": 15,
+    "categorie": "intreprinzator",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -1841,8 +1901,9 @@
   },
   {
     "id": 61,
-    "text": "Să utilizezi matematica pentru a rezolva o problemă tehnică şi ştiinţifică?",
+    "text": "Să faci experienţe ştiinţifice?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -1877,8 +1938,9 @@
   },
   {
     "id": 62,
-    "text": "Să fii medic chirurg?",
+    "text": "Să foloseşti microscopul pentru a studia celule şi bacterii?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -1913,8 +1975,9 @@
   },
   {
     "id": 63,
-    "text": "Să fii biolog marin?",
+    "text": "Să citeşti cărţi, reviste ştiinţifice?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -1949,8 +2012,9 @@
   },
   {
     "id": 64,
-    "text": "Să examinezi efectele aerului poluat asupra mediului?",
+    "text": "Să faci muncă de cercetare într-un laborator fizic?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -1985,8 +2049,9 @@
   },
   {
     "id": 65,
-    "text": "Să faci cercetare ştiinţifică cu privire la utilizarea energiei solare?",
+    "text": "Să faci studii ştiinţifice despre Soare, Lună, planetă, stele?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -2021,8 +2086,9 @@
   },
   {
     "id": 66,
-    "text": "Să lucrezi la realizarea unei inimi artificiale?",
+    "text": "Să studiezi cauzele bolilor de inimă?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -2057,8 +2123,9 @@
   },
   {
     "id": 67,
-    "text": "Să fii asistent medical de laborator?",
+    "text": "Să utilizezi matematica pentru a rezolva o problemă tehnică şi ştiinţifică?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -2093,8 +2160,9 @@
   },
   {
     "id": 68,
-    "text": "Să urmezi un curs de biologie la o şcoală sau universitate?",
+    "text": "Să fii medic chirurg?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -2129,8 +2197,9 @@
   },
   {
     "id": 69,
-    "text": "Să cercetezi, să cauţi un remediu contra cancerului?",
+    "text": "Să fii biolog marin?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -2165,8 +2234,9 @@
   },
   {
     "id": 70,
-    "text": "Să conduci studii ştiinţifice privind controlul bolilor plantelor?",
+    "text": "Să examinezi efectele aerului poluat asupra mediului?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -2201,8 +2271,9 @@
   },
   {
     "id": 71,
-    "text": "Să fii medic care să ajute la prevenirea bolilor?",
+    "text": "Să faci cercetare ştiinţifică cu privire la utilizarea energiei solare?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -2237,8 +2308,9 @@
   },
   {
     "id": 72,
-    "text": "Să inventezi un nou tip de echipament tehnic?",
+    "text": "Să lucrezi la realizarea unei inimi artificiale?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -2273,8 +2345,9 @@
   },
   {
     "id": 73,
-    "text": "Să faci studii ştiinţifice despre natură?",
+    "text": "Să fii asistent medical de laborator?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -2309,8 +2382,9 @@
   },
   {
     "id": 74,
-    "text": "Să ajuţi cercetătorii ştiinţifici în laboratoarele lor experimentale?",
+    "text": "Să urmezi un curs de biologie la o şcoală sau universitate?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
@@ -2345,9 +2419,10 @@
   },
   {
     "id": 75,
-    "text": "Să repari ceasuri şi bijuterii?",
+    "text": "Să cercetezi, să cauţi un remediu contra cancerului?",
     "text_poza": "",
-    "categorie": "realist",
+    "timer": 15,
+    "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -2381,9 +2456,10 @@
   },
   {
     "id": 76,
-    "text": "Să repari motoare de automobile?",
+    "text": "Să conduci studii ştiinţifice privind controlul bolilor plantelor?",
     "text_poza": "",
-    "categorie": "realist",
+    "timer": 15,
+    "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -2417,9 +2493,10 @@
   },
   {
     "id": 77,
-    "text": "Să faci mobilier?",
+    "text": "Să fii medic care să ajute la prevenirea bolilor?",
     "text_poza": "",
-    "categorie": "realist",
+    "timer": 15,
+    "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -2453,9 +2530,10 @@
   },
   {
     "id": 78,
-    "text": "Să lucrezi pe o macara?",
+    "text": "Să inventezi un nou tip de echipament tehnic?",
     "text_poza": "",
-    "categorie": "realist",
+    "timer": 15,
+    "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -2489,9 +2567,10 @@
   },
   {
     "id": 79,
-    "text": "Să fii dulgher?",
+    "text": "Să faci studii ştiinţifice despre natură?",
     "text_poza": "",
-    "categorie": "realist",
+    "timer": 15,
+    "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -2525,9 +2604,10 @@
   },
   {
     "id": 80,
-    "text": "Să asamblezi componentele unui echipament stereo?",
+    "text": "Să ajuţi cercetătorii ştiinţifici în laboratoarele lor experimentale?",
     "text_poza": "",
-    "categorie": "realist",
+    "timer": 15,
+    "categorie": "investigativ",
     "variante_raspuns": {
       "0": {
         "voturi": 0,
@@ -2561,8 +2641,9 @@
   },
   {
     "id": 81,
-    "text": "Să repari lucrurile din jurul casei?",
+    "text": "Să repari ceasuri şi bijuterii?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2597,8 +2678,9 @@
   },
   {
     "id": 82,
-    "text": "Să fii electrician?",
+    "text": "Să repari motoare de automobile?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2633,8 +2715,9 @@
   },
   {
     "id": 83,
-    "text": "Să conduci un tractor cu remorcă?",
+    "text": "Să faci mobilier?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2669,8 +2752,9 @@
   },
   {
     "id": 84,
-    "text": "Să faci, repari, refinisezi mobilă?",
+    "text": "Să lucrezi pe o macara?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2705,8 +2789,9 @@
   },
   {
     "id": 85,
-    "text": "Să utilizezi şi să repari echipament de radio, telegraf?",
+    "text": "Să fii dulgher?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2741,8 +2826,9 @@
   },
   {
     "id": 86,
-    "text": "Să instalezi sau să repari telefoane?",
+    "text": "Să asamblezi componentele unui echipament stereo?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2777,8 +2863,9 @@
   },
   {
     "id": 87,
-    "text": "Să lucrezi în construcţii?",
+    "text": "Să repari lucrurile din jurul casei?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2813,8 +2900,9 @@
   },
   {
     "id": 88,
-    "text": "Să montezi dispozitive electrice?",
+    "text": "Să fii electrician?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2849,8 +2937,9 @@
   },
   {
     "id": 89,
-    "text": "Să construieşti etajere pentru cărţi?",
+    "text": "Să conduci un tractor cu remorcă?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2885,8 +2974,9 @@
   },
   {
     "id": 90,
-    "text": "Să fii antreprenor în construcţii de locuinţe?",
+    "text": "Să faci, repari, refinisezi mobilă?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2921,8 +3011,9 @@
   },
   {
     "id": 91,
-    "text": "Să faci jucării din lemn?",
+    "text": "Să utilizezi şi să repari echipament de radio, telegraf?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2957,8 +3048,9 @@
   },
   {
     "id": 92,
-    "text": "Să lucrezi ca paznic sau custode?",
+    "text": "Să instalezi sau să repari telefoane?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -2993,8 +3085,9 @@
   },
   {
     "id": 93,
-    "text": "Să conduci un autobuz?",
+    "text": "Să lucrezi în construcţii?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -3029,8 +3122,9 @@
   },
   {
     "id": 94,
-    "text": "Să repari mecanisme?",
+    "text": "Să montezi dispozitive electrice?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "realist",
     "variante_raspuns": {
       "0": {
@@ -3065,656 +3159,675 @@
   },
   {
     "id": 95,
-    "text": "Să discuţi cu diverşi oameni despre problemele ce privesc comunitatea?",
+    "text": "Să construieşti etajere pentru cărţi?",
     "text_poza": "",
-    "categorie": "social",
+    "timer": 15,
+    "categorie": "realist",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 96,
-    "text": "Să ajuţi persoanele handicapate fizic să se pregătească pentru o meserie?",
+    "text": "Să fii antreprenor în construcţii de locuinţe?",
     "text_poza": "",
-    "categorie": "social",
+    "timer": 15,
+    "categorie": "realist",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 97,
-    "text": "Să ajuţi pe cei neajutoraţi (handicap, bătrâni, copii cu probleme)?",
+    "text": "Să faci jucării din lemn?",
     "text_poza": "",
-    "categorie": "social",
+    "timer": 15,
+    "categorie": "realist",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 98,
-    "text": "Să fii profesor sau învăţător?",
+    "text": "Să lucrezi ca paznic sau custode?",
     "text_poza": "",
-    "categorie": "social",
+    "timer": 15,
+    "categorie": "realist",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 99,
-    "text": "Să studiezi sociologia, adică cum trăiesc oamenii împreună (grupurile sociale)?",
+    "text": "Să conduci un autobuz?",
     "text_poza": "",
-    "categorie": "social",
+    "timer": 15,
+    "categorie": "realist",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 100,
-    "text": "Să dai sfaturi privind legislaţia oamenilor săraci?",
+    "text": "Să repari mecanisme?",
     "text_poza": "",
-    "categorie": "social",
+    "timer": 15,
+    "categorie": "realist",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 101,
-    "text": "Să ai grijă de oameni bolnavi?",
+    "text": "Să discuţi cu diverşi oameni despre problemele ce privesc comunitatea?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 102,
-    "text": "Să ajuţi persoanele care au ieşit din închisoare să îşi găsească un loc de muncă?",
+    "text": "Să ajuţi persoanele handicapate fizic să se pregătească pentru o meserie?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 103,
-    "text": "Să înveţi să califici adulţi pentru o meserie?",
+    "text": "Să ajuţi pe cei neajutoraţi (handicap, bătrâni, copii cu probleme)?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 104,
-    "text": "Să ajuţi oamenii în alegerea unei cariere?",
+    "text": "Să fii profesor sau învăţător?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 105,
-    "text": "Să supraveghezi persoane care au încălcat legea?",
+    "text": "Să studiezi sociologia, adică cum trăiesc oamenii împreună (grupurile sociale)?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 106,
-    "text": "Să participi la strângerea fondurilor de caritate?",
+    "text": "Să dai sfaturi privind legislaţia oamenilor săraci?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 107,
-    "text": "Să planifici activitatea altora?",
+    "text": "Să ai grijă de oameni bolnavi?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 108,
-    "text": "Să dai primul ajutor?",
+    "text": "Să ajuţi persoanele care au ieşit din închisoare să îşi găsească un loc de muncă?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 109,
-    "text": "Să lucrezi în calitate de consilier familial?",
+    "text": "Să înveţi să califici adulţi pentru o meserie?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 110,
-    "text": "Să ajuţi copii cu tulburări mentale?",
+    "text": "Să ajuţi oamenii în alegerea unei cariere?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 111,
-    "text": "Să înveţi să ajuţi oameni în suferinţă?",
+    "text": "Să supraveghezi persoane care au încălcat legea?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 112,
-    "text": "Să studiezi psihologia?",
+    "text": "Să participi la strângerea fondurilor de caritate?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
-      "6": {
-        "voturi": 6,
-        "raspuns_poza": ""
-      },
-      "5": {
-        "voturi": 5,
-        "raspuns_poza": ""
-      },
-      "4": {
-        "voturi": 4,
-        "raspuns_poza": ""
-      },
-      "3": {
-        "voturi": 3,
-        "raspuns_poza": ""
-      },
-      "2": {
-        "voturi": 2,
+      "0": {
+        "voturi": 0,
         "raspuns_poza": ""
       },
       "1": {
         "voturi": 1,
         "raspuns_poza": ""
       },
-      "0": {
-        "voturi": 0,
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }
   },
   {
     "id": 113,
-    "text": "Să coordonezi programul sportiv pe un teren de sport?",
+    "text": "Să planifici activitatea altora?",
     "text_poza": "",
+    "timer": 15,
     "categorie": "social",
     "variante_raspuns": {
       "0": {
@@ -3749,8 +3862,157 @@
   },
   {
     "id": 114,
-    "text": "Să conduci discuţiile de grup pentru copii delincvenţi?",
+    "text": "Să dai primul ajutor?",
     "text_poza": "",
+    "timer": 15,
+    "categorie": "social",
+    "variante_raspuns": {
+      "0": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "1": {
+        "voturi": 1,
+        "raspuns_poza": ""
+      },
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 115,
+    "text": "Să lucrezi în calitate de consilier familial?",
+    "text_poza": "",
+    "timer": 15,
+    "categorie": "social",
+    "variante_raspuns": {
+      "0": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "1": {
+        "voturi": 1,
+        "raspuns_poza": ""
+      },
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 116,
+    "text": "Să ajuţi copii cu tulburări mentale?",
+    "text_poza": "",
+    "timer": 15,
+    "categorie": "social",
+    "variante_raspuns": {
+      "0": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "1": {
+        "voturi": 1,
+        "raspuns_poza": ""
+      },
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 117,
+    "text": "Să înveţi să ajuţi oameni în suferinţă?",
+    "text_poza": "",
+    "timer": 15,
+    "categorie": "social",
+    "variante_raspuns": {
+      "0": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "1": {
+        "voturi": 1,
+        "raspuns_poza": ""
+      },
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 118,
+    "text": "Să studiezi psihologia?",
+    "text_poza": "",
+    "timer": 0,
     "categorie": "social",
     "variante_raspuns": {
       "6": {
@@ -3779,6 +4041,80 @@
       },
       "0": {
         "voturi": 0,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 119,
+    "text": "Să coordonezi programul sportiv pe un teren de sport?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "social",
+    "variante_raspuns": {
+      "0": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "1": {
+        "voturi": 1,
+        "raspuns_poza": ""
+      },
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 120,
+    "text": "Să conduci discuţiile de grup pentru copii delincvenţi?",
+    "text_poza": "",
+    "timer": 15,
+    "categorie": "social",
+    "variante_raspuns": {
+      "0": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "1": {
+        "voturi": 1,
+        "raspuns_poza": ""
+      },
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
         "raspuns_poza": ""
       }
     }

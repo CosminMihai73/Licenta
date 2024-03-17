@@ -3,33 +3,34 @@
         {
             "text": "Să discuţi cu diverşi oameni despre problemele ce privesc comunitatea?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -37,33 +38,34 @@
         {
             "text": "Să ajuţi persoanele handicapate fizic să se pregătească pentru o meserie?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -71,33 +73,34 @@
         {
             "text": "Să ajuţi pe cei neajutoraţi (handicap, bătrâni, copii cu probleme)?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -105,33 +108,34 @@
         {
             "text": "Să fii profesor sau învăţător?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -139,33 +143,34 @@
         {
             "text": "Să studiezi sociologia, adică cum trăiesc oamenii împreună (grupurile sociale)?",
          "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -173,33 +178,34 @@
         {
             "text": "Să dai sfaturi privind legislaţia oamenilor săraci?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -207,33 +213,34 @@
         {
             "text": "Să ai grijă de oameni bolnavi?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -241,33 +248,34 @@
         {
             "text": "Să ajuţi persoanele care au ieşit din închisoare să îşi găsească un loc de muncă?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -275,33 +283,34 @@
         {
             "text": "Să înveţi să califici adulţi pentru o meserie?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -309,33 +318,34 @@
         {
             "text": "Să ajuţi oamenii în alegerea unei cariere?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -343,33 +353,34 @@
         {
             "text": "Să supraveghezi persoane care au încălcat legea?",
          "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -377,33 +388,34 @@
         {
             "text": "Să participi la strângerea fondurilor de caritate?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -411,33 +423,34 @@
         {
             "text": "Să planifici activitatea altora?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -445,33 +458,34 @@
         {
             "text": "Să dai primul ajutor?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -479,33 +493,34 @@
         {
             "text": "Să lucrezi în calitate de consilier familial?",
          "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -513,33 +528,34 @@
         {
             "text": "Să ajuţi copii cu tulburări mentale?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -547,33 +563,34 @@
         {
             "text": "Să înveţi să ajuţi oameni în suferinţă?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }
@@ -649,33 +666,34 @@
         {
             "text": "Să conduci discuţiile de grup pentru copii delincvenţi?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
-                "6": {
-                    "voturi": 6,
-                    "raspuns_poza": ""
-                },
-                "5": {
-                    "voturi": 5,
-                    "raspuns_poza": ""
-                },
-                "4": {
-                    "voturi": 4,
-                    "raspuns_poza": ""
-                },
-                "3": {
-                    "voturi": 3,
-                    "raspuns_poza": ""
-                },
-                "2": {
-                    "voturi": 2,
+                "0": {
+                    "voturi": 0,
                     "raspuns_poza": ""
                 },
                 "1": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "0": {
-                    "voturi": 0,
+                "2": {
+                    "voturi": 2,
+                    "raspuns_poza": ""
+                },
+               "3": {
+                    "voturi": 3,
+                    "raspuns_poza": ""
+                },
+               "4": {
+                    "voturi": 4,
+                    "raspuns_poza": ""
+                },
+               "5": {
+                    "voturi": 5,
+                    "raspuns_poza": ""
+                },
+               "6": {
+                    "voturi": 6,
                     "raspuns_poza": ""
                 }
             }

@@ -3,6 +3,7 @@
         {
             "text": "Să fii numărător de bani (de exemplu persoana care să primească şi să dea bani la o bancă)'?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -37,6 +38,7 @@
         {
             "text": "Să înregistrezi datele financiare ale unei firme?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -70,7 +72,8 @@
         },
         {
             "text": "Să lucrezi cu calculatorul sau cu un copiator într-un birou?",
-          "text_poza": "",
+           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -105,6 +108,7 @@
         {
             "text": "Să faci rezervări pentru zboruri de avioane, pentru hoteluri într-un birou de voiaj?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -139,6 +143,7 @@
         {
             "text": "Să fii expert contabil (verificare)?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -172,7 +177,8 @@
         },
         {
             "text": "Să verifici bugetul unei firme?",
-          "text_poza": "",
+            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -207,6 +213,7 @@
         {
             "text": "Să ţii evidenţa mărfurilor, a ceea ce se consumă la o firmă?",
            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -241,6 +248,7 @@
         {
             "text": "Să lucrezi cu cifre într-un birou de afaceri?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -275,6 +283,7 @@
         {
             "text": "Să studiezi o firmă şi să elaborezi un sistem contabil pentru nevoile sale financiare?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -308,7 +317,8 @@
         },
         {
             "text": "Să supervizezi personalul administrativ al unui oficiu?",
-         "text_poza": "",
+            "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -343,6 +353,7 @@
         {
             "text": "Să urmezi un curs de matematică pentru afaceri?",
           "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -377,6 +388,7 @@
         {
             "text": "Să controlezi actele băncilor pentru a descoperi greşeli?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -411,6 +423,7 @@
         {
             "text": "Să utilizezi calculatorul pentru a prelucra date contabile?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -445,6 +458,7 @@
         {
             "text": "Să urmezi un curs de contabilitate?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -479,6 +493,7 @@
         {
             "text": "Să introduci informaţii în calculator?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -513,6 +528,7 @@
         {
             "text": "Să ţii evidenţa încasărilor pentru lucrările efectuate?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -547,6 +563,7 @@
         {
             "text": "Să operezi într-un registru de încasări?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -581,6 +598,7 @@
         {
             "text": "Să fii recepţioner la un hotel?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -615,6 +633,7 @@
         {
             "text": "Să fii funcţionar administrativ?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,
@@ -649,6 +668,7 @@
         {
             "text": "Să operezi cu cifre pe computer?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "0": {
                     "voturi": 0,

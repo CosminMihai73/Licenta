@@ -9,13 +9,18 @@ const QuestionsPage = () => {
   const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
   const [errorDetails, setErrorDetails] = useState(null);
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [timeRemaining, setTimeRemaining] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/questions');
-        setQuestions(response.data);
-        setResponses(response.data.map((question) => ({ id: question.id, raspuns: '' })));
+        const response = await axios.get(`http://localhost:8000/questions?page=${currentPage}`);
+        setQuestions(response.data.questions);
+        setResponses(response.data.questions.map((question) => ({ id: question.id, raspuns: '' })));
+        setTotalPages(response.data.total_pages);
+        setTimeRemaining(response.data.total_time);
       } catch (error) {
         console.error('Error:', error);
         setErrorDetails(error.response?.data?.detail || 'An unknown error occurred.');
@@ -23,55 +28,78 @@ const QuestionsPage = () => {
     };
 
     fetchData();
+  }, [currentPage]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeRemaining((prevTime) => prevTime - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
   }, []);
 
   useEffect(() => {
     const areAllQuestionsAnswered = responses.every((response) => response.raspuns !== '');
     setAllQuestionsAnswered(areAllQuestionsAnswered);
+
+    if (areAllQuestionsAnswered && currentPage < totalPages) {
+      goToNextPage();
+    }
   }, [responses]);
 
   const handleResponseChange = (id, raspuns) => {
-  // eslint-disable-next-line
-  setResponses((prevResponses) =>
-    prevResponses.map((response) => (response.id === id ? { ...response, raspuns } : response))
-  );
-};
+    setResponses((prevResponses) =>
+      prevResponses.map((response) => (response.id === id ? { ...response, raspuns } : response))
+    );
+  };
+
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
+  const goToPreviousPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1)); // Nu permite pagini < 1
+  };
+
+  const goToNextPage = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages)); // Nu permite pagini > totalPages
+  };
+
   const handleSubmit = async () => {
-  if (!allQuestionsAnswered) {
-    alert('Vă rugăm să răspundeți la toate întrebările înainte de a trimite!');
-    return;
-  }
+    if (!allQuestionsAnswered) {
+      alert('Vă rugăm să răspundeți la toate întrebările înainte de a trimite!');
+      return;
+    }
 
-  try {
-    const formattedResponses = responses.map((response) => ({
-      id: response.id,
-      categorie: 'string', // Schimbă valoarea 'string' dacă este necesar
-      raspuns: response.raspuns
-    }));
+    try {
+      const formattedResponses = responses.map((response) => ({
+        id: response.id,
+        categorie: 'string', // Schimbă valoarea 'string' dacă este necesar
+        raspuns: response.raspuns
+      }));
 
-    const payload = {
-      raspunsuri: formattedResponses,
-      email: email,
-    };
+      const payload = {
+        raspunsuri: formattedResponses,
+        email: email
+      };
 
-    const response = await axios.post('http://localhost:8000/actualizeaza_si_calculeaza_punctaje', payload);
+      const response = await axios.post('http://localhost:8000/actualizeaza_si_calculeaza_punctaje', payload);
 
-    setSubmissionSuccess(true);
-    setErrorDetails(null);
-  } catch (error) {
-    console.error('Error:', error.response);
-    setErrorDetails(error.response?.data?.detail || 'An unknown error occurred.');
-  }
-};
+      setSubmissionSuccess(true);
+      setErrorDetails(null);
+    } catch (error) {
+      console.error('Error:', error.response);
+      setErrorDetails(error.response?.data?.detail || 'An unknown error occurred.');
+    }
+  };
 
   return (
     <div className="questions-container">
+      <h1>Întrebări</h1>
+      <div className="timer">
+        <p>Timp rămas: {timeRemaining} secunde</p>
+      </div>
       <div className="questions-content">
-        <h1>Întrebări</h1>
         <div className="email-input">
           <label>Email:</label>
           <input type="email" value={email} onChange={handleEmailChange} />
@@ -98,6 +126,11 @@ const QuestionsPage = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="pagination">
+        <button onClick={goToPreviousPage} disabled={currentPage === 1}>Pagina anterioară</button>
+        <span>Pagina {currentPage} din {totalPages}</span>
+        <button onClick={goToNextPage} disabled={currentPage === totalPages}>Pagina următoare</button>
       </div>
       {errorDetails && <p style={{ color: 'red' }}>{errorDetails}</p>}
       {submissionSuccess && <p style={{ color: 'green' }}>Răspunsurile au fost trimise cu succes!</p>}

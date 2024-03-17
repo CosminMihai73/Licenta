@@ -41,8 +41,11 @@ class Combinare:
                                 'id': len(date_combine) + 1,
                                 'text': intrebare['text'],
                                 'text_poza': intrebare.get('text_poza', ''),
+                                'timer': intrebare.get('timer', 0),
                                 'categorie': categorie,
                                 'variante_raspuns': intrebare['variante_raspuns']
+
+
                             }
                             date_combine.append(intrebare_noua)
             except FileNotFoundError:

@@ -3,6 +3,7 @@
         {
             "text": "Să cânți pe o scenă?",
             "text_poza": "/poze/pisica1.jpg",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -21,6 +22,7 @@
         {
             "text": "Să fii artist?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -39,6 +41,7 @@
         {
             "text": "Să scrii scurte povestiri?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -57,6 +60,7 @@
         {
             "text": "Să faci desene animate?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -75,6 +79,7 @@
         {
             "text": "Să predai muzica în școli?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -93,6 +98,7 @@
         {
             "text": "Să scrii un roman?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -111,6 +117,7 @@
         {
             "text": "Să organizezi/regizezi piese de teatru?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -129,6 +136,7 @@
         {
             "text": "Să fii cântăreț de jazz?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -147,6 +155,7 @@
         {
             "text": "Să citești articole despre muzică și artă?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -165,6 +174,7 @@
         {
             "text": "Să fii designerul reclamelor pentru reviste sau TV?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -183,6 +193,7 @@
         {
             "text": "Să studiezi operele marilor muzicieni?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -201,6 +212,7 @@
         {
             "text": "Să scrii o piesă de teatru?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -219,6 +231,7 @@
         {
             "text": "Să compui muzică sau să faci aranjamente muzicale?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -237,6 +250,7 @@
         {
             "text": "Să dirijezi o orchestră simfonică?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -255,6 +269,7 @@
         {
             "text": "Să scrii reportaje pentru reviste?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -273,6 +288,7 @@
         {
             "text": "Să pictezi peisaje?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -291,6 +307,7 @@
         {
             "text": "Să scrii scenarii TV?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -309,6 +326,7 @@
         {
             "text": "Să faci scenografie pentru piesele de teatru?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -327,6 +345,7 @@
         {
             "text": "Să aranjezi muzica de fond pentru film?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,
@@ -345,6 +364,7 @@
         {
             "text": "Să faci recenzii de cărți ca un critic literar?",
             "text_poza": "",
+            "timer": 15,
             "variante_raspuns": {
                 "Nu": {
                     "voturi": 0,

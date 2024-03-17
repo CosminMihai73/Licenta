@@ -1,6 +1,5 @@
 import os
-
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
 from starlette.responses import JSONResponse, FileResponse
@@ -38,20 +37,32 @@ def combina_fisiere_json():
     return JSONResponse(content={"message": "Fisierele au fost combinate cu succes!", "file_content": content})
 
 
+
+
 @app.get("/questions")
-async def get_questions():
+async def get_questions(page: int = Query(1, gt=0)):
     file_path_variante = 'json/toate_intrebarile.json'
     cititor = Citeste()
     intrebari = cititor.citeste_date(file_path_variante)
 
+    # Calculăm indexul de start și de sfârșit pentru întrebările din pagina curentă
+    items_per_page = 20
+    start_index = (page - 1) * items_per_page
+    end_index = min(start_index + items_per_page, len(intrebari))
+
     questions_with_responses = []
-    for intrebare in intrebari:
+    total_time = 0  # Initializează timpul total cu 0
+
+    for intrebare in intrebari[start_index:end_index]:
         formatted_question = {
             "id": intrebare["id"],
             "text": intrebare["text"],
             "image_path": intrebare.get("text_poza", None),  # Calea către fișierul imagine
             "responses": []
         }
+
+        # Calculăm timpul total al întrebărilor
+        total_time += intrebare.get("timer", 0)  # Adaugă timpul întrebării curente la timpul total
 
         # Verificăm tipul variantelor de răspuns
         for raspuns, detalii in intrebare["variante_raspuns"].items():
@@ -78,7 +89,42 @@ async def get_questions():
 
         questions_with_responses.append(formatted_question)
 
-    return questions_with_responses
+    # Calculăm numărul total de pagini
+    total_pages = (len(intrebari) + items_per_page - 1) // items_per_page
+
+    return {"total_time": total_time, "total_pages": total_pages, "questions": questions_with_responses}
+
+
+
+
+class RaspunsModel(BaseModel):
+    id: int
+    categorie: str
+    raspuns: str
+
+
+class IntrebareModel(BaseModel):
+    id: int
+    text: str
+    categorie: str
+    variante_raspuns: Dict[str, Union[int, str]]
+
+
+class RaspundeLaIntrebari(BaseModel):
+    raspunsuri: List[RaspunsModel]
+    email: EmailStr
+
+raspunsuri_stocate = []
+
+# Load questions and initial scores from JSON files
+with open("json/toate_intrebarile.json", "r") as file:
+    intrebari = json.load(file)
+
+with open("json/punctaje.json", "r") as file:
+    punctaje_initiale = json.load(file)
+
+# Create a list of Pydantic models for validating answers
+modele_intrebari = [RaspunsModel(id=intrebare["id"], categorie=intrebare["categorie"], raspuns="") for intrebare in intrebari]
 
 class RaspunsModel(BaseModel):
     id: int
@@ -193,6 +239,7 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
     except Exception as e:
         # Dacă apare o altă excepție, returnăm un răspuns HTTP cu codul de eroare 500 și detalii despre acea excepție
         raise HTTPException(status_code=500, detail=str(e))
+
 
 class InterpretareResult(BaseModel):
     tip_dominant: str

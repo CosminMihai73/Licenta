@@ -5,8 +5,7 @@ import './QuestionsPage.css';
 const QuestionsPage = () => {
   const [questions, setQuestions] = useState([]);
   const [email, setEmail] = useState('');
-  const [responses, setResponses] = useState([]);
-  const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
+  const [tempResponses, setTempResponses] = useState({}); // Obiect pentru stocarea temporară a răspunsurilor
   const [errorDetails, setErrorDetails] = useState(null);
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +17,6 @@ const QuestionsPage = () => {
       try {
         const response = await axios.get(`http://localhost:8000/questions?page=${currentPage}`);
         setQuestions(response.data.questions);
-        setResponses(response.data.questions.map((question) => ({ id: question.id, raspuns: '' })));
         setTotalPages(response.data.total_pages);
         setTimeRemaining(response.data.total_time);
       } catch (error) {
@@ -38,19 +36,11 @@ const QuestionsPage = () => {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    const areAllQuestionsAnswered = responses.every((response) => response.raspuns !== '');
-    setAllQuestionsAnswered(areAllQuestionsAnswered);
-
-    if (areAllQuestionsAnswered && currentPage < totalPages) {
-      goToNextPage();
-    }
-  }, [responses]);
-
-  const handleResponseChange = (id, raspuns) => {
-    setResponses((prevResponses) =>
-      prevResponses.map((response) => (response.id === id ? { ...response, raspuns } : response))
-    );
+  const handleResponseChange = (id, response) => {
+    setTempResponses(prevResponses => ({
+      ...prevResponses,
+      [id]: response
+    }));
   };
 
   const handleEmailChange = (event) => {
@@ -66,16 +56,19 @@ const QuestionsPage = () => {
   };
 
   const handleSubmit = async () => {
-    if (!allQuestionsAnswered) {
-      alert('Vă rugăm să răspundeți la toate întrebările înainte de a trimite!');
+    if (currentPage !== totalPages) {
+      // Salvăm răspunsurile temporare într-un fișier sau în altă formă de stocare temporară
+      // Puteți folosi localStorage, sessionStorage sau puteți crea un serviciu de stocare temporară pe backend
+      // Aici puteți folosi și alte metode pentru stocarea temporară a datelor
+      console.log('Răspunsurile au fost salvate temporar:', tempResponses);
       return;
     }
 
     try {
-      const formattedResponses = responses.map((response) => ({
-        id: response.id,
+      const formattedResponses = Object.keys(tempResponses).map(id => ({
+        id,
         categorie: 'string', // Schimbă valoarea 'string' dacă este necesar
-        raspuns: response.raspuns
+        raspuns: tempResponses[id]
       }));
 
       const payload = {
@@ -115,7 +108,7 @@ const QuestionsPage = () => {
                     type="radio"
                     name={`response-${question.id}`}
                     value={response.value}
-                    checked={responses.find((resp) => resp.id === question.id)?.raspuns === response.value}
+                    checked={tempResponses[question.id] === response.value}
                     onChange={() => handleResponseChange(question.id, response.value)}
                   />
                   <span className="custom-radio"></span>
@@ -134,7 +127,7 @@ const QuestionsPage = () => {
       </div>
       {errorDetails && <p style={{ color: 'red' }}>{errorDetails}</p>}
       {submissionSuccess && <p style={{ color: 'green' }}>Răspunsurile au fost trimise cu succes!</p>}
-      <button onClick={handleSubmit} disabled={!allQuestionsAnswered}>Trimite</button>
+      <button onClick={handleSubmit}>Trimite</button>
     </div>
   );
 };

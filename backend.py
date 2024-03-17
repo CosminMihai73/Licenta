@@ -126,35 +126,6 @@ with open("json/punctaje.json", "r") as file:
 # Create a list of Pydantic models for validating answers
 modele_intrebari = [RaspunsModel(id=intrebare["id"], categorie=intrebare["categorie"], raspuns="") for intrebare in intrebari]
 
-class RaspunsModel(BaseModel):
-    id: int
-    categorie: str
-    raspuns: str
-
-
-class IntrebareModel(BaseModel):
-    id: int
-    text: str
-    categorie: str
-    variante_raspuns: Dict[str, Union[int, str]]
-
-
-class RaspundeLaIntrebari(BaseModel):
-    raspunsuri: List[RaspunsModel]
-    email: EmailStr
-
-raspunsuri_stocate = []
-
-# Load questions and initial scores from JSON files
-with open("json/toate_intrebarile.json", "r") as file:
-    intrebari = json.load(file)
-
-with open("json/punctaje.json", "r") as file:
-    punctaje_initiale = json.load(file)
-
-# Create a list of Pydantic models for validating answers
-modele_intrebari = [RaspunsModel(id=intrebare["id"], categorie=intrebare["categorie"], raspuns="") for intrebare in intrebari]
-
 @app.post("/actualizeaza_si_calculeaza_punctaje")
 def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
     try:

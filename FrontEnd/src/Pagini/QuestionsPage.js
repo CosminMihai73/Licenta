@@ -6,8 +6,6 @@ const QuestionsPage = () => {
   const [questions, setQuestions] = useState([]);
   const [email, setEmail] = useState('');
   const [tempResponses, setTempResponses] = useState({});
-  const [errorDetails, setErrorDetails] = useState(null);
-  const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [timeRemaining, setTimeRemaining] = useState(0);
@@ -21,7 +19,6 @@ const QuestionsPage = () => {
         setTimeRemaining(response.data.total_time);
       } catch (error) {
         console.error('Error:', error);
-        setErrorDetails(error.response?.data?.detail || 'An unknown error occurred.');
       }
     };
 
@@ -33,7 +30,7 @@ const QuestionsPage = () => {
       setTimeRemaining((prevTime) => {
         if (prevTime <= 1) {
           clearInterval(timer);
-          window.location.href = '/'; // Redirecționează utilizatorul către pagina de acasă
+          window.location.href = '/';
         }
         return prevTime - 1;
       });
@@ -54,13 +51,19 @@ const QuestionsPage = () => {
   };
 
   const goToNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-    window.scrollTo(0, 0); // Facem scroll în partea de sus a paginii
+    const allQuestionsAnswered = questions.every(question => tempResponses.hasOwnProperty(question.id));
+    if (allQuestionsAnswered) {
+      setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+      window.scrollTo(0, 0);
+    } else {
+      alert('Te rugăm să completezi toate întrebările înainte de a trece la pagina următoare.');
+    }
   };
 
   const handleSubmit = async () => {
-    if (currentPage !== totalPages) {
-      console.log('Răspunsurile au fost salvate temporar:', tempResponses);
+    const allQuestionsAnswered = questions.every(question => tempResponses.hasOwnProperty(question.id));
+    if (!allQuestionsAnswered) {
+      alert('Te rugăm să completezi toate întrebările înainte de a trimite răspunsurile.');
       return;
     }
 
@@ -78,15 +81,14 @@ const QuestionsPage = () => {
 
       await axios.post('http://localhost:8000/actualizeaza_si_calculeaza_punctaje', payload);
 
-      setSubmissionSuccess(true);
-      setErrorDetails(null);
+      window.location.href = '/rezultat';
+
     } catch (error) {
       console.error('Error:', error.response);
-      setErrorDetails(error.response?.data?.detail || 'An unknown error occurred.');
+      alert('A apărut o eroare în timpul trimiterii răspunsurilor. Vă rugăm să încercați din nou mai târziu.');
     }
   };
 
-  // Calculăm minutele și secundele rămase din timpul total
   const minutes = Math.floor(timeRemaining / 60);
   const seconds = timeRemaining % 60;
 
@@ -97,10 +99,12 @@ const QuestionsPage = () => {
         <p className="timer-text">Timp rămas: {minutes} minute și {seconds} secunde</p>
       </div>
       <div className="questions-content">
-        <div className="email-input">
-          <label className="email-label">Email:</label>
-          <input type="email" value={email} onChange={handleEmailChange} className="email-input-field" />
-        </div>
+        {currentPage === 1 && (
+          <div className="email-input">
+            <label className="email-label">Email:</label>
+            <input type="email" value={email} onChange={handleEmailChange} className="email-input-field" />
+          </div>
+        )}
         {questions.map((question, index) => (
           <div key={question.id} className={`question-div-${index}`}>
             <p className={`question-text-${index}`}>{question.text}</p>
@@ -127,17 +131,17 @@ const QuestionsPage = () => {
       </div>
       <div className="pagination-container">
         <span className="pagination-text">Pagina {currentPage} din {totalPages}</span>
-        {currentPage !== totalPages && (
-          <button onClick={goToNextPage} className="next-page-button">Pagina următoare</button>
-        )}
-      </div>
-      {currentPage === totalPages && (
-        <div className="submit-container">
-          {errorDetails && <p className="error-details">{errorDetails}</p>}
-          {submissionSuccess && <p className="submission-success">Răspunsurile au fost trimise cu succes!</p>}
-          <button onClick={handleSubmit} className="submit-button">Trimite</button>
+        <div className="pagination-buttons">
+          {currentPage !== totalPages && (
+            <button onClick={goToNextPage} className="next-page-button">Pagina următoare</button>
+          )}
+          {currentPage === totalPages && (
+            <div className="submit-container">
+              <button className="submit-button" onClick={handleSubmit}>Trimite și vezi rezultate</button>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };

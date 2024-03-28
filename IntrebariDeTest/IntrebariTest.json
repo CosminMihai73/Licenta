@@ -1,0 +1,375 @@
+[
+  {
+    "id": 1,
+    "text": "Să cânți pe o scenă?",
+    "text_poza": "/poze/pisica1.jpg",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "": {
+        "voturi": 0,
+        "raspuns_poza": "/poze/nu.png"
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 2,
+    "text": "Să fii artist?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 3,
+    "text": "Să scrii scurte povestiri?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 4,
+    "text": "Să faci desene animate?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 5,
+    "text": "Să predai muzica în școli?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 6,
+    "text": "Să scrii un roman?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 7,
+    "text": "Să organizezi/regizezi piese de teatru?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 8,
+    "text": "Să fii cântăreț de jazz?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 9,
+    "text": "Să citești articole despre muzică și artă?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 10,
+    "text": "Să fii designerul reclamelor pentru reviste sau TV?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 11,
+    "text": "Să studiezi operele marilor muzicieni?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 12,
+    "text": "Să scrii o piesă de teatru?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 13,
+    "text": "Să compui muzică sau să faci aranjamente muzicale?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 14,
+    "text": "Să dirijezi o orchestră simfonică?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 15,
+    "text": "Să scrii reportaje pentru reviste?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 16,
+    "text": "Să pictezi peisaje?",
+    "text_poza": "",
+    "timer": 0,
+    "categorie": "artistic",
+    "variante_raspuns": {
+      "Nu": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "Poate": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "Da": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  },
+  {
+    "id": 3,
+    "text": "Să conduci discuţiile de grup pentru copii delincvenţi?",
+    "text_poza": "",
+    "timer": 15,
+    "categorie": "social",
+    "variante_raspuns": {
+      "0": {
+        "voturi": 0,
+        "raspuns_poza": ""
+      },
+      "1": {
+        "voturi": 1,
+        "raspuns_poza": ""
+      },
+      "2": {
+        "voturi": 2,
+        "raspuns_poza": ""
+      },
+      "3": {
+        "voturi": 3,
+        "raspuns_poza": ""
+      },
+      "4": {
+        "voturi": 4,
+        "raspuns_poza": ""
+      },
+      "5": {
+        "voturi": 5,
+        "raspuns_poza": ""
+      },
+      "6": {
+        "voturi": 6,
+        "raspuns_poza": ""
+      }
+    }
+  }
+]

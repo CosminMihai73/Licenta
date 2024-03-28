@@ -25,6 +25,9 @@ const HomePage = () => {
           <Link to="/informatii">
             <button className="info-button">Informații</button>
           </Link>
+           <Link to="/IntrebariTest">
+            <button className="info-button">Teste</button>
+          </Link>
         </div>
       </div>
     </div>

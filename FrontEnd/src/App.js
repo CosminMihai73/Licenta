@@ -5,6 +5,7 @@ import QuestionsPage from './Pagini/QuestionsPage';
 import InterpretationPage from './Pagini/InterpretationPage';
 import ErrorPage from './Pagini/ErrorPage';
 import Informatii from "./Pagini/Informatii";
+import IntrebariTest from "./Pagini/IntrebariTest";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/IntrebariTest" element={<IntrebariTest />} />
           <Route path="/intrebari" element={<QuestionsPage />} />
           <Route path="/rezultat" element={<InterpretationPage />} />
           <Route path="/informatii" element={<Informatii />} />

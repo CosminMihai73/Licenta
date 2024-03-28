@@ -22,26 +22,11 @@ app.add_middleware(
 
 
 
-@app.get("/combina_fisiere_json")
-def combina_fisiere_json():
-    fisiere_intrare = ['Holland/artistic.json', 'Holland/conventional.json', 'Holland/intreprinzator.json',
-                       'Holland/investigativ.json', 'Holland/realist.json', 'Holland/social.json']
-    fisier_iesire = 'Holland/toate_intrebarile.json'
-
-    comb = Combinare()
-    comb.combina_fisiere_json(fisiere_intrare, fisier_iesire)
-
-    with open(fisier_iesire, 'r') as file:
-        content = json.load(file)
-
-    return JSONResponse(content={"message": "Fisierele au fost combinate cu succes!", "file_content": content})
-
-
 
 
 @app.get("/questions")
 async def get_questions(page: int = Query(1, gt=0)):
-    file_path_variante = 'Holland/toate_intrebarile.json'
+    file_path_variante = 'IntrebariDeTest/IntrebariTest.json'
     cititor = Citeste()
     intrebari = cititor.citeste_date(file_path_variante)
 
@@ -51,17 +36,18 @@ async def get_questions(page: int = Query(1, gt=0)):
     end_index = min(start_index + items_per_page, len(intrebari))
 
     questions_with_responses = []
+    total_time = 0  # Initializează timpul total cu 0
 
     for intrebare in intrebari[start_index:end_index]:
         formatted_question = {
             "id": intrebare["id"],
             "text": intrebare["text"],
-            "timer": intrebare.get("timer", 0),
             "image_path": intrebare.get("text_poza", None),  # Calea către fișierul imagine
             "responses": []
         }
 
-
+        # Calculăm timpul total al întrebărilor
+        total_time += intrebare.get("timer", 0)  # Adaugă timpul întrebării curente la timpul total
 
         # Verificăm tipul variantelor de răspuns
         for raspuns, detalii in intrebare["variante_raspuns"].items():
@@ -91,7 +77,7 @@ async def get_questions(page: int = Query(1, gt=0)):
     # Calculăm numărul total de pagini
     total_pages = (len(intrebari) + items_per_page - 1) // items_per_page
 
-    return {"total_pages": total_pages, "questions": questions_with_responses}
+    return {"total_time": total_time, "total_pages": total_pages, "questions": questions_with_responses}
 
 
 
@@ -116,10 +102,10 @@ class RaspundeLaIntrebari(BaseModel):
 raspunsuri_stocate = []
 
 # Load questions and initial scores from JSON files
-with open("Holland/toate_intrebarile.json", "r") as file:
+with open("IntrebariDeTest/IntrebariTest.json", "r") as file:
     intrebari = json.load(file)
 
-with open("Holland/punctaje.json", "r") as file:
+with open("IntrebariDeTest/punctaje.json", "r") as file:
     punctaje_initiale = json.load(file)
 
 # Create a list of Pydantic models for validating answers
@@ -135,7 +121,7 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
             raise HTTPException(status_code=400, detail="Nu există răspunsuri salvate pentru a calcula punctajele.")
 
         # Încărcăm întrebările din fișierul JSON
-        with open("Holland/toate_intrebarile.json", "r", encoding="utf-8") as file:
+        with open("IntrebariDeTest/IntrebariTest.json", "r", encoding="utf-8") as file:
             intrebari = json.load(file)
 
         # Inițializăm un dicționar pentru a stoca punctajele
@@ -169,18 +155,18 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
         raspunsuri_stocate.extend(raspunsuri.raspunsuri)
 
         # Salvăm răspunsurile în fișierul "raspunsuri.json"
-        with open("Holland/raspunsuri.json", "w", encoding="utf-8") as file:
+        with open("IntrebariDeTest/raspunsuri.json", "w", encoding="utf-8") as file:
             json.dump([raspuns.dict() for raspuns in raspunsuri.raspunsuri], file, ensure_ascii=False)
 
         # Salvăm punctajele în fișierul "punctaje.json"
-        with open("Holland/punctaje.json", "w") as file:
+        with open("IntrebariDeTest/punctaje.json", "w") as file:
             json.dump(punctaje, file)
 
         email = raspunsuri.email
         punctaje_json = json.dumps(punctaje)
 
         # Deschide fișierul cu întrebări
-        with open("Holland/toate_intrebarile.json", "r", encoding='utf-8') as file:
+        with open("IntrebariDeTest/IntrebariTest.json", "r", encoding='utf-8') as file:
             intrebari = json.load(file)
 
         # Apoi, poți folosi aceste întrebări în cadrul buclei tale pentru a obține textul întrebării
@@ -218,14 +204,14 @@ class InterpretareResult(BaseModel):
     profesie_attribuita: str
 
 @app.get("/interpretare_si_atribuie_profesie", response_model=InterpretareResult)
-def interpretare_si_atribuie_profesie(fisier_punctaje: str = 'Holland/punctaje.json'):
+def interpretare_si_atribuie_profesie(fisier_punctaje: str = 'IntrebariDeTest/punctaje.json'):
     try:
         # Interpretation logic
         interpretare = InterpretareHolland(fisier_punctaje)
         rezultat_interpretat = interpretare.interpreteaza()
         combinatie_finala = interpretare.combinatie_finala
 
-        with open('Holland/profesii.json', 'r', encoding='utf-8') as file:
+        with open('IntrebariDeTest/profesii.json', 'r', encoding='utf-8') as file:
             profesii_data = json.load(file)["profesii"]
 
         interpretare_profesii = InterpretareProfesii(combinatie_finala, profesii_data)

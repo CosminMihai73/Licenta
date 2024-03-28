@@ -9,62 +9,59 @@ const QuestionsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [timeRemaining, setTimeRemaining] = useState(0);
-  const [showTimer, setShowTimer] = useState(false);
-  const [emailValidated, setEmailValidated] = useState(false);
-  const [showEmailValidationButton, setShowEmailValidationButton] = useState(true);
+  const [totalTime, setTotalTime] = useState(0);
+  const [areResponsesSubmitted, setAreResponsesSubmitted] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8000/questions?page=${currentPage}`);
-        setQuestions(response.data.questions);
-        setTotalPages(response.data.total_pages);
-
-        const currentQuestionTimer = response.data.questions[currentPage - 1]?.timer || 0;
-        setTimeRemaining(currentQuestionTimer);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
-
-    fetchData();
-  }, [currentPage]);
-
-  useEffect(() => {
-    if (showTimer && timeRemaining > 0) {
-      const interval = setInterval(() => {
-        setTimeRemaining(prevTime => prevTime - 1);
-      }, 1000);
-
-      return () => clearInterval(interval);
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8000/questions`);
+      setQuestions(response.data.questions);
+      setTotalPages(response.data.total_pages);
+      setTotalTime(response.data.total_time);
+      setTimeRemaining(response.data.total_time);
+    } catch (error) {
+      console.error('Error:', error);
     }
-  }, [showTimer, timeRemaining]);
+  };
+
+  fetchData();
+}, [currentPage]);
+
+  useEffect(() => {
+  if (totalTime > 0) {
+    const timer = setInterval(() => {
+      setTimeRemaining((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(timer);
+          if (!areResponsesSubmitted) {
+            setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+            window.scrollTo(0, 0);
+          }
+        }
+        return prevTime - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }
+}, [totalTime, areResponsesSubmitted]);
 
   const handleResponseChange = (id, response) => {
     setTempResponses(prevResponses => ({
       ...prevResponses,
       [id]: response
     }));
-
-    const currentQuestionTimer = questions[currentPage - 1]?.timer || 0;
-    setTimeRemaining(currentQuestionTimer);
-    setShowTimer(true);
   };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
-  const handleEmailValidation = () => {
-    setShowTimer(true);
-    setEmailValidated(true);
-    setShowEmailValidationButton(false);
-  };
-
   const goToNextPage = () => {
     const allQuestionsAnswered = questions.every(question => tempResponses.hasOwnProperty(question.id));
     if (allQuestionsAnswered) {
-      setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages));
+      setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
       window.scrollTo(0, 0);
     } else {
       alert('Te rugăm să completezi toate întrebările înainte de a trece la pagina următoare.');
@@ -72,62 +69,52 @@ const QuestionsPage = () => {
   };
 
   const handleSubmit = async () => {
-    const allQuestionsAnswered = questions.every(question => tempResponses.hasOwnProperty(question.id));
-    if (!allQuestionsAnswered) {
-      alert('Te rugăm să completezi toate întrebările înainte de a trimite răspunsurile.');
-      return;
-    }
+  const allQuestionsAnswered = questions.every(question => tempResponses.hasOwnProperty(question.id));
+  if (!allQuestionsAnswered) {
+    alert('Te rugăm să completezi toate întrebările înainte de a trimite răspunsurile.');
+    return;
+  }
 
-    try {
-      const formattedResponses = Object.keys(tempResponses).map(id => ({
-        id,
-        categorie: 'string',
-        raspuns: tempResponses[id]
-      }));
+  try {
+    const formattedResponses = Object.keys(tempResponses).map(id => ({
+      id,
+      categorie: 'string',
+      raspuns: tempResponses[id]
+    }));
 
-      const payload = {
-        raspunsuri: formattedResponses,
-        email: email
-      };
-
-      await axios.post('http://localhost:8000/actualizeaza_si_calculeaza_punctaje', payload);
-
-      window.location.href = '/rezultat';
-    } catch (error) {
-      console.error('Error:', error.response);
-      alert('A apărut o eroare în timpul trimiterii răspunsurilor. Vă rugăm să încercați din nou mai târziu.');
-    }
-  };
-
-  // Adaugarea clasei 'show-timer' pentru a afisa timerul
-  useEffect(() => {
-    const handleScroll = () => {
-      const timerContainer = document.querySelector('.timer-container');
-      if (timerContainer) {
-        if (window.scrollY > 100) {
-          timerContainer.classList.add('show-timer');
-        } else {
-          timerContainer.classList.remove('show-timer');
-        }
-      }
+    const payload = {
+      raspunsuri: formattedResponses,
+      email: email
     };
 
-    window.addEventListener('scroll', handleScroll);
+    await axios.post('http://localhost:8000/actualizeaza_si_calculeaza_punctaje', payload);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    setAreResponsesSubmitted(true); // Setează flagul că răspunsurile au fost trimise
+
+    window.location.href = '/rezultat';
+
+  } catch (error) {
+    console.error('Error:', error.response);
+    alert('A apărut o eroare în timpul trimiterii răspunsurilor. Vă rugăm să încercați din nou mai târziu.');
+  }
+};
+
+  const minutes = Math.floor(timeRemaining / 60);
+  const seconds = timeRemaining % 60;
 
   return (
     <div className="questions-container">
       <h1 className="questions-title">Întrebări</h1>
+      {totalTime > 0 && (
+        <div className="timer-container">
+          <p className="timer-text">Timp rămas: {minutes} minute și {seconds} secunde</p>
+        </div>
+      )}
       <div className="questions-content">
-        {currentPage === 1 && !emailValidated && (
+        {currentPage === 1 && (
           <div className="email-input">
             <label className="email-label">Email:</label>
             <input type="email" value={email} onChange={handleEmailChange} className="email-input-field" />
-            {showEmailValidationButton && <button onClick={handleEmailValidation}>Validare</button>}
           </div>
         )}
         {questions.map((question, index) => (
@@ -154,12 +141,6 @@ const QuestionsPage = () => {
           </div>
         ))}
       </div>
-      {/* Timerul */}
-      {(showTimer && timeRemaining > 0) && (
-        <div className="timer-container">
-          <p className="timer-text">Timp rămas pentru această întrebare: {Math.floor(timeRemaining / 60)} minute și {timeRemaining % 60} secunde</p>
-        </div>
-      )}
       <div className="pagination-container">
         <span className="pagination-text">Pagina {currentPage} din {totalPages}</span>
         <div className="pagination-buttons">

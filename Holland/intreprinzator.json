@@ -5,31 +5,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -40,31 +40,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -75,31 +75,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -110,31 +110,31 @@
 "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -145,31 +145,31 @@
            "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -180,31 +180,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -215,31 +215,31 @@
            "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -250,31 +250,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -285,31 +285,31 @@
            "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -320,31 +320,31 @@
          "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -355,31 +355,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -390,31 +390,31 @@
            "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -425,31 +425,31 @@
           "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -460,31 +460,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -495,31 +495,31 @@
            "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -530,31 +530,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -565,31 +565,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -600,31 +600,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -635,31 +635,31 @@
            "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }
@@ -670,31 +670,31 @@
             "text_poza": "",
             "timer": 15,
             "variante_raspuns": {
-                "0": {
+                 "Foarte Dezacord": {
                     "voturi": 0,
                     "raspuns_poza": ""
                 },
-                "1": {
+                "Dezacord": {
                     "voturi": 1,
                     "raspuns_poza": ""
                 },
-                "2": {
+                "Partial Dezacord": {
                     "voturi": 2,
                     "raspuns_poza": ""
                 },
-               "3": {
+               "Neutru": {
                     "voturi": 3,
                     "raspuns_poza": ""
                 },
-               "4": {
+               "Partial de Acord": {
                     "voturi": 4,
                     "raspuns_poza": ""
                 },
-               "5": {
+               "Acord": {
                     "voturi": 5,
                     "raspuns_poza": ""
                 },
-               "6": {
+               "Foarte de Acord": {
                     "voturi": 6,
                     "raspuns_poza": ""
                 }

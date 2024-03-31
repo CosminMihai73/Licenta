@@ -38,62 +38,79 @@ def combina_fisiere_json():
 
 
 
-
 @app.get("/questions")
 async def get_questions(page: int = Query(1, gt=0)):
-    file_path_variante = 'Holland/toate_intrebarile.json'
-    cititor = Citeste()
-    intrebari = cititor.citeste_date(file_path_variante)
+    file_path_reguli = 'Holland/Paginare.json'
+    file_path_intrebari = 'Holland/toate_intrebarile.json'
 
-    # Calculăm indexul de start și de sfârșit pentru întrebările din pagina curentă
-    items_per_page = 20
-    start_index = (page - 1) * items_per_page
-    end_index = min(start_index + items_per_page, len(intrebari))
+    cititor_reguli = Citeste()
+    reguli_paginare = cititor_reguli.citeste_date(file_path_reguli)
+
+    cititor_intrebari = Citeste()
+    intrebari = cititor_intrebari.citeste_date(file_path_intrebari)
+
+    total_pages = len(reguli_paginare)
+
+    if page > total_pages:
+        return {"error": "Pagina specificată nu există."}
+
+    reguli_pagina_curenta = reguli_paginare.get(f"reguli_pagina_{page}")
+    if not reguli_pagina_curenta:
+        return {"error": f"Nu s-au găsit reguli pentru pagina {page}."}
+
+    intrebari_pe_pagina = reguli_pagina_curenta["intrebari_pe_pagina"]
 
     questions_with_responses = []
 
-    for intrebare in intrebari[start_index:end_index]:
-        formatted_question = {
-            "id": intrebare["id"],
-            "text": intrebare["text"],
-            "timer": intrebare.get("timer", 0),
-            "image_path": intrebare.get("text_poza", None),  # Calea către fișierul imagine
-            "responses": []
-        }
-
-
-
-        # Verificăm tipul variantelor de răspuns
-        for raspuns, detalii in intrebare["variante_raspuns"].items():
-            if isinstance(detalii, dict):
-                punctaj = detalii.get("voturi", 0)
-            else:
-                punctaj = detalii
-
-            formatted_response = {
-                "value": raspuns,
-                "score": punctaj
+    for id_intrebare in intrebari_pe_pagina:
+        intrebare = next((i for i in intrebari if i['id'] == id_intrebare), None)
+        if intrebare:
+            formatted_question = {
+                "id": intrebare["id"],
+                "text": intrebare["text"],
+                "timer": intrebare.get("timer", 0),
+                "image_path": intrebare.get("text_poza", None),
+                "image_url": None,
+                "responses": []
             }
 
-            if isinstance(detalii, dict):
-                formatted_response["response_image"] = detalii.get("raspuns_poza", None)
+            if formatted_question["image_path"] and formatted_question["image_path"] != "":
+                base_url = "http://localhost:8000"
+                image_url = f"{base_url}/images/{os.path.basename(formatted_question['image_path'])}"
+                formatted_question["image_url"] = image_url
 
-            formatted_question["responses"].append(formatted_response)
+            for raspuns, detalii in intrebare["variante_raspuns"].items():
+                punctaj = detalii.get("voturi", 0) if isinstance(detalii, dict) else detalii
 
-        # Verifică dacă calea către imagine există și este validă
-        if formatted_question["image_path"] is not None and os.path.exists(formatted_question["image_path"]):
-            # Returnează fișierul imagine
-            formatted_question["image_response"] = FileResponse(formatted_question["image_path"],
-                                                                media_type="image/jpeg")
+                formatted_response = {
+                    "value": raspuns,
+                    "score": punctaj
+                }
 
-        questions_with_responses.append(formatted_question)
+                if isinstance(detalii, dict):
+                    response_image_path = detalii.get("raspuns_poza", None)
+                    if response_image_path and response_image_path != "":
+                        response_image_url = f"{base_url}/images/{os.path.basename(response_image_path)}"
+                        formatted_response["response_image_url"] = response_image_url
 
-    # Calculăm numărul total de pagini
-    total_pages = (len(intrebari) + items_per_page - 1) // items_per_page
+                formatted_question["responses"].append(formatted_response)
+
+            questions_with_responses.append(formatted_question)
 
     return {"total_pages": total_pages, "questions": questions_with_responses}
 
 
+
+@app.get("/images/{image_name}")
+async def get_image(image_name: str, display_url: Optional[bool] = False):
+    image_path = os.path.join("Holland/poze", image_name)
+    if os.path.exists(image_path):
+        if display_url:
+            return {"image_url": f"http://localhost:8000/images/{image_name}", "image": FileResponse(image_path, media_type="image/jpeg")}
+        else:
+            return FileResponse(image_path, media_type="image/jpeg")
+    else:
+        return {"error": "Image not found"}
 
 
 class RaspunsModel(BaseModel):

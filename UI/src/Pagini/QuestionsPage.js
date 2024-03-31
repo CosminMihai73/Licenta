@@ -41,14 +41,26 @@ const QuestionsPage = () => {
   }, [showTimer, timeRemaining]);
 
   const handleResponseChange = (id, response) => {
+    if (tempResponses.hasOwnProperty(id)) {
+      return;
+    }
+
     setTempResponses(prevResponses => ({
       ...prevResponses,
       [id]: response
     }));
 
-    const currentQuestionTimer = questions[currentPage - 1]?.timer || 0;
-    setTimeRemaining(currentQuestionTimer);
-    setShowTimer(true);
+    const allQuestionsAnswered = questions.every(question => tempResponses.hasOwnProperty(question.id));
+    if (allQuestionsAnswered) {
+      goToNextPage();
+    } else {
+      const nextQuestionIndex = questions.findIndex(question => !tempResponses.hasOwnProperty(question.id));
+      if (nextQuestionIndex !== -1) {
+        const nextQuestionTimer = questions[nextQuestionIndex]?.timer || 0;
+        setTimeRemaining(nextQuestionTimer);
+        setShowTimer(true);
+      }
+    }
   };
 
   const handleEmailChange = (event) => {
@@ -61,15 +73,26 @@ const QuestionsPage = () => {
     setShowEmailValidationButton(false);
   };
 
-  const goToNextPage = () => {
-    const allQuestionsAnswered = questions.every(question => tempResponses.hasOwnProperty(question.id));
-    if (allQuestionsAnswered) {
-      setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages));
-      window.scrollTo(0, 0);
-    } else {
-      alert('Te rugăm să completezi toate întrebările înainte de a trece la pagina următoare.');
-    }
-  };
+ const goToNextPage = () => {
+  const allQuestionsAnswered = questions.every(question => tempResponses.hasOwnProperty(question.id));
+  if (allQuestionsAnswered) {
+    setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages));
+    window.scrollTo(0, 0);
+    resetTimerForNextPage();
+  } else {
+    alert('Te rugăm să completezi toate întrebările înainte de a trece la pagina următoare.');
+  }
+};
+
+const resetTimerForNextPage = () => {
+  const nextPageQuestions = questions.filter(question => question.page === currentPage + 1);
+  if (nextPageQuestions.length > 0) {
+    const nextQuestionId = Math.min(...nextPageQuestions.map(question => question.id));
+    const nextQuestionTimer = nextPageQuestions.find(question => question.id === nextQuestionId)?.timer || 0;
+    setTimeRemaining(nextQuestionTimer);
+    setShowTimer(true);
+  }
+};
 
   const handleSubmit = async () => {
     const allQuestionsAnswered = questions.every(question => tempResponses.hasOwnProperty(question.id));
@@ -115,6 +138,11 @@ const QuestionsPage = () => {
             <div className="question-container">
               <p className={`question-text-${index}`}>{question.text}</p>
               {question.image_url && <img src={question.image_url} alt={`Imagine asociată întrebării ${index}`} className={`question-image-${index}`} />}
+              {showTimer && timeRemaining > 0 && index === Object.keys(tempResponses).length && (
+                <div className="timer-container">
+                  <p className="timer-text">Timp rămas pentru această întrebare: {Math.floor(timeRemaining / 60)} minute și {timeRemaining % 60} secunde</p>
+                </div>
+              )}
               <div className={`radio-container-${index}`} key={`radio-container-${question.id}`}>
                 {question.responses.map((response, subIndex) => (
                   <label key={`${question.id}-${response.value}`} className={`response-label-${subIndex}`}>
@@ -125,6 +153,7 @@ const QuestionsPage = () => {
                       checked={tempResponses[question.id] === response.value}
                       onChange={() => handleResponseChange(question.id, response.value)}
                       className={`response-input-${subIndex}`}
+                      disabled={tempResponses.hasOwnProperty(question.id)}
                     />
                     <span className={`custom-radio-${subIndex}`}></span>
                     <span className={`response-value-${subIndex}`}>{response.value}</span>
@@ -136,11 +165,6 @@ const QuestionsPage = () => {
           </div>
         ))}
       </div>
-      {showTimer && timeRemaining > 0 && (
-        <div className="timer-container">
-          <p className="timer-text">Timp rămas pentru această întrebare: {Math.floor(timeRemaining / 60)} minute și {timeRemaining % 60} secunde</p>
-        </div>
-      )}
       <div className="pagination-container">
         <span className="pagination-text">Pagina {currentPage} din {totalPages}</span>
         <div className="pagination-buttons">

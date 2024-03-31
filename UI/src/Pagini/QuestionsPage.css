@@ -92,27 +92,11 @@ body {
   width: 30px; /* Mărimea butonului radio */
   height: 30px; /* Mărimea butonului radio */
   border-radius: 50%; /* Face butonul radio rotund */
-  border: 3px solid #007bff; /* Mărim grosimea border-ului */
+  border: 3px solid #ff0000; /* Mărim grosimea border-ului */
   margin-right: 15px; /* Mai mult spațiu între buton și text */
 }
 
-/* Timer styles */
-.timer-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.timer-text {
-  font-size: 14px;
-  margin: 0;
-  color: #333;
-}
 
 /* Pagination styles */
 .pagination-container {

@@ -1,9 +1,9 @@
 {
   "reguli_pagina_1": {
-    "intrebari_pe_pagina": [1, 2, 3, 4, 5, 6]
+    "intrebari_pe_pagina": [1, 2, 3]
   },
   "reguli_pagina_2": {
-    "intrebari_pe_pagina": [7, 8, 9, 10,11,12,13]
+    "intrebari_pe_pagina": [4, 5, 6, 7, 8, 9, 10,11,12,13]
   },
   "reguli_pagina_3": {
     "intrebari_pe_pagina": [14,15,16,17,18,19,20,21]

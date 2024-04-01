@@ -5,13 +5,14 @@ import './QuestionsPage.css';
 const QuestionsPage = () => {
   const [questions, setQuestions] = useState([]);
   const [email, setEmail] = useState('');
-  const [tempResponses, setTempResponses] = useState({ raspunsuri: [], email: '' });
+  const [responses, setResponses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [showTimer, setShowTimer] = useState(false);
   const [emailValidated, setEmailValidated] = useState(false);
   const [showEmailValidationButton, setShowEmailValidationButton] = useState(true);
+  const [firstUnansweredQuestion, setFirstUnansweredQuestion] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,13 +20,16 @@ const QuestionsPage = () => {
         const response = await axios.get(`http://localhost:8000/questions?page=${currentPage}`);
         setQuestions(response.data.questions);
         setTotalPages(response.data.total_pages);
+        if (currentPage !== 1 || emailValidated) {
+          startTimerAutomatically(response.data.questions, responses);
+        }
       } catch (error) {
         console.error('Error:', error);
       }
     };
 
     fetchData();
-  }, [currentPage]);
+  }, [currentPage, responses, emailValidated]);
 
   useEffect(() => {
     if (showTimer && timeRemaining > 0) {
@@ -37,19 +41,13 @@ const QuestionsPage = () => {
     }
   }, [showTimer, timeRemaining]);
 
-  useEffect(() => {
-    // Start timer automatically on page load for pages other than the first one
-    if (currentPage !== 1) {
-      startTimerAutomatically();
-    }
-  }, [currentPage]);
-
-  const startTimerAutomatically = () => {
-    const currentQuestion = questions.find(question => !tempResponses.raspunsuri.some(response => response.id === question.id));
+  const startTimerAutomatically = (questionsData, responsesData) => {
+    const currentQuestion = questionsData.find(question => !responsesData.some(response => response.id === question.id));
     if (currentQuestion) {
       const questionTimer = currentQuestion.timer || 0;
       setShowTimer(true);
       setTimeRemaining(questionTimer);
+      setFirstUnansweredQuestion(currentQuestion.id);
     }
   };
 
@@ -63,60 +61,53 @@ const QuestionsPage = () => {
     setShowTimer(true);
     const firstQuestionTimer = questions[0]?.timer || 0;
     setTimeRemaining(firstQuestionTimer);
-    setTempResponses(prevState => ({ ...prevState, email: email }));
   };
 
-  const handleResponseChange = (id, response, index) => {
-    setTempResponses(prevState => ({
-      ...prevState,
-      raspunsuri: [
-        ...prevState.raspunsuri,
-        {
-          id: id,
-          categorie: questions[index].categorie,
-          raspuns: response
-        }
-      ]
-    }));
+  const handleResponseChange = (id, response) => {
+  const existingResponseIndex = responses.findIndex(item => item.id === id);
+  if (existingResponseIndex !== -1) {
+    const updatedResponses = [...responses];
+    updatedResponses[existingResponseIndex] = { id, response };
+    setResponses(updatedResponses);
+  } else {
+    setResponses(prevResponses => [...prevResponses, { id, response }]);
+  }
 
-    const allQuestionsAnswered = questions.every(question => tempResponses.raspunsuri.some(response => response.id === question.id));
-    if (allQuestionsAnswered) {
-      localStorage.setItem('tempResponses', JSON.stringify(tempResponses));
-      goToNextPage();
-    } else {
-      const nextQuestionIndex = questions.findIndex(question => !tempResponses.raspunsuri.some(response => response.id === question.id));
-      if (nextQuestionIndex !== -1) {
-        const nextQuestionTimer = questions[nextQuestionIndex]?.timer || 0;
-        setShowTimer(true);
-        setTimeRemaining(nextQuestionTimer);
-      }
-    }
-  };
+  const unansweredQuestions = questions.filter(question => !responses.some(item => item.id === question.id));
+  if (unansweredQuestions.length > 1) { // Verificăm dacă sunt mai mult de o întrebare rămasă
+    const nextQuestion = unansweredQuestions[0];
+    const nextQuestionTimer = nextQuestion.timer || 0;
+    setShowTimer(true);
+    setTimeRemaining(nextQuestionTimer);
+    setFirstUnansweredQuestion(nextQuestion.id);
+  } else {
+    setShowTimer(false); // Dacă este doar o întrebare rămasă, dezactivăm timerul
+
+  }
+};
 
   const goToNextPage = () => {
-    const allQuestionsAnswered = questions.every(question => tempResponses.raspunsuri.some(response => response.id === question.id));
-    if (allQuestionsAnswered) {
-      setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages));
-      window.scrollTo(0, 0);
-      setTempResponses({ raspunsuri: [], email: '' });
-      setShowTimer(false);
-      setEmailValidated(false);
-    } else {
-      alert('Te rugăm să completezi toate întrebările înainte de a trece la pagina următoare.');
-    }
+    setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages));
+    window.scrollTo(0, 0);
   };
 
   const handleSubmit = async () => {
-    const allQuestionsAnswered = questions.every(question => tempResponses.raspunsuri.some(response => response.id === question.id));
+    const allQuestionsAnswered = questions.every(question => responses.some(item => item.id === question.id));
     if (!allQuestionsAnswered) {
       alert('Te rugăm să completezi toate întrebările înainte de a trimite răspunsurile.');
       return;
     }
 
     try {
+      const formattedResponses = responses.map(({ id, response }) => ({
+        id,
+        categorie: 'string',
+        raspuns: response
+      }));
+
       const payload = {
-        raspunsuri: tempResponses.raspunsuri,
-        email: tempResponses.email
+        raspunsuri: formattedResponses,
+        email: email
       };
 
       await axios.post('http://localhost:8000/actualizeaza_si_calculeaza_punctaje', payload);
@@ -144,7 +135,7 @@ const QuestionsPage = () => {
             <div className="question-container">
               <p className={`question-text-${index}`}>{question.text}</p>
               {question.image_url && <img src={question.image_url} alt={`Imagine asociată întrebării ${index}`} className={`question-image-${index}`} />}
-              {showTimer && timeRemaining > 0 && index === tempResponses.raspunsuri.length && (
+              {showTimer && timeRemaining > 0 && question.id === firstUnansweredQuestion && (
                 <div className="timer-container">
                   <p className="timer-text">Timp rămas pentru această întrebare: {Math.floor(timeRemaining / 60)} minute și {timeRemaining % 60} secunde</p>
                 </div>
@@ -156,10 +147,10 @@ const QuestionsPage = () => {
                       type="radio"
                       name={`response-${question.id}`}
                       value={response.value}
-                      checked={tempResponses.raspunsuri.some(resp => resp.id === question.id && resp.raspuns === response.value)}
-                      onChange={() => handleResponseChange(question.id, response.value, index)}
+                      checked={responses.some(item => item.id === question.id && item.response === response.value)}
+                      onChange={() => handleResponseChange(question.id, response.value)}
                       className={`response-input-${subIndex}`}
-                      disabled={tempResponses.raspunsuri.some(resp => resp.id === question.id)}
+                      disabled={responses.some(item => item.id === question.id)}
                     />
                     <span className={`custom-radio-${subIndex}`}></span>
                     <span className={`response-value-${subIndex}`}>{response.value}</span>

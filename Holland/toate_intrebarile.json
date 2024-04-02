@@ -3,7 +3,7 @@
     "id": 1,
     "text": "Să cânți pe o scenă?",
     "text_poza": "/poze/pisica1.jpg",
-    "timer": 15,
+    "timer": 9,
     "categorie": "artistic",
     "variante_raspuns": {
       "": {
@@ -24,7 +24,7 @@
     "id": 2,
     "text": "Să fii artist?",
     "text_poza": "",
-    "timer": 15,
+    "timer": 11,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {
@@ -45,7 +45,7 @@
     "id": 3,
     "text": "Să scrii scurte povestiri?",
     "text_poza": "",
-    "timer": 15,
+    "timer": 12,
     "categorie": "artistic",
     "variante_raspuns": {
       "Nu": {

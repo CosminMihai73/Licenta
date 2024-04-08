@@ -6,6 +6,11 @@ import InterpretationPage from './Pagini/InterpretationPage';
 import ErrorPage from './Pagini/ErrorPage';
 import Informatii from "./Pagini/Informatii";
 import IntrebariTest from "./Pagini/IntrebariTest";
+import Grafice from "./Pagini/Grafice";
+import CandidatiCuRaspunsuri from "./Pagini/CandidatiCuRaspunsuri";
+import IntrebarileHolland from "./Pagini/IntrebarileHolland";
+import Poze from './Pagini/Poze';
+import PaginareHolland from './Pagini/PaginareHolland'
 
 function App() {
   return (
@@ -18,6 +23,11 @@ function App() {
           <Route path="/rezultat" element={<InterpretationPage />} />
           <Route path="/informatii" element={<Informatii />} />
           <Route path="*" element={<ErrorPage />} />
+          <Route path="/grafice" element={<Grafice/>}/>
+          <Route path="/CRaspunsuri" element={<CandidatiCuRaspunsuri/>}/>
+          <Route path="/IntrebariHolland" element={<IntrebarileHolland/>}/>
+          <Route path="/pozeHolland" element={<Poze/>}/>
+          <Route path="/paginareH" element={<PaginareHolland/>}/>          
         </Routes>
       </div>
     </Router>

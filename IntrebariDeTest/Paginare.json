@@ -1,0 +1,15 @@
+{
+  "reguli_pagina_1": {
+    "intrebari_pe_pagina": [1,14, 2]
+  },
+  "reguli_pagina_2": {
+    "intrebari_pe_pagina": [4, 5]
+  },
+  "reguli_pagina_3": {
+    "intrebari_pe_pagina": [6,7,8]
+  },
+  "reguli_pagina_4": {
+    "intrebari_pe_pagina": [10,11,12,13]
+  }
+
+}

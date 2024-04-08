@@ -1,0 +1,102 @@
+/* poze.css */
+
+/* Stil pentru containerul de poze */
+.poze-container {
+  padding: 20px;
+}
+
+/* Stil pentru tabela galeriei */
+.gallery-container {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white; /* Setare fundal alb pentru tabela */
+}
+
+/* Stil pentru antetul tabelului (thead) */
+.gallery-container thead tr {
+  background-color: #f2f2f2; /* Culoare de fundal pentru antet */
+}
+
+/* Stil pentru celulele din antet */
+.gallery-container th {
+  padding: 12px;
+  text-align: left;
+}
+
+/* Stil pentru rândurile din tabel (tbody) */
+.gallery-container tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Stil pentru celulele din corpul tabelului */
+.gallery-container td {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+/* Stil pentru butoanele din tabel */
+.gallery-container .delete-button,
+.gallery-container .modify-button,
+.gallery-container .rename-button,
+.gallery-container .cancel-button {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  margin-right: 5px;
+}
+
+/* Stil pentru butonul de "X" pentru anularea modificării */
+.gallery-container .cancel-button {
+  background-color: #dc3545;
+}
+
+/* Stil pentru imaginea de previzualizare */
+.image-preview {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+/* Stil pentru input-ul de redenumire */
+.rename-input {
+  margin-right: 5px;
+}
+
+/* Stil pentru butonul de încărcare */
+.upload-button {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: white;
+}
+
+/* Stil pentru formularul de încărcare */
+.upload-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* Stil pentru input-ul de fișier */
+.file-input {
+  margin-bottom: 10px;
+}
+
+/* Stil pentru butonul de încărcare din formularul de încărcare */
+.upload-submit {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+}

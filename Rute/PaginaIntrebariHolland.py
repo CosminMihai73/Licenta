@@ -1,85 +1,88 @@
+from fastapi import APIRouter, HTTPException,Query
+from starlette.responses import FileResponse
+from typing import  Optional, Union, List, Dict
 import os
-from fastapi import FastAPI, HTTPException, Query
-from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
-from starlette.responses import JSONResponse, FileResponse
-from typing import List, Dict, Optional, Union
 import json
 from Clase.Citeste import Citeste
-from Clase.Combinare import Combinare
+from Clase.Conectare import adauga_in_baza_de_date, conectare_baza_date
 from Clase.InterpretareRezultat import InterpretareHolland, InterpretareProfesii
-from Clase.Conectare import adauga_in_baza_de_date
 
-app = FastAPI()
+router = APIRouter(tags=["Pagina Intrebari Holland"])
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-
-
-
-
-@app.get("/questions")
+@router.get("/questions")
 async def get_questions(page: int = Query(1, gt=0)):
-    file_path_variante = 'IntrebariDeTest/IntrebariTest.json'
-    cititor = Citeste()
-    intrebari = cititor.citeste_date(file_path_variante)
+    file_path_reguli = 'Holland/Paginare.json'
+    file_path_intrebari = 'Holland/toate_intrebarile.json'
 
-    # Calculăm indexul de start și de sfârșit pentru întrebările din pagina curentă
-    items_per_page = 20
-    start_index = (page - 1) * items_per_page
-    end_index = min(start_index + items_per_page, len(intrebari))
+    cititor_reguli = Citeste()
+    reguli_paginare = cititor_reguli.citeste_date(file_path_reguli)
+
+    cititor_intrebari = Citeste()
+    intrebari = cititor_intrebari.citeste_date(file_path_intrebari)
+
+    total_pages = len(reguli_paginare)
+
+    if page > total_pages:
+        return {"error": "Pagina specificată nu există."}
+
+    reguli_pagina_curenta = reguli_paginare.get(f"reguli_pagina_{page}")
+    if not reguli_pagina_curenta:
+        return {"error": f"Nu s-au găsit reguli pentru pagina {page}."}
+
+    intrebari_pe_pagina = reguli_pagina_curenta["intrebari_pe_pagina"]
 
     questions_with_responses = []
-    total_time = 0  # Initializează timpul total cu 0
 
-    for intrebare in intrebari[start_index:end_index]:
-        formatted_question = {
-            "id": intrebare["id"],
-            "text": intrebare["text"],
-            "image_path": intrebare.get("text_poza", None),  # Calea către fișierul imagine
-            "responses": []
-        }
-
-        # Calculăm timpul total al întrebărilor
-        total_time += intrebare.get("timer", 0)  # Adaugă timpul întrebării curente la timpul total
-
-        # Verificăm tipul variantelor de răspuns
-        for raspuns, detalii in intrebare["variante_raspuns"].items():
-            if isinstance(detalii, dict):
-                punctaj = detalii.get("voturi", 0)
-            else:
-                punctaj = detalii
-
-            formatted_response = {
-                "value": raspuns,
-                "score": punctaj
+    for id_intrebare in intrebari_pe_pagina:
+        intrebare = next((i for i in intrebari if i['id'] == id_intrebare), None)
+        if intrebare:
+            formatted_question = {
+                "id": intrebare["id"],
+                "text": intrebare["text"],
+                "timer": intrebare.get("timer", 0),
+                "image_path": intrebare.get("text_poza", None),
+                "image_url": None,
+                "responses": []
             }
 
-            if isinstance(detalii, dict):
-                formatted_response["response_image"] = detalii.get("raspuns_poza", None)
+            if formatted_question["image_path"] and formatted_question["image_path"] != "":
+                base_url = "http://localhost:8000"
+                image_url = f"{base_url}/images/{os.path.basename(formatted_question['image_path'])}"
+                formatted_question["image_url"] = image_url
 
-            formatted_question["responses"].append(formatted_response)
+            for raspuns, detalii in intrebare["variante_raspuns"].items():
+                punctaj = detalii.get("voturi", 0) if isinstance(detalii, dict) else detalii
 
-        # Verifică dacă calea către imagine există și este validă
-        if formatted_question["image_path"] is not None and os.path.exists(formatted_question["image_path"]):
-            # Returnează fișierul imagine
-            formatted_question["image_response"] = FileResponse(formatted_question["image_path"],
-                                                                media_type="image/jpeg")
+                formatted_response = {
+                    "value": raspuns,
+                    "score": punctaj
+                }
 
-        questions_with_responses.append(formatted_question)
+                if isinstance(detalii, dict):
+                    response_image_path = detalii.get("raspuns_poza", None)
+                    if response_image_path and response_image_path != "":
+                        response_image_url = f"{base_url}/images/{os.path.basename(response_image_path)}"
+                        formatted_response["response_image_url"] = response_image_url
 
-    # Calculăm numărul total de pagini
-    total_pages = (len(intrebari) + items_per_page - 1) // items_per_page
+                formatted_question["responses"].append(formatted_response)
 
-    return {"total_time": total_time, "total_pages": total_pages, "questions": questions_with_responses}
+            questions_with_responses.append(formatted_question)
+
+    return {"total_pages": total_pages, "questions": questions_with_responses}
 
 
+
+@router.get("/images/{image_name}")
+async def get_image(image_name: str, display_url: Optional[bool] = False):
+    image_path = os.path.join("Holland/poze", image_name)
+    if os.path.exists(image_path):
+        if display_url:
+            return {"image_url": f"http://localhost:8000/images/{image_name}", "image": FileResponse(image_path, media_type="image/jpeg")}
+        else:
+            return FileResponse(image_path, media_type="image/jpeg")
+    else:
+        return {"error": "Image not found"}
 
 
 class RaspunsModel(BaseModel):
@@ -102,16 +105,16 @@ class RaspundeLaIntrebari(BaseModel):
 raspunsuri_stocate = []
 
 # Load questions and initial scores from JSON files
-with open("IntrebariDeTest/IntrebariTest.json", "r") as file:
+with open("Holland/toate_intrebarile.json", "r") as file:
     intrebari = json.load(file)
 
-with open("IntrebariDeTest/punctaje.json", "r") as file:
+with open("Holland/punctaje.json", "r") as file:
     punctaje_initiale = json.load(file)
 
 # Create a list of Pydantic models for validating answers
 modele_intrebari = [RaspunsModel(id=intrebare["id"], categorie=intrebare["categorie"], raspuns="") for intrebare in intrebari]
 
-@app.post("/actualizeaza_si_calculeaza_punctaje")
+@router.post("/actualizeaza_si_calculeaza_punctaje")
 def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
     try:
         global raspunsuri_stocate
@@ -121,7 +124,7 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
             raise HTTPException(status_code=400, detail="Nu există răspunsuri salvate pentru a calcula punctajele.")
 
         # Încărcăm întrebările din fișierul JSON
-        with open("IntrebariDeTest/IntrebariTest.json", "r", encoding="utf-8") as file:
+        with open("Holland/toate_intrebarile.json", "r", encoding="utf-8") as file:
             intrebari = json.load(file)
 
         # Inițializăm un dicționar pentru a stoca punctajele
@@ -155,18 +158,18 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
         raspunsuri_stocate.extend(raspunsuri.raspunsuri)
 
         # Salvăm răspunsurile în fișierul "raspunsuri.json"
-        with open("IntrebariDeTest/raspunsuri.json", "w", encoding="utf-8") as file:
+        with open("Holland/raspunsuri.json", "w", encoding="utf-8") as file:
             json.dump([raspuns.dict() for raspuns in raspunsuri.raspunsuri], file, ensure_ascii=False)
 
         # Salvăm punctajele în fișierul "punctaje.json"
-        with open("IntrebariDeTest/punctaje.json", "w") as file:
+        with open("Holland/punctaje.json", "w") as file:
             json.dump(punctaje, file)
 
         email = raspunsuri.email
         punctaje_json = json.dumps(punctaje)
 
         # Deschide fișierul cu întrebări
-        with open("IntrebariDeTest/IntrebariTest.json", "r", encoding='utf-8') as file:
+        with open("Holland/toate_intrebarile.json", "r", encoding='utf-8') as file:
             intrebari = json.load(file)
 
         # Apoi, poți folosi aceste întrebări în cadrul buclei tale pentru a obține textul întrebării
@@ -203,15 +206,15 @@ class InterpretareResult(BaseModel):
     combinatie_finala: str
     profesie_attribuita: str
 
-@app.get("/interpretare_si_atribuie_profesie", response_model=InterpretareResult)
-def interpretare_si_atribuie_profesie(fisier_punctaje: str = 'IntrebariDeTest/punctaje.json'):
+@router.get("/interpretare_si_atribuie_profesie", response_model=InterpretareResult)
+def interpretare_si_atribuie_profesie(fisier_punctaje: str = 'Holland/punctaje.json'):
     try:
         # Interpretation logic
         interpretare = InterpretareHolland(fisier_punctaje)
         rezultat_interpretat = interpretare.interpreteaza()
         combinatie_finala = interpretare.combinatie_finala
 
-        with open('IntrebariDeTest/profesii.json', 'r', encoding='utf-8') as file:
+        with open('Holland/profesii.json', 'r', encoding='utf-8') as file:
             profesii_data = json.load(file)["profesii"]
 
         interpretare_profesii = InterpretareProfesii(combinatie_finala, profesii_data)
@@ -228,10 +231,3 @@ def interpretare_si_atribuie_profesie(fisier_punctaje: str = 'IntrebariDeTest/pu
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
-
-
-
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)

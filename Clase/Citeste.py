@@ -12,6 +12,7 @@ class Citeste:
             with open(file_path, 'r', encoding='utf-8') as file:
                 return json.load(file)
 
+    @staticmethod
     def citeste(nume_fisier):
-        with open(nume_fisier, "r") as file:
+        with open(nume_fisier, "r", encoding="utf-8") as file:
             return json.load(file)

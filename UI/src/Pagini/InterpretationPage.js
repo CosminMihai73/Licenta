@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './InterpretationPage.css';
+import {Link} from "react-router-dom";
 
 const InterpretationPage = () => {
   const [interpretationResult, setInterpretationResult] = useState(null);
@@ -30,7 +31,10 @@ const InterpretationPage = () => {
             <p>Profesie Atribuita: {interpretationResult.profesie_attribuita}</p>
           </div>
         )}
-      </div>
+        </div>
+            <div className="button-container">
+                <Link to="/" className="link-button">Înapoi la Pagina Principală</Link>
+            </div>
     </div>
   );
 };

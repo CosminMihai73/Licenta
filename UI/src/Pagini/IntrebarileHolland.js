@@ -174,6 +174,8 @@ const IntrebariHolland = () => {
 
   return (
     <div className="container">
+      <button className="custom-button" onClick={() => window.location.href = '/'}>Homepage</button>
+      <button className="custom-button" onClick={() => window.location.href = '/Grafice'}>Inapoi</button>
       <h1>Intrebari Holland</h1>
       <div className="input-container">
         <input

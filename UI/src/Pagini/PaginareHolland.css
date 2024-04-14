@@ -1,0 +1,79 @@
+/* PaginareHolland.css */
+
+.pagina-holland {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn-adauga-regula,
+.btn-adauga-intrebare,
+.btn-sterge-regula,
+.btn-modifica-intrebare,
+.btn-adauga,
+.btn-save,
+.btn-close,
+.btn-sterge-intrebare {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-adauga-regula:disabled,
+.btn-adauga:disabled,
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+}
+
+.lista-pagini {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pagina-item {
+  margin-bottom: 20px;
+}
+
+.intrebari-lista {
+  margin-top: 10px;
+}
+
+.lista-intrebari {
+  list-style-type: none;
+  padding: 0;
+}
+
+.intrebare-item {
+  margin-bottom: 5px;
+}
+
+.adauga-intrebare,
+.modifica-intrebare {
+  margin-top: 10px;
+}
+
+.intrebare-container {
+  display: flex;
+  align-items: center;
+}
+
+.intrebare-container input[type="number"] {
+  flex: 1;
+  margin-right: 10px;
+}
+

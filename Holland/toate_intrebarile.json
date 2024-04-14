@@ -4118,5 +4118,30 @@
                 "raspuns_poza": ""
             }
         }
+    },
+    {
+        "id": 121,
+        "text": "test",
+        "text_poza": "",
+        "timer": 15,
+        "categorie": "artistic",
+        "variante_raspuns": {
+            "0": {
+                "voturi": 0,
+                "raspuns_poza": ""
+            },
+            "": {
+                "voturi": 6,
+                "raspuns_poza": ""
+            }
+        }
+    },
+    {
+        "id": 122,
+        "text": "",
+        "text_poza": "",
+        "timer": 0,
+        "categorie": "",
+        "variante_raspuns": {}
     }
 ]

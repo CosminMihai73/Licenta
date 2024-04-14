@@ -127,7 +127,13 @@ const Grafice = () => {
                 <Link to="/CRaspunsuri" className="link-button">Raspunsuri Candidati</Link>
             </div>
             <div className="button-container">
-                <Link to="/intrebariHolland" className="link-button">Intrebari</Link>
+                <Link to="/intrebariHolland" className="link-button">Intrebari chestionar Holland</Link>
+            </div>
+            <div className="button-container">
+                <Link to="/pozeHolland" className="link-button">Poze chestionar Holland</Link>
+            </div>
+            <div className="button-container">
+                <Link to="/paginareH" className="link-button">Paginre chestionar Holland</Link>
             </div>
         </div>
     );

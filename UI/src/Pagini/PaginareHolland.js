@@ -1,88 +1,159 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./PaginareHolland.css"
 
-const HollandPage = () => {
-  const [data, setData] = useState({});
+const PaginaHolland = () => {
+  const [paginiHolland, setPaginiHolland] = useState(null);
+  const [error, setError] = useState(null);
+  const [adaugareIntrebareIndex, setAdaugareIntrebareIndex] = useState(null);
+  const [intrebareNoua, setIntrebareNoua] = useState('');
+  const [adaugareIntrebareLoading, setAdaugareIntrebareLoading] = useState(false);
+  const [adaugareRegulaLoading, setAdaugareRegulaLoading] = useState(false);
+  const [modificareRegulaIndex, setModificareRegulaIndex] = useState(null); 
+  const [modificareIntrebariRegula, setModificareIntrebariRegula] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       try {
         const response = await axios.get('http://127.0.0.1:8000/afisare_pagini_holland');
-        setData(response.data);
+        setPaginiHolland(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        setError('Nu s-a putut obține datele.');
       }
-    }
+    };
+
     fetchData();
   }, []);
 
-  const handleAdaugaRegula = async () => {
+  const adaugaRegulaPagina = async () => {
     try {
+      setAdaugareRegulaLoading(true);
       const response = await axios.post('http://127.0.0.1:8000/adauga_regula_pagina');
-      setData(response.data);
+      setPaginiHolland(response.data);
     } catch (error) {
-      console.error('Error adding rule:', error);
+      setError('Nu s-a putut adăuga regula de pagină.');
+    } finally {
+      setAdaugareRegulaLoading(false);
     }
   };
 
-  const handleIncarcaIntrebari = async (numeRegula, intrebariInput) => {
+  const adaugaIntrebarePagina = async (numeRegula) => {
     try {
-      const intrebari = intrebariInput.split(',').map(item => parseInt(item.trim()));
-      const response = await axios.put(`http://127.0.0.1:8000/incarca_intrebari_pagina/${numeRegula}`, { numere_intrebari: intrebari });
-      setData(response.data);
+      setAdaugareIntrebareLoading(true);
+      await axios.put(`http://127.0.0.1:8000/incarca_intrebari_pagina/${numeRegula}?numar_intrebare=${intrebareNoua}`);
+      const response = await axios.get('http://127.0.0.1:8000/afisare_pagini_holland');
+      setPaginiHolland(response.data);
+      setAdaugareIntrebareIndex(null);
+      setIntrebareNoua('');
     } catch (error) {
-      console.error('Error loading questions:', error);
+      setError('Nu s-a putut adăuga întrebarea pentru pagină.');
+    } finally {
+      setAdaugareIntrebareLoading(false);
     }
   };
 
-  const handleStergeRegula = async (numeRegula) => {
-    try {
-      const response = await axios.delete(`http://127.0.0.1:8000/sterge_regula_pagina/${numeRegula}`);
-      setData(response.data);
-    } catch (error) {
-      console.error('Error deleting rule:', error);
+  const stergeRegulaPagina = async (numeRegula) => {
+    const confirmDelete = window.confirm('Ești sigur că vrei să ștergi această regulă de pagină?');
+    if (confirmDelete) {
+      try {
+        await axios.delete(`http://127.0.0.1:8000/sterge_regula_pagina/${numeRegula}`);
+        const updatedData = { ...paginiHolland };
+        delete updatedData[numeRegula];
+        setPaginiHolland(updatedData);
+      } catch (error) {
+        setError('Nu s-a putut șterge regula de pagină.');
+      }
     }
+  };
+
+  const modificaIntrebarePagina = async (numeRegula, intrebareIndex, nouaValoareIntrebare) => {
+    try {
+      await axios.put(`http://127.0.0.1:8000/modifica_intrebare_pagina/${numeRegula}/${paginiHolland[numeRegula].intrebari_pe_pagina[intrebareIndex]}/${nouaValoareIntrebare}`);
+      const updatedData = { ...paginiHolland };
+      updatedData[numeRegula].intrebari_pe_pagina[intrebareIndex] = parseInt(nouaValoareIntrebare);
+      setPaginiHolland(updatedData);
+    } catch (error) {
+      setError(' ');
+    } finally {
+      setModificareRegulaIndex(null); 
+    }
+  };
+
+  const stergeIntrebarePagina = async (numeRegula, numarIntrebare) => {
+    try {
+      await axios.delete(`http://127.0.0.1:8000/sterge_intrebare_pagina/${numeRegula}/${numarIntrebare}`);
+      const updatedData = { ...paginiHolland };
+      updatedData[numeRegula].intrebari_pe_pagina = updatedData[numeRegula].intrebari_pe_pagina.filter(intrebare => intrebare !== numarIntrebare);
+      setPaginiHolland(updatedData);
+    } catch (error) {
+      setError('Nu s-a putut șterge întrebarea de pe pagină.');
+    } finally {
+      setModificareRegulaIndex(null);
+    }
+  };
+
+  const numePersonalizatPagina = (cheie) => {
+    return cheie.replace('reguli_pagina_', 'Pagina ');
   };
 
   return (
-    <div>
-      <h1>Page for Holland</h1>
-      {Object.keys(data).map((pagina, index) => (
-        <div key={index}>
-          <h2>{pagina}</h2>
-          <ul>
-            {data[pagina].intrebari_pe_pagina.map((intrebare, i) => (
-              <li key={i}>{intrebare}</li>
-            ))}
-          </ul>
-          <InputRegulaPagina numeRegula={pagina} handleIncarcaIntrebari={handleIncarcaIntrebari} />
-          <button onClick={() => handleStergeRegula(pagina)}>Șterge regula pentru {pagina}</button>
-        </div>
-      ))}
-      <button onClick={handleAdaugaRegula}>Adaugă regulă de pagină</button>
+    <div className="pagina-holland">
+      <button className="custom-button" onClick={() => window.location.href = '/'}>Homepage</button>
+      <button className="custom-button" onClick={() => window.location.href = '/Grafice'}>Inapoi</button>
+      <h1>Pagini Holland</h1>
+      <button className="btn-adauga-regula" onClick={adaugaRegulaPagina} disabled={adaugareRegulaLoading}>Adaugă Regulă Pagină</button>
+      {error && <p className="error-message">{error}</p>}
+      {paginiHolland && (
+        <ul className="lista-pagini">
+          {Object.keys(paginiHolland).map((paginaKey, index) => (
+            <li key={index} className="pagina-item">
+              <h2>{numePersonalizatPagina(paginaKey)}</h2>
+              <button className="btn-adauga-intrebare" onClick={() => setAdaugareIntrebareIndex(index)}>Adaugă Întrebare</button>
+              <button className="btn-sterge-regula" onClick={() => stergeRegulaPagina(paginaKey)}>Șterge Regulă</button>
+              <button className="btn-modifica-intrebare" onClick={() => {
+                setModificareRegulaIndex(index);
+                setModificareIntrebariRegula(paginiHolland[paginaKey].intrebari_pe_pagina);
+              }}>Modificare întrebare</button>
+              <div className="intrebari-lista">
+                Intrebarile:
+                <ul className="lista-intrebari">
+                  {modificareRegulaIndex !== index && paginiHolland[paginaKey].intrebari_pe_pagina.map((intrebare, intrebareIndex) => (
+                    <li key={intrebareIndex} className="intrebare-item">{intrebare}</li>
+                  ))}
+                </ul>
+              </div>
+              {adaugareIntrebareIndex === index && (
+                <div className="adauga-intrebare">
+                  <input type="number" value={intrebareNoua} onChange={e => setIntrebareNoua(e.target.value)} />
+                  <button className="btn-adauga" onClick={() => adaugaIntrebarePagina(paginaKey)} disabled={adaugareIntrebareLoading}>Adaugă</button>
+                  <button className="btn-close" onClick={() => setAdaugareIntrebareIndex(null)}>X</button>
+                </div>
+              )}
+              {modificareRegulaIndex === index && (
+                <div className="modifica-intrebare">
+                  <ul className="lista-intrebari">
+                    {modificareIntrebariRegula.map((intrebare, intrebareIndex) => (
+                      <li key={intrebareIndex} className="intrebare-item">
+                        <div className="intrebare-container">
+                          <input type="number" value={intrebare} onChange={e => {
+                            const updatedIntrebari = [...modificareIntrebariRegula];
+                            updatedIntrebari[intrebareIndex] = e.target.value;
+                            setModificareIntrebariRegula(updatedIntrebari);
+                          }} />
+                          <button className="btn-save" onClick={() => modificaIntrebarePagina(paginaKey, intrebareIndex, modificareIntrebariRegula[intrebareIndex])}>Salvează</button>
+                          <button className="btn-close" onClick={() => setModificareRegulaIndex(null)}>X</button>
+                        </div>
+                        <button className="btn-sterge-intrebare" onClick={() => stergeIntrebarePagina(paginaKey, intrebare)}>Șterge Întrebare</button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
-};
-
-const InputRegulaPagina = ({ numeRegula, handleIncarcaIntrebari }) => {
-  const [intrebariInput, setIntrebariInput] = useState('');
-
-  const handleIncarcaClick = () => {
-    handleIncarcaIntrebari(numeRegula, intrebariInput);
-    setIntrebariInput('');
-  };
-
-  return (
-    <div>
-      <input
-        type="text"
-        value={intrebariInput}
-        onChange={(e) => setIntrebariInput(e.target.value)}
-        placeholder="Introdu întrebările separate prin virgulă"
-      />
-      <button onClick={handleIncarcaClick}>Încarcă întrebările pentru {numeRegula}</button>
-    </div>
-  );
-};
-
-export default HollandPage;
+}
+export default PaginaHolland;

@@ -86,6 +86,8 @@ function PozeHolland() {
     // Returnul componentei
     return (
         <div className="poze-container">
+        <button className="custom-button" onClick={() => window.location.href = '/'}>Homepage</button>
+        <button className="custom-button" onClick={() => window.location.href = '/Grafice'}>Inapoi</button>
             <h1>Image Gallery</h1>
             <button className="upload-button" onClick={() => setShowUploadForm(!showUploadForm)}>Upload Photo</button>
             {showUploadForm && (

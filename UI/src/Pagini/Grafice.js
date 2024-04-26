@@ -44,9 +44,9 @@ const Grafice = () => {
     const getCategoryColor = categorie => {
         const colors = {
             "artistic": '#8884d8',
-            "conventional": '#82ca9d',
+            "convențional": '#82ca9d',
             "realist": '#ffc658',
-            "intreprinzator": '#ff7300',
+            "întreprinzător": '#ff7300',
             "investigativ": '#00C49F',
             "social": '#FFBB28'
         };

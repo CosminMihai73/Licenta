@@ -1,0 +1,57 @@
+/* AdaugaIntrebare.css */
+
+/* Stili pentru containerul principal */
+.add-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 50%; /* Așezare centrală */
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stili pentru titlu */
+.add-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Centrare titlu */
+}
+
+/* Stili pentru input-uri și select-uri */
+.input-container {
+    margin-bottom: 15px;
+}
+
+.input-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.input-container input,
+.input-container select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Stili pentru butoane */
+.adaugareinput-btn,
+.add-btn {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px; /* Spațiu între butoane */
+}
+
+.adaugareinput-btn:hover,
+.add-btn:hover {
+    background-color: #0056b3;
+}

@@ -20,9 +20,9 @@ def calcul_suma_punctaje():
         # Inițializăm sumele pentru fiecare categorie
         sume = {
             "artistic": 0,
-            "conventional": 0,
+            "convențional": 0,
             "realist": 0,
-            "intreprinzator": 0,
+            "întreprinzător": 0,
             "investigativ": 0,
             "social": 0
         }
@@ -56,9 +56,9 @@ def calcul_procente():
         # Inițializăm sumele pentru fiecare categorie
         sume = {
             "artistic": 0,
-            "conventional": 0,
+            "convențional": 0,
             "realist": 0,
-            "intreprinzator": 0,
+            "întreprinzător": 0,
             "investigativ": 0,
             "social": 0
         }
@@ -114,7 +114,7 @@ async def ultimele_modificari():
                 "Punctaje Categorii": punctaje_str
             }
 
-            # Adăugarea modificării în lista de modificări
+            # Adăugarea modificării în lista de modificăriz
             modificari.append(modificare)
 
         # Închide conexiunea

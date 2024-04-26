@@ -2,20 +2,20 @@
     {
         "id": 1,
         "text": "Să cânți pe o scenă?",
-        "text_poza": "/poze/pisica1.jpg",
+        "text_poza": "",
         "timer": 10,
         "categorie": "artistic",
         "variante_raspuns": {
-            "": {
+            "Nu îmi place": {
                 "voturi": 0,
-                "raspuns_poza": "/poze/nu.png"
-            },
-            "Poate": {
-                "voturi": 3,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Așa și așa": {
+                "voturi": 1,
+                "raspuns_poza": ""
+            },
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -27,16 +27,16 @@
         "timer": 11,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -48,16 +48,16 @@
         "timer": 12,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -69,16 +69,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -90,16 +90,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -111,16 +111,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -132,16 +132,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -153,16 +153,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -174,16 +174,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -195,16 +195,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -216,16 +216,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -237,16 +237,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -258,16 +258,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -279,16 +279,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -300,16 +300,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -321,16 +321,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -342,16 +342,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -363,16 +363,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -384,16 +384,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -405,16 +405,16 @@
         "timer": 15,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Poate": {
-                "voturi": 3,
+            "Așa și așa": {
+                "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Da": {
-                "voturi": 6,
+            "Îmi place": {
+                "voturi": 2,
                 "raspuns_poza": ""
             }
         }
@@ -424,34 +424,18 @@
         "text": "Să fii numărător de bani (de exemplu persoana care să primească şi să dea bani la o bancă)'?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -461,34 +445,18 @@
         "text": "Să înregistrezi datele financiare ale unei firme?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -498,34 +466,18 @@
         "text": "Să lucrezi cu calculatorul sau cu un copiator într-un birou?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -535,34 +487,18 @@
         "text": "Să faci rezervări pentru zboruri de avioane, pentru hoteluri într-un birou de voiaj?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -572,34 +508,18 @@
         "text": "Să fii expert contabil (verificare)?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -609,34 +529,18 @@
         "text": "Să verifici bugetul unei firme?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -646,34 +550,18 @@
         "text": "Să ţii evidenţa mărfurilor, a ceea ce se consumă la o firmă?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -683,34 +571,18 @@
         "text": "Să lucrezi cu cifre într-un birou de afaceri?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -720,34 +592,18 @@
         "text": "Să studiezi o firmă şi să elaborezi un sistem contabil pentru nevoile sale financiare?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -757,34 +613,18 @@
         "text": "Să supervizezi personalul administrativ al unui oficiu?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -794,34 +634,18 @@
         "text": "Să urmezi un curs de matematică pentru afaceri?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -831,34 +655,18 @@
         "text": "Să controlezi actele băncilor pentru a descoperi greşeli?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -868,34 +676,18 @@
         "text": "Să utilizezi calculatorul pentru a prelucra date contabile?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -905,34 +697,18 @@
         "text": "Să urmezi un curs de contabilitate?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -942,34 +718,18 @@
         "text": "Să introduci informaţii în calculator?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -979,34 +739,18 @@
         "text": "Să ţii evidenţa încasărilor pentru lucrările efectuate?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1016,34 +760,18 @@
         "text": "Să operezi într-un registru de încasări?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1053,34 +781,18 @@
         "text": "Să fii recepţioner la un hotel?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1090,34 +802,18 @@
         "text": "Să fii funcţionar administrativ?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1127,34 +823,18 @@
         "text": "Să operezi cu cifre pe computer?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "conventional",
+        "categorie": "convențional",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1164,34 +844,18 @@
         "text": "Să conduci un departament administrativ?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1201,34 +865,18 @@
         "text": "Să cumperi marfă pentru un magazin mare?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1238,34 +886,18 @@
         "text": "Să fii manager de vânzări?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1275,34 +907,18 @@
         "text": "Să înregistrezi muncitori care au nemulţumiri la locul de muncă?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1312,34 +928,18 @@
         "text": "Să câştigi bani din comerţ sau la bursa de valori?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1349,34 +949,18 @@
         "text": "Să conduci un restaurant mare?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1386,34 +970,18 @@
         "text": "Să te ocupi de politica administrativă?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1423,34 +991,18 @@
         "text": "Să fii vicepreşedinte de bancă??",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1460,34 +1012,18 @@
         "text": "Să fii jurisconsultul unei firme?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1497,34 +1033,18 @@
         "text": "Să ocupi o poziţie de lider?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1534,34 +1054,18 @@
         "text": "Să fii agent imobiliar?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1571,34 +1075,18 @@
         "text": "Să lucrezi pentru a convinge guvernul să adopte o anumită măsură?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1608,34 +1096,18 @@
         "text": "Să promovezi dezvoltarea unei noi pieţe de aprovizionare a populaţiei?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1645,34 +1117,18 @@
         "text": "Să faci afaceri, comerţ?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1682,34 +1138,18 @@
         "text": "Să fii legiuitorul care să medieze disputele dintre sindicate şi patronat?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1719,34 +1159,18 @@
         "text": "Să fii judecător?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1756,34 +1180,18 @@
         "text": "Să recrutezi şi să angajezi oameni pentru o mare firmă?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1793,34 +1201,18 @@
         "text": "Să călătoreşti prin ţară pentru a vinde produsele firmei?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1830,34 +1222,18 @@
         "text": "Să organizezi şi să coordonezi afaceri?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1867,34 +1243,18 @@
         "text": "Să fii manager de producţie?",
         "text_poza": "",
         "timer": 15,
-        "categorie": "intreprinzator",
+        "categorie": "întreprinzător",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1906,32 +1266,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1943,32 +1287,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -1980,32 +1308,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2017,32 +1329,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2054,32 +1350,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2091,32 +1371,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2128,32 +1392,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2165,32 +1413,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2202,32 +1434,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2239,32 +1455,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2276,32 +1476,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2313,32 +1497,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2350,32 +1518,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2387,32 +1539,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2424,32 +1560,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2461,32 +1581,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2498,32 +1602,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2535,32 +1623,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2572,32 +1644,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2609,32 +1665,16 @@
         "timer": 15,
         "categorie": "investigativ",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2646,32 +1686,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2683,32 +1707,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2720,32 +1728,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2757,32 +1749,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2794,32 +1770,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2831,32 +1791,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2868,32 +1812,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2905,32 +1833,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2942,32 +1854,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -2979,32 +1875,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3016,32 +1896,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3053,32 +1917,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3090,32 +1938,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3127,32 +1959,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3164,32 +1980,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3201,32 +2001,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3238,32 +2022,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3275,32 +2043,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3312,32 +2064,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3349,32 +2085,16 @@
         "timer": 15,
         "categorie": "realist",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3386,32 +2106,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3423,32 +2127,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3460,32 +2148,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3497,32 +2169,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3534,32 +2190,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3571,32 +2211,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3608,32 +2232,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3645,32 +2253,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3682,32 +2274,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3719,32 +2295,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3756,32 +2316,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3793,32 +2337,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3830,32 +2358,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3867,32 +2379,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3904,32 +2400,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3941,32 +2421,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -3978,32 +2442,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -4015,32 +2463,16 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -4048,36 +2480,20 @@
     {
         "id": 119,
         "text": "Să coordonezi programul sportiv pe un teren de sport?",
-        "text_poza": "/poze/pisica1.jpg",
+        "text_poza": "",
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
-                "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
                 "raspuns_poza": ""
             }
         }
@@ -4089,59 +2505,18 @@
         "timer": 15,
         "categorie": "social",
         "variante_raspuns": {
-            "Foarte Dezacord": {
+            "Nu îmi place": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Dezacord": {
+            "Așa și așa": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Partial Dezacord": {
+            "Îmi place": {
                 "voturi": 2,
                 "raspuns_poza": ""
-            },
-            "Neutru": {
-                "voturi": 3,
-                "raspuns_poza": ""
-            },
-            "Partial de Acord": {
-                "voturi": 4,
-                "raspuns_poza": ""
-            },
-            "Acord": {
-                "voturi": 5,
-                "raspuns_poza": ""
-            },
-            "Foarte de Acord": {
-                "voturi": 6,
-                "raspuns_poza": ""
             }
         }
-    },
-    {
-        "id": 121,
-        "text": "test",
-        "text_poza": "",
-        "timer": 15,
-        "categorie": "artistic",
-        "variante_raspuns": {
-            "0": {
-                "voturi": 0,
-                "raspuns_poza": ""
-            },
-            "": {
-                "voturi": 6,
-                "raspuns_poza": ""
-            }
-        }
-    },
-    {
-        "id": 122,
-        "text": "",
-        "text_poza": "",
-        "timer": 0,
-        "categorie": "",
-        "variante_raspuns": {}
     }
 ]

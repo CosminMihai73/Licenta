@@ -67,3 +67,4 @@ async def rename_file(old_filename: str, new_filename: str):
         return {"message": "File renamed successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to rename file: {str(e)}")
+    

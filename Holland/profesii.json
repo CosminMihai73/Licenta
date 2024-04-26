@@ -1,91 +1,199 @@
 {
-  "profesii": [
+  "tipuri_personalitate": [
     {
-      "Realist-Investigativ":"Tehnic, meşteşugăresc, ştiinţe matematice"
+      "tip": "realist",
+      "descriere": "Se caracterizează prin tendinţa de a se îndrepta spre acele activități care presupun manipularea obiectelor şi a instrumentelor. Posedă aptitudini manuale, mecanice sau tehnice şi este satisfăcut de acele medii profesionale care necesită un nivel optim de dezvoltare a acestor aptitudini. Preferă mai degrabă să lucreze cu obiecte, cu plante, animale, materiale din natură, în aer liber şi mai puțin împreună cu alte persoane. Le place sa repare aparate electronice, sa faca obiecte din lemn, sa lucreze cu echipamente monitorizate, etc.",
+      "meserii": [
+        "inspector în construcții",
+        "aviator",
+        "kinetoterapeut",
+        "șef mentenanță",
+        "inginer agronom",
+        "expert achiziții publice",
+        "inginer sunet",
+        "technician dentar",
+        "fermier",
+        "activități din domeniul auto",
+        "tehnician",
+        "din agricultură"
+      ],
+      "facultati": [
+        {
+          "nume": "Facultatea de Inginerie electronică și știința calculatoarelor",
+          "link": "https://iesc.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Inginerie mecanică",
+          "link": "https://mecanica.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Inginerie tehnologică și management industrial",
+          "link": "https://itmi.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Design de produs și mediu",
+          "link": "https://dpm.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Design de mobilier și inginerie a lemnului",
+          "link": "https://dmil.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Știința și ingineria materialelor",
+          "link": "https://sim.unitbv.ro/ro/"
+        }
+      ]
     },
     {
-      "Realist-Artistic":"Meşteşugăresc, activitate artistică, tehnic"
+      "tip": "investigativ",
+      "descriere": "Se distinge prin apetit deosebit pentru cercetare, investigare sub diverse forme şi în cele mai diferite domenii (biologic, fizic, social, cultural etc.). Are de obicei abilități matematice şi ştiințifice şi preferă să lucreze singur pentru rezolvarea de probleme. Se implică în activități care presupun investigarea observațională, sistematică și creativă a fenomenelor fizice, biologice și culturale, pentru a le înțelege. Ii place sa citeasca reviste, carti, articole stiintifice, sa lucreze intr-un institute de cercetare.",
+      "meserii": [
+        "medic",
+        "chimist",
+        "specialist în probleme de mediu",
+        "medic legist",
+        "șef laborator criminalistic",
+        "asistent universitar",
+        "specialist evaluare daune",
+        "matematician",
+        "biolog",
+        "specialist IT"
+      ],
+      "facultati": [
+        {
+          "nume": "Facultatea de Medicină",
+          "link": "https://medicina.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Matematică și informatică",
+          "link": "https://mateinfo.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Design de produs și mediu",
+          "link": "https://dpm.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Știința și ingineria materialelor",
+          "link": "https://sim.unitbv.ro/ro/"
+        }
+      ]
     },
     {
-      "Realist-Social":"Meşteşugăresc, activitate cu publicul, management"
+      "tip": "artistic",
+      "descriere": "Manifestă atracţie spre activităţile mai puțin structurate, care presupun o rezolvare creativă şi oferă posibilitatea de autoexpresie. Persoanele care reprezintă acest tip sunt înzestrate cu abilități artistice şi imaginație. În general, preferă să lucreze cu idei noi, să modifice lucruri, să dezvolte produse şi nu neapărat să urmeze reguli. Ii place sa faca schite, desene, sa faca fotografii si materiale video, sa scrie romane sau piese de teatru.",
+      "meserii": [
+        "muzician",
+        "jurnalist",
+        "creator de animații",
+        "sculptor",
+        "scriitor"
+      ],
+      "facultati": [
+        {
+          "nume": "Facultatea de Muzică",
+          "link": "https://muzica.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Design de mobilier și inginerie a lemnului",
+          "link": "https://dmil.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Litere",
+          "link": "https://litere.unitbv.ro/ro/"
+        }
+      ]
     },
     {
-      "Realist-Intreprinzator":"Stiinte matematice, tehnic, meşteşugăresc"
+      "tip": "social",
+      "descriere": "Interesat de activităţi care implică relaţionare interpersonală. Preferă să ajute oamenii să-şi rezolve problemele sau să-i învețe diverse lucruri, decât să realizeze activităţi care necesită manipularea unor unelte sau maşini. Ii place sa lucreze ca voluntar, sa ii ajute pe ceilalti in rezolvarea problemelor, sa predea elevilor sau adultilor.",
+      "meserii": [
+        "profesor",
+        "consilier",
+        "terapeut",
+        "psiholog",
+        "psihopedagog",
+        "logoped",
+        "formator",
+        "consilier vocational",
+        "consilier in domeniul adictiilor",
+        "asistent social"
+      ],
+      "facultati": [
+        {
+          "nume": "Facultatea de Psihologie și științele educației",
+          "link": "https://psihoedu.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Sociologie și comunicare",
+          "link": "https://socio.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Educație fizică și sporturi montane",
+          "link": "https://sport.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Medicină",
+          "link": "https://medicina.unitbv.ro/ro/"
+        }
+      ]
     },
     {
-      "Realist-Conventional":"Activ cu publicul, depan, de personal, meşteşugărese"
+      "tip": "întreprinzător",
+      "descriere": "Preferă să lucreze în echipă, însă în primul rând cu scopul de a conduce, a dirija, a ocupa locul de lider. Evită activităţi ştiinţifice sau domeniile care implică o muncă foarte dificilă, preferându-le pe acelea care îi pun în valoare abilităţiile oratorice şi manageriale.",
+      "meserii": [
+        "manager",
+        "director publicitate",
+        "broker",
+        "director relatii cu publicul",
+        "antreprenor",
+        "agent vânzări"
+      ],
+       "facultati": [
+        {
+          "nume": "Facultatea de Științe economice și administrarea afacerilor",
+          "link": "https://econ.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Drept",
+          "link": "https://drept.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Sociologie și comunicare",
+          "link": "https://socio.unitbv.ro/ro/"
+        },
+        {
+          "nume": "Facultatea de Psihologie și științele educației",
+          "link": "https://psihoedu.unitbv.ro/ro/"
+        }
+      ]
     },
-    {
-      "Investigativ-Realist":"Stiinte matematice, tehnico-demar, munca hterană, muncă artistică"
-    },
-    {
-      "Investigativ-Artistic":"Spectacole, management, muncă artistică"
-    },
-    {
-      "Investigativ-Social":"Servicii sociale, administrativ, management"
-    },
-    {
-      "Investigativ-Conventional":"Analiza de date, stiinte matematice, activit, administr"
-    },
-    {
-      "Artistic-Realist":"Meşteşugăresc, activitate artistică, tehnic"
-    },
-    {
-      "Artistic-Investigativ":"Spectacole, management, muncă artistică"
-    },
-    {
-      "Artistic-Social":"Servicii sociale, activitate muzicală, muncă educativă"
-    },
-    {
-      "Artistic-Intreprinzator":"Activități legale, spectacole, management"
-    },
-    {
-      "Artistic-Conventional":"Muncă artistică, administrative, literară"
-    },
-    {
-      "Social-Realist":"Meşteşugăresc, activitate cu publicul, management"
-    },
-    {
-      "Social-Investigativ":"Servicii sociale, medico-dentar, ştiinţe matematice"
-    },
-    {
-      "Social-Artistic":"Servicii sociale, activitate muzicală, muncă educativă"
-    },
-    {
-      "Social-Intreprinzator":"Management, activităţi de vânzare, servicii sociale. activități legale"
-    },
-    {
-      "Social-Conventional":"Servicii sociale, activitate cu publicul, management"
-    },
-    {
-      "Intreprinzator-Realist":"Stiinte matematice, management, tehnic"
-    },
-    {
-      "Intreprinzator-Investigativ":"Analiza de date, stiinte matematice, activit, administr"
-    },
-    {
-      "Intreprinzator-Artistic":"Activități legale, spectacole, management"
-    },
-    {
-      "Intreprinzator-Social":"Servicii sociale, activitate muzicală, muncă educativă"
-    },
-    {
-      "Intreprinzator-Conventional":"Management, vânzări, analiză de date, activități admin"
-    },
-    {
-      "Conventional-Realist":"Activ cu publicul, depan, de personal, meşteşugărese"
-    },
-    {
-      "Conventional-Investigativ":"Analiza de date, stiinte matematice, activit, administr"
-    },
-    {
-      "Conventional-Artistic":"Muncă artistică, administrative, literară"
-    },
-    {
-      "Conventional-Social":"Servicii sociale, activitate cu publicul, management"
-    },
-    {
-      "Conventional-Intreprinzator":"Management, meşteşugăresc, activitate cu publicul"
-    }
-  ]
-}
+      {
+        "tip": "convențional",
+        "descriere": "Se îndreaptă spre acele activități care se caracterizează prin manipularea sistematică şi ordonată a unor obiecte într-un cadru bine organizat şi definit. Are abilități funționăreşti şi matematice, ceea ce îl face potrivit pentru activități administrative. Tipul convențional reuşeşte să se adapteze cu dificultate la situaţiile cu grad ridicat de ambiguitate şi care nu au descrise cerinţe clare. Ii place sa tina evidenta cheltuielilor, sa verifice documente pentru depistarea greselilor, sa faca calculi diverse. Este o persoana atenta si organizata.",
+        "meserii": [
+          "secretar",
+          "bibliotecar",
+          "contabil",
+          "inspector bancar",
+          "analist financiar",
+          "programator",
+          "funcționar public"
+        ],
+        "facultati": [
+         {
+           "nume": "Facultatea de Științe economice și administrarea afacerilor",
+           "link": "https://econ.unitbv.ro/ro/"
+         },
+         {
+           "nume": "Facultatea de Litere",
+           "link": "https://litere.unitbv.ro/ro/"
+         },
+         {
+           "nume": "Facultatea de Matematică și informatică",
+           "link": "https://socio.unitbv.ro/ro/"
+         }
+        
+       ]
+      }
+    ]
+  }

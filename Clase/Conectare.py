@@ -32,14 +32,14 @@ def adauga_in_baza_de_date(email, punctaje_json, raspunsuri_json):
             # Dacă există, actualizați înregistrarea existentă
             cursor.execute(
                 'UPDATE Candidat SET Punctaje = ?, Raspunsuri = ?, Data_Modificarii = ? WHERE email = ?',
-                (punctaje_json, str(raspunsuri_json), data_ora_curenta, email)
+                (str(punctaje_json), str(raspunsuri_json), data_ora_curenta, email)
             )
             print("Datele au fost actualizate cu succes în baza de date!")
         else:
             # Dacă nu există, inserați o înregistrare nouă
             cursor.execute(
                 'INSERT INTO Candidat (email, Punctaje, Raspunsuri, Data_Modificarii) VALUES (?, ?, ?, ?)',
-                (email, punctaje_json, str(raspunsuri_json), data_ora_curenta)
+                (email, str(punctaje_json), str(raspunsuri_json), data_ora_curenta)
             )
             print("Datele au fost adăugate cu succes în baza de date!")
 

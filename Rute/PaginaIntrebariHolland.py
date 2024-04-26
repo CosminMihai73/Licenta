@@ -6,7 +6,7 @@ from pydantic import BaseModel, EmailStr
 import json
 from Clase.Citeste import Citeste
 from Clase.Conectare import adauga_in_baza_de_date, conectare_baza_date
-from Clase.InterpretareRezultat import InterpretareHolland, InterpretareProfesii
+
 
 router = APIRouter(tags=["Pagina Intrebari Holland"])
 
@@ -130,9 +130,9 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
         # Inițializăm un dicționar pentru a stoca punctajele
         punctaje = {
             'artistic': 0,
-            'conventional': 0,
+            'convențional': 0,
             'realist': 0,
-            'intreprinzator': 0,
+            'întreprinzător': 0,
             'investigativ': 0,
             'social': 0
         }
@@ -162,8 +162,8 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
             json.dump([raspuns.dict() for raspuns in raspunsuri.raspunsuri], file, ensure_ascii=False)
 
         # Salvăm punctajele în fișierul "punctaje.json"
-        with open("Holland/punctaje.json", "w") as file:
-            json.dump(punctaje, file)
+        with open("Holland/punctaje.json", "w", encoding="utf-8") as file:
+            json.dump(punctaje, file, ensure_ascii=False)
 
         email = raspunsuri.email
         punctaje_json = json.dumps(punctaje)
@@ -200,34 +200,59 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-class InterpretareResult(BaseModel):
-    tip_dominant: str
-    tip_secundar: str
-    combinatie_finala: str
-    profesie_attribuita: str
+@router.get("/interpretare_si_atribuie_profesie")
+async def interpretare_si_atribuie_profesie():
+    tipuri_holland = {
+        'artistic': 'Artistic',
+        'convențional': 'Convențional',
+        'realist': 'Realist',
+        'întreprinzător': 'Întreprinzător',
+        'investigativ': 'Investigativ',
+        'social': 'Social'
+    }
+    punctaje = None
+    profesii = None
 
-@router.get("/interpretare_si_atribuie_profesie", response_model=InterpretareResult)
-def interpretare_si_atribuie_profesie(fisier_punctaje: str = 'Holland/punctaje.json'):
-    try:
-        # Interpretation logic
-        interpretare = InterpretareHolland(fisier_punctaje)
-        rezultat_interpretat = interpretare.interpreteaza()
-        combinatie_finala = interpretare.combinatie_finala
+    # Deschidem și citim fișierele punctaje.json și profesii.json
+    with open("Holland/punctaje.json", "r", encoding='utf-8') as file:
+        punctaje = json.load(file)
 
-        with open('Holland/profesii.json', 'r', encoding='utf-8') as file:
-            profesii_data = json.load(file)["profesii"]
+    with open("Holland/profesii.json", "r", encoding='utf-8') as file:
+        profesii = json.load(file)['tipuri_personalitate']
 
-        interpretare_profesii = InterpretareProfesii(combinatie_finala, profesii_data)
-        profesie_attribuita = interpretare_profesii.atribuie_profesie()
+    # Calculăm tipul dominant și tipurile secundare
+    tip_dominant = max(punctaje, key=punctaje.get)
+    tipuri_secundare = sorted(punctaje, key=punctaje.get, reverse=True)[1:3]
 
-        # Return the interpreted results
-        result = InterpretareResult(
-            tip_dominant=interpretare.tip_dominant,
-            tip_secundar=interpretare.tip_secundar,
-            combinatie_finala=combinatie_finala,
-            profesie_attribuita=profesie_attribuita
-        )
-        return result
+    # Obținem informațiile despre profesii pentru tipul dominant și tipurile secundare
+    profesie_dominanta = None
+    profesii_secundare = []
 
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
+    for profesie in profesii:
+        if profesie['tip'] == tip_dominant:
+            profesie_dominanta = profesie
+        elif profesie['tip'] in tipuri_secundare:
+            profesii_secundare.append(profesie)
+
+    # Procesăm informațiile despre facultăți pentru a le integra în rezultatul final
+    facultati_dominante = profesie_dominanta['facultati']
+    facultati_secundare_1 = profesii_secundare[0]['facultati']
+    facultati_secundare_2 = profesii_secundare[1]['facultati']
+
+    # Formatăm rezultatul în format JSON
+    rezultat = {
+        "tip_dominant": tipuri_holland[tip_dominant],
+        "descriere_dominanta": profesie_dominanta['descriere'],
+        "meserii_dominante": profesie_dominanta['meserii'],
+        "facultati_dominante": facultati_dominante,
+        "tip_secundar_1": tipuri_holland[tipuri_secundare[0]],
+        "descriere_secundar_1": profesii_secundare[0]['descriere'],
+        "meserii_secundare_1": profesii_secundare[0]['meserii'],
+        "facultati_secundare_1": facultati_secundare_1,
+        "tip_secundar_2": tipuri_holland[tipuri_secundare[1]],
+        "descriere_secundar_2": profesii_secundare[1]['descriere'],
+        "meserii_secundare_2": profesii_secundare[1]['meserii'],
+        "facultati_secundare_2": facultati_secundare_2,
+    }
+
+    return {"rezultat_interpretare": rezultat}

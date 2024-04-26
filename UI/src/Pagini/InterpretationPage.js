@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './InterpretationPage.css';
-import {Link} from "react-router-dom";
 
-const InterpretationPage = () => {
-  const [interpretationResult, setInterpretationResult] = useState(null);
+
+const InterpretareProfesie = () => {
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://127.0.0.1:8000/interpretare_si_atribuie_profesie');
-        setInterpretationResult(response.data);
+        setData(response.data.rezultat_interpretare);
       } catch (error) {
-        console.error('Error:', error);
+        console.error('Error fetching data:', error);
       }
     };
 
@@ -20,23 +19,52 @@ const InterpretationPage = () => {
   }, []);
 
   return (
-    <div className="interpretation-container">
-      <div className="interpretation-content">
-        <h1>Rezultat</h1>
-        {interpretationResult && (
-          <div className="result-info">
-            <p>Tip Dominant: {interpretationResult.tip_dominant}</p>
-            <p>Tip Secundar: {interpretationResult.tip_secundar}</p>
-            <p>Combinatie Finala: {interpretationResult.combinatie_finala}</p>
-            <p>Profesie Atribuita: {interpretationResult.profesie_attribuita}</p>
-          </div>
-        )}
+    <div>
+      {data ? (
+        <div>
+          <h2>{data.tip_dominant}</h2>
+          <p>Descrierea categoriei: {data.descriere_dominanta}</p>
+          <p>Meserii recomandate: {data.meserii_dominante.join(', ')}</p>
+          <p>
+            Facultați recomandate:<br />
+            {data.facultati_dominante.map((facultate, index) => (
+              <div key={index}>
+                <a href={facultate.link}>{facultate.nume}</a>
+                <br />
+              </div>
+            ))}
+          </p>
+          <h2>{data.tip_secundar_1}</h2>
+          <p>Descrierea categoriei: {data.descriere_secundar_1}</p>
+          <p>Meserii recomandate: {data.meserii_secundare_1.join(', ')}</p>
+          <p>
+            Facultați recomandate:<br />
+            {data.facultati_secundare_1.map((facultate, index) => (
+              <div key={index}>
+                <a href={facultate.link}>{facultate.nume}</a>
+                <br />
+              </div>
+            ))}
+          </p>
+          <h2>{data.tip_secundar_2}</h2>
+          <p>Descrierea categoriei: {data.descriere_secundar_2}</p>
+          <p>Meserii recomandate: {data.meserii_secundare_2.join(', ')}</p>
+          <p>
+            Facultați recomandate: <br />
+            {data.facultati_secundare_2.map((facultate, index) => (
+              <div key={index}>
+                <a href={facultate.link}>{facultate.nume}</a>
+                <br />
+              </div>
+            ))}
+          </p>
+          <p>Pentru întrebări legate de chestionar, vă rugăm să ne contactați la adresa: <a href="mailto:consiliere@unitbv.ro">consiliere@unitbv.ro</a></p>
         </div>
-            <div className="button-container">
-                <Link to="/" className="link-button">Înapoi la Pagina Principală</Link>
-            </div>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };
 
-export default InterpretationPage;
+export default InterpretareProfesie;

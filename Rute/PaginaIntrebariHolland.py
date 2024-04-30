@@ -105,10 +105,10 @@ class RaspundeLaIntrebari(BaseModel):
 raspunsuri_stocate = []
 
 # Load questions and initial scores from JSON files
-with open("Holland/toate_intrebarile.json", "r") as file:
+with open("Holland/toate_intrebarile.json", "r",encoding="utf-8") as file:
     intrebari = json.load(file)
 
-with open("Holland/punctaje.json", "r") as file:
+with open("Holland/punctaje.json", "r",encoding="utf-8") as file:
     punctaje_initiale = json.load(file)
 
 # Create a list of Pydantic models for validating answers
@@ -117,11 +117,9 @@ modele_intrebari = [RaspunsModel(id=intrebare["id"], categorie=intrebare["catego
 @router.post("/actualizeaza_si_calculeaza_punctaje")
 def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
     try:
-        global raspunsuri_stocate
-
-        # Verificăm dacă există răspunsuri în lista de răspunsuri
+        # Verificăm dacă lista de răspunsuri este goală
         if not raspunsuri.raspunsuri:
-            raise HTTPException(status_code=400, detail="Nu există răspunsuri salvate pentru a calcula punctajele.")
+            raise HTTPException(status_code=400, detail="Nu există răspunsuri disponibile pentru a calcula punctajele.")
 
         # Încărcăm întrebările din fișierul JSON
         with open("Holland/toate_intrebarile.json", "r", encoding="utf-8") as file:
@@ -129,15 +127,15 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
 
         # Inițializăm un dicționar pentru a stoca punctajele
         punctaje = {
-            'artistic': 0,
-            'convențional': 0,
-            'realist': 0,
-            'întreprinzător': 0,
-            'investigativ': 0,
-            'social': 0
+            "artistic": 0,
+            "convențional": 0,
+            "realist": 0,
+            "întreprinzător": 0,
+            "investigativ": 0,
+            "social": 0
         }
 
-        # Parcurgem fiecare răspuns și actualizăm punctajele
+        # Parcurgem fiecare răspuns și actualizăm punctajele corespunzător
         for raspuns in raspunsuri.raspunsuri:
             for intrebare in intrebari:
                 if intrebare["id"] == raspuns.id:
@@ -157,22 +155,16 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
         # Adăugăm răspunsurile la lista de răspunsuri stocate
         raspunsuri_stocate.extend(raspunsuri.raspunsuri)
 
-        # Salvăm răspunsurile în fișierul "raspunsuri.json"
+        # Salvăm răspunsurile în fișierul "raspunsuri.json" cu codificare UTF-8
         with open("Holland/raspunsuri.json", "w", encoding="utf-8") as file:
             json.dump([raspuns.dict() for raspuns in raspunsuri.raspunsuri], file, ensure_ascii=False)
 
-        # Salvăm punctajele în fișierul "punctaje.json"
+        # Salvăm punctajele în fișierul "punctaje.json" cu codificare UTF-8
         with open("Holland/punctaje.json", "w", encoding="utf-8") as file:
             json.dump(punctaje, file, ensure_ascii=False)
 
+        # Obținem email-ul și datele în format JSON pentru răspunsuri
         email = raspunsuri.email
-        punctaje_json = json.dumps(punctaje)
-
-        # Deschide fișierul cu întrebări
-        with open("Holland/toate_intrebarile.json", "r", encoding='utf-8') as file:
-            intrebari = json.load(file)
-
-        # Apoi, poți folosi aceste întrebări în cadrul buclei tale pentru a obține textul întrebării
         raspunsuri_json = []
         for raspuns in raspunsuri.raspunsuri:
             for intrebare in intrebari:
@@ -184,7 +176,7 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
                     })
                     break
 
-        adauga_in_baza_de_date(email, punctaje_json, raspunsuri_json)
+        adauga_in_baza_de_date(email, punctaje, raspunsuri_json)
 
         # Returnăm un răspuns HTTP cu informațiile necesare
         return {
@@ -256,3 +248,111 @@ async def interpretare_si_atribuie_profesie():
     }
 
     return {"rezultat_interpretare": rezultat}
+
+@router.get("/interpretare_si_atribuie_profesie_BD")
+async def interpretare_si_atribuie_profesie_BD(email: str = Query(..., description="Adresa de email a candidatului")):
+    tipuri_holland = {
+        'artistic': 'Artistic',
+        'convențional': 'Convențional',
+        'realist': 'Realist',
+        'întreprinzător': 'Întreprinzător',
+        'investigativ': 'Investigativ',
+        'social': 'Social'
+    }
+    # Deschideți conexiunea la baza de date
+    conn = conectare_baza_date()
+    cursor = conn.cursor()
+    
+    # Interogați baza de date pentru a obține punctajele candidatului
+    query = f"SELECT Punctaje FROM Candidat WHERE email = '{email}'"
+    cursor.execute(query)
+    row = cursor.fetchone()
+    
+    # Închideți cursorul și conexiunea
+    cursor.close()
+    conn.close()
+    
+    # Verificați dacă a fost găsit un candidat cu adresa de email dată
+    if row is None:
+        raise HTTPException(status_code=404, detail="Candidat nu a fost găsit pentru adresa de email dată.")
+    
+    punctaje_json = row[0]
+    punctaje_json = punctaje_json.replace("'", '"')
+    punctaje = json.loads(punctaje_json)
+
+    
+    # Continuați cu procesarea punctajelor pentru a obține tipul dominant și tipurile secundare
+    tip_dominant = max(punctaje, key=punctaje.get)
+    tipuri_secundare = sorted(punctaje, key=punctaje.get, reverse=True)[1:3]
+    
+    # Deschideți și citiți fișierul profesii.json
+    with open("Holland/profesii.json", "r", encoding='utf-8') as file:
+        profesii = json.load(file)['tipuri_personalitate']
+    
+    # Obțineți informațiile despre profesii pentru tipul dominant și tipurile secundare
+    profesie_dominanta = None
+    profesii_secundare = []
+
+    for profesie in profesii:
+        if profesie['tip'] == tip_dominant:
+            profesie_dominanta = profesie
+        elif profesie['tip'] in tipuri_secundare:
+            profesii_secundare.append(profesie)
+    
+    # Procesați informațiile despre facultăți pentru a le integra în rezultatul final
+    facultati_dominante = profesie_dominanta['facultati']
+    facultati_secundare_1 = profesii_secundare[0]['facultati']
+    facultati_secundare_2 = profesii_secundare[1]['facultati']
+    
+    # Formatți rezultatul într-un dicționar
+    rezultat = {
+        "tip_dominant": tipuri_holland[tip_dominant],
+        "descriere_dominanta": profesie_dominanta['descriere'],
+        "meserii_dominante": profesie_dominanta['meserii'],
+        "facultati_dominante": facultati_dominante,
+        "tip_secundar_1": tipuri_holland[tipuri_secundare[0]],
+        "descriere_secundar_1": profesii_secundare[0]['descriere'],
+        "meserii_secundare_1": profesii_secundare[0]['meserii'],
+        "facultati_secundare_1": facultati_secundare_1,
+        "tip_secundar_2": tipuri_holland[tipuri_secundare[1]],
+        "descriere_secundar_2": profesii_secundare[1]['descriere'],
+        "meserii_secundare_2": profesii_secundare[1]['meserii'],
+        "facultati_secundare_2": facultati_secundare_2,
+    }
+    
+    return {"rezultat_interpretare": rezultat}
+
+class EmailCheckRequest(BaseModel):
+    email: str
+    
+@router.post("/check_email/")
+async def check_email(request: EmailCheckRequest):
+    email_to_check = request.email
+
+    # Conectează-te la baza de date
+    conn = conectare_baza_date()
+
+    try:
+        # Creează un cursor și execută interogarea SQL
+        cursor = conn.cursor()
+        query = "SELECT COUNT(*) FROM Candidat WHERE email = ?"
+        cursor.execute(query, email_to_check)
+
+        # Obține rezultatul interogării
+        result = cursor.fetchone()
+        count = result[0]
+
+        # Închide cursorul și conexiunea
+        cursor.close()
+        conn.close()
+
+        # Verifică dacă emailul există în baza de date
+        if count > 0:
+            return {"exists": True}
+        else:
+            return {"exists": False}
+
+    except Exception as e:
+        # Închide conexiunea în caz de excepție
+        conn.close()
+        raise HTTPException(status_code=500, detail=str(e))

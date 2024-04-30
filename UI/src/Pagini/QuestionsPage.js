@@ -14,23 +14,26 @@ const QuestionsPage = () => {
   const [showEmailValidationButton, setShowEmailValidationButton] = useState(true);
   const [currentQuestionId, setCurrentQuestionId] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8000/questions?page=${currentPage}`);
-        setQuestions(response.data.questions);
-        setTotalPages(response.data.total_pages);
-        if (currentPage !== 1 || emailValidated) {
-          startTimerAutomatically(response.data.questions, responses);
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
 
-    fetchData();
-    
+
+  useEffect(() => {
+    // Verificăm dacă e-mailul a fost validat
+    if (emailValidated) {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8000/questions?page=${currentPage}`);
+          setQuestions(response.data.questions);
+          setTotalPages(response.data.total_pages);
+          startTimerAutomatically(response.data.questions, responses);
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
+  
+      fetchData();
+    }
   }, [currentPage, responses, emailValidated]);
+  
 
   useEffect(() => {
     if (showTimer && timeRemaining > 0) {
@@ -63,22 +66,50 @@ const QuestionsPage = () => {
       setCurrentQuestionId(currentQuestion.id);
     }
   };
+    
+  const checkEmail = async (email) => {
+    try {
+        // Trimite o solicitare POST la endpointul "/check_email/"
+        const response = await axios.post('http://localhost:8000/check_email/', {
+            email: email,
+        });
+
+        // Returnează răspunsul primit de la server
+        return response.data.exists;
+    } catch (error) {
+        console.error('Eroare la verificarea e-mailului:', error);
+        // Poți returna un răspuns de eroare sau gestiona eroarea conform necesităților tale
+        return false;
+    }
+};
+
 
   const handleEmailChange = event => {
     setEmail(event.target.value);
   };
 
-  const handleEmailValidation = () => {
-    setEmailValidated(true);
-    setShowEmailValidationButton(false);
-    const firstQuestion = questions.find(question => question.timer > 0);
-    if (firstQuestion) {
-      const firstQuestionTimer = firstQuestion.timer || 0;
-      setTimeRemaining(firstQuestionTimer);
-      setCurrentQuestionId(firstQuestion.id);
-      setShowTimer(true);
+  const handleEmailValidation = async () => {
+    const exists = await checkEmail(email);
+
+    if (exists) {
+        // Dacă e-mailul există, redirecționează utilizatorul către pagina `/email-exists` cu emailul ca parametru de interogare
+        window.location.href = `/email-exists?email=${encodeURIComponent(email)}`;
+    } else {
+        // Dacă e-mailul nu există, continuă cu întrebările
+        setEmailValidated(true);
+        setShowEmailValidationButton(false);
+
+        // Începe timer-ul pentru prima întrebare dacă există
+        const firstQuestion = questions.find(question => question.timer > 0);
+        if (firstQuestion) {
+            const firstQuestionTimer = firstQuestion.timer || 0;
+            setTimeRemaining(firstQuestionTimer);
+            setCurrentQuestionId(firstQuestion.id);
+            setShowTimer(true);
+        }
     }
-  };
+};
+
 
   const handleResponseChange = (id, response) => {
     const updatedResponses = [...responses];
@@ -141,61 +172,93 @@ const QuestionsPage = () => {
   return (
     <div className="questions-container">
       <h1 className="questions-title">Întrebări</h1>
-      <div className="questions-content">
-        {currentPage === 1 && !emailValidated && (
-          <div className="email-input">
-            <label className="email-label">Email:</label>
-            <input type="email" value={email} onChange={handleEmailChange} className="email-input-field" />
-            {showEmailValidationButton && <button onClick={handleEmailValidation} className="validation-button">Trimite</button>}
-          </div>
-        )}
-        {questions.map((question, index) => (
-          <div key={question.id} className={`question-div-${index}`}>
-            <div className="question-container">
-              <p className={`question-text-${index}`}>{question.text}</p>
-              {question.image_url && <img src={question.image_url} alt={`Imagine asociată întrebării ${index}`} className={`question-image-${index}`} />}
-              {showTimer && timeRemaining > 0 && question.id === currentQuestionId && (
-                <div className="timer-container">
-                  <p className="timer-text">Timp rămas pentru această întrebare: {Math.floor(timeRemaining / 60)} minute și {timeRemaining % 60} secunde</p>
-                </div>
-              )}
-              <div className={`radio-container-${index}`} key={`radio-container-${question.id}`}>
-                {question.responses.map((response, subIndex) => (
-                  <label key={`${question.id}-${response.value}`} className={`response-label-${subIndex}`}>
-                    <input
-                      type="radio"
-                      name={`response-${question.id}`}
-                      value={response.value}
-                      checked={responses.some(item => item.id === question.id && item.response === response.value)}
-                      onChange={() => handleResponseChange(question.id, response.value)}
-                      className={`response-input-${subIndex}`}
-                      disabled={responses.some(item => item.id === question.id)}
-                    />
-                    <span className={`custom-radio-${subIndex}`}></span>
-                    <span className={`response-value-${subIndex}`}>{response.value}</span>
-                    {response.response_image_url && <img src={response.response_image_url} alt={`Imagine asociată răspunsului ${subIndex}`} className={`response-image-${subIndex}`} />}
-                  </label>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="pagination-container">
-        <span className="pagination-text">Pagina {currentPage} din {totalPages}</span>
-        <div className="pagination-buttons">
-          {currentPage !== totalPages && (
-            <button onClick={goToNextPage} className="next-page-button">Pagina următoare</button>
-          )}
-          {currentPage === totalPages && (
-            <div className="submit-container">
-              <button className="submit-button" onClick={handleSubmit}>Trimite și vezi rezultate</button>
-            </div>
+      {currentPage === 1 && !emailValidated && (
+        <div className="email-input">
+          <label className="email-label">Email:</label>
+          <input type="email" value={email} onChange={handleEmailChange} className="email-input-field" />
+          {showEmailValidationButton && (
+            <button onClick={handleEmailValidation} className="validation-button">Trimite</button>
           )}
         </div>
-      </div>
+      )}
+  
+      {/* Afișăm întrebările doar dacă e-mailul a fost validat */}
+      {emailValidated && (
+        <div className="questions-content">
+          {questions.map((question, index) => (
+            <div key={question.id} className={`question-div-${index}`}>
+              <div className="question-container">
+                <p className={`question-text-${index}`}>{question.text}</p>
+                {question.image_url && (
+                  <img
+                    src={question.image_url}
+                    alt={`Imagine asociată întrebării ${index}`}
+                    className={`question-image-${index}`}
+                  />
+                )}
+  
+                {/* Temporizator */}
+                {showTimer && timeRemaining > 0 && question.id === currentQuestionId && (
+                  <div className="timer-container">
+                    <p className="timer-text">
+                      Timp rămas pentru această întrebare: {Math.floor(timeRemaining / 60)} minute și {timeRemaining % 60} secunde
+                    </p>
+                  </div>
+                )}
+  
+                {/* Opțiuni de răspuns */}
+                <div className={`radio-container-${index}`}>
+                  {question.responses.map((response, subIndex) => (
+                    <label key={`${question.id}-${response.value}`} className={`response-label-${subIndex}`}>
+                      <input
+                        type="radio"
+                        name={`response-${question.id}`}
+                        value={response.value}
+                        checked={responses.some(item => item.id === question.id && item.response === response.value)}
+                        onChange={() => handleResponseChange(question.id, response.value)}
+                        className={`response-input-${subIndex}`}
+                        disabled={responses.some(item => item.id === question.id)}
+                      />
+                      <span className={`custom-radio-${subIndex}`}></span>
+                      <span className={`response-value-${subIndex}`}>{response.value}</span>
+                      {response.response_image_url && (
+                        <img
+                          src={response.response_image_url}
+                          alt={`Imagine asociată răspunsului ${subIndex}`}
+                          className={`response-image-${subIndex}`}
+                        />
+                      )}
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+  
+          {/* Paginare */}
+          <div className="pagination-container">
+            <span className="pagination-text">
+              Pagina {currentPage} din {totalPages}
+            </span>
+            <div className="pagination-buttons">
+              {currentPage !== totalPages && (
+                <button onClick={goToNextPage} className="next-page-button">
+                  Pagina următoare
+                </button>
+              )}
+              {currentPage === totalPages && (
+                <div className="submit-container">
+                  <button className="submit-button" onClick={handleSubmit}>
+                    Trimite și vezi rezultate
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
-};
+} 
 
 export default QuestionsPage;

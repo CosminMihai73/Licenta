@@ -1,20 +1,20 @@
 [
     {
         "id": 1,
-        "text": "Să cânți pe o scenă?",
+        "text": "Să cânți pe o scenă? ",
         "text_poza": "",
         "timer": 10,
         "categorie": "artistic",
         "variante_raspuns": {
-            "Nu îmi place": {
+            "Nu îmi place ": {
                 "voturi": 0,
                 "raspuns_poza": ""
             },
-            "Așa și așa": {
+            "Așa și așa ": {
                 "voturi": 1,
                 "raspuns_poza": ""
             },
-            "Îmi place": {
+            "Îmi place ": {
                 "voturi": 2,
                 "raspuns_poza": ""
             }

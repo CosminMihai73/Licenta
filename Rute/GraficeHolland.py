@@ -13,9 +13,9 @@ def calcul_suma_punctaje():
 
         # Execută interogarea pentru a obține toate punctajele
         cursor.execute('SELECT Punctaje FROM Candidat')
-
-        # Extrage toate punctajele din rezultatul interogării
-        punctaje = [json.loads(row[0]) for row in cursor.fetchall()]
+        
+        # Extrageți toate punctajele din rezultatul interogării
+        punctaje = [json.loads(row[0].replace("'", '"')) for row in cursor.fetchall()]
 
         # Inițializăm sumele pentru fiecare categorie
         sume = {
@@ -51,7 +51,7 @@ def calcul_procente():
         cursor.execute('SELECT Punctaje FROM Candidat')
 
         # Extrage toate punctajele din rezultatul interogării
-        punctaje = [json.loads(row[0]) for row in cursor.fetchall()]
+        punctaje = [json.loads(row[0].replace("'", '"')) for row in cursor.fetchall()]
 
         # Inițializăm sumele pentru fiecare categorie
         sume = {
@@ -100,8 +100,8 @@ async def ultimele_modificari():
         # Extrage rezultatele interogării
         modificari = []
         for row in cursor.fetchall():
-            # Deserializare șir JSON pentru punctaje
-            punctaje_json = json.loads(row[2])
+            # Deserializare șir JSON pentru punctaje și corectarea ghilimelelor simple cu duble
+            punctaje_json = json.loads(row[2].replace("'", '"'))
 
             # Construirea unui șir pentru punctaje categorii
             punctaje_str = ", ".join([f"{categorie.capitalize()}: {valoare}" for categorie, valoare in punctaje_json.items()])
@@ -114,13 +114,15 @@ async def ultimele_modificari():
                 "Punctaje Categorii": punctaje_str
             }
 
-            # Adăugarea modificării în lista de modificăriz
+            # Adăugarea modificării în lista de modificări
             modificari.append(modificare)
 
-        # Închide conexiunea
+        # Închideți cursorul și conexiunea
+        cursor.close()
         conn.close()
 
         return {"ultimele_modificari": modificari}
 
     except Exception as e:
+        # Returnați un mesaj de eroare semnificativ în cazul unei excepții
         return {"error": f"Eroare de server: {str(e)}"}

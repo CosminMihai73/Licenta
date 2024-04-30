@@ -8,84 +8,81 @@ router = APIRouter(tags=["UtilizatorI Holland"])
 @router.get("/obitineCandidati/{partial_email}")
 async def get_CandidatPartialEmail(partial_email: str):
     try:
-        # Connect to the database
-        conn = conectare_baza_date()
-        cursor = conn.cursor()
+        # Utilizăm context manager pentru a gestiona conexiunea și cursorul
+        with conectare_baza_date() as conn:
+            cursor = conn.cursor()
 
-        # Execute query
-        query = "SELECT * FROM Candidat WHERE email LIKE ?"
-        # Utilizează '%' pentru a căuta orice potrivire în interiorul adresei de email
-        cursor.execute(query, f"%{partial_email}%")
+            # Interogare SQL cu placeholder pentru a preveni SQL injection
+            query = "SELECT * FROM Candidat WHERE email LIKE ?"
+            cursor.execute(query, (f"%{partial_email}%",))
 
-        # Fetch the rows
-        rows = cursor.fetchall()
+            # Extragem rezultatele interogării
+            rows = cursor.fetchall()
 
-        if not rows:
-            # If no candidate found with the given partial email, raise HTTPException with status code 404
-            raise HTTPException(status_code=404, detail="Niciun candidat nu a fost găsit cu acea parte din email.")
+            if not rows:
+                raise HTTPException(status_code=404, detail="Niciun candidat nu a fost găsit cu acea parte din email.")
 
-        # Convert rows to list of dictionaries
-        candidati = []
-        for row in rows:
-            columns = [desc[0] for desc in cursor.description]
-            candidat = dict(zip(columns, row))
-            # Reorder dictionary to have 'Data_Modificari' first
-            candidat = {'Data_Modificarii': candidat['Data_Modificarii'], **candidat}
-            # Parse 'Punctaje' column
-            punctaje = json.loads(candidat['Punctaje'])
-            candidat['Punctaje'] = punctaje
-            # Parse 'Raspunsuri' column
-            raspunsuri = eval(candidat['Raspunsuri'])
-            candidat['Raspunsuri'] = raspunsuri
-            candidati.append(candidat)
+            # Procesăm datele și corectăm formatul JSON
+            candidati = []
+            for row in rows:
+                columns = [desc[0] for desc in cursor.description]
+                candidat = dict(zip(columns, row))
 
-        # Close cursor and connection
-        cursor.close()
-        conn.close()
+                # Procesăm coloanele JSON și Python
+                punctaje = json.loads(candidat['Punctaje'].replace("'", '"'))
+                candidat['Punctaje'] = punctaje
+                
+                # Asigurați-vă că eval este sigur
+                raspunsuri = eval(candidat['Raspunsuri'])
+                candidat['Raspunsuri'] = raspunsuri
+                
+                # Reordonăm dicționarul
+                candidat = {'Data_Modificarii': candidat['Data_Modificarii'], **candidat}
+                candidati.append(candidat)
 
-        return {"candidati": candidati}
+            return {"candidati": candidati}
 
     except Exception as e:
+        # Returnați eroarea în format clar
         return {"error": str(e)}
 
 @router.get("/obitineCandidati")
 async def get_Candidat():
     try:
-        # Connect to the database
-        conn = conectare_baza_date()
-        cursor = conn.cursor()
+        # Utilizăm context manager pentru conexiunea la baza de date
+        with conectare_baza_date() as conn:
+            cursor = conn.cursor()
 
-        # Execute query
-        query = "SELECT * FROM Candidat"
-        cursor.execute(query)
+            # Executăm interogarea
+            query = "SELECT * FROM Candidat"
+            cursor.execute(query)
 
-        # Fetch all rows
-        rows = cursor.fetchall()
+            # Extragem toate rândurile
+            rows = cursor.fetchall()
 
-        # Get column names
-        columns = [desc[0] for desc in cursor.description]
+            # Procesăm datele
+            candidati = []
+            columns = [desc[0] for desc in cursor.description]
 
-        # Convert rows to dictionaries
-        candidati = []
-        for row in rows:
-            candidat = dict(zip(columns, row))
-            # Reorder dictionary to have 'Data_Modificari' first
-            candidat = {'Data_Modificarii': candidat['Data_Modificarii'], **candidat}
-            # Parse 'Punctaje' column
-            punctaje = json.loads(candidat['Punctaje'])
-            candidat['Punctaje'] = punctaje
-            # Parse 'Raspunsuri' column
-            raspunsuri = eval(candidat['Raspunsuri'])
-            candidat['Raspunsuri'] = raspunsuri
-            candidati.append(candidat)
+            for row in rows:
+                candidat = dict(zip(columns, row))
 
-        # Close cursor and connection
-        cursor.close()
-        conn.close()
+                # Procesăm coloanele JSON și Python
+                punctaje = json.loads(candidat['Punctaje'].replace("'", '"'))
+                candidat['Punctaje'] = punctaje
+                
+                # Evaluați cu grijă `Raspunsuri`
+                raspunsuri = eval(candidat['Raspunsuri'])
+                candidat['Raspunsuri'] = raspunsuri
+                
+                # Reordonăm dicționarul
+                candidat = {'Data_Modificarii': candidat['Data_Modificarii'], **candidat}
+                candidati.append(candidat)
 
-        return {"candidati": candidati}
+            return {"candidati": candidati}
 
     except Exception as e:
+        # Returnați eroarea într-un format clar
         return {"error": str(e)}
 
 

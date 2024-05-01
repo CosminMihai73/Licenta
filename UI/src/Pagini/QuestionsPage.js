@@ -29,33 +29,49 @@ const QuestionsPage = () => {
           console.error('Error:', error);
         }
       };
-  
+
       fetchData();
     }
   }, [currentPage, responses, emailValidated]);
-  
 
-  useEffect(() => {
-    if (showTimer && timeRemaining > 0) {
+
+  // Efect secundar pentru decrementarea timpului și gestionarea întrebărilor
+useEffect(() => {
+  if (showTimer && timeRemaining > 0) {
       const interval = setInterval(() => {
-        setTimeRemaining(prevTime => prevTime - 1);
+          setTimeRemaining(prevTime => prevTime - 1);
       }, 1000);
 
       return () => clearInterval(interval);
-    } else if (showTimer && timeRemaining === 0 && currentQuestionId) {
+  } else if (showTimer && timeRemaining === 0 && currentQuestionId) {
       handleResponseChange(currentQuestionId, '');
-      setCurrentQuestionId(currentQuestionId + 1);
-      const nextQuestion = questions.find(question => question.id === currentQuestionId + 1);
-      if (nextQuestion && nextQuestion.timer > 0) {
-        const nextQuestionTimer = nextQuestion.timer || 0;
-        setTimeRemaining(nextQuestionTimer);
-        setCurrentQuestionId(nextQuestion.id);
-      } else {
-        setShowTimer(false);
+      // Caută următoarea întrebare
+      const currentQuestionIndex = questions.findIndex(question => question.id === currentQuestionId);
+      let nextQuestionIndex = currentQuestionIndex + 1;
+
+      // Caută următoarea întrebare cu timer, începând de la întrebarea următoare
+      while (nextQuestionIndex < questions.length) {
+          const nextQuestion = questions[nextQuestionIndex];
+
+          if (nextQuestion.timer > 0) {
+              // Următoarea întrebare are timer
+              setCurrentQuestionId(nextQuestion.id);
+              setTimeRemaining(nextQuestion.timer);
+              setShowTimer(true);
+              break;
+          } else {
+              // Treci la următoarea întrebare
+              nextQuestionIndex++;
+          }
       }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showTimer, timeRemaining, currentQuestionId, questions]);
+
+      // Dacă nu există alte întrebări cu timer, oprește timerul
+      if (nextQuestionIndex >= questions.length) {
+          setShowTimer(false);
+      }
+  }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [showTimer, timeRemaining, currentQuestionId, questions]);
 
   const startTimerAutomatically = (questionsData, responsesData) => {
     const currentQuestion = questionsData.find(question => !responsesData.some(response => response.id === question.id));
@@ -66,22 +82,22 @@ const QuestionsPage = () => {
       setCurrentQuestionId(currentQuestion.id);
     }
   };
-    
+
   const checkEmail = async (email) => {
     try {
-        // Trimite o solicitare POST la endpointul "/check_email/"
-        const response = await axios.post('http://localhost:8000/check_email/', {
-            email: email,
-        });
+      // Trimite o solicitare POST la endpointul "/check_email/"
+      const response = await axios.post('http://localhost:8000/check_email/', {
+        email: email,
+      });
 
-        // Returnează răspunsul primit de la server
-        return response.data.exists;
+      // Returnează răspunsul primit de la server
+      return response.data.exists;
     } catch (error) {
-        console.error('Eroare la verificarea e-mailului:', error);
-        // Poți returna un răspuns de eroare sau gestiona eroarea conform necesităților tale
-        return false;
+      console.error('Eroare la verificarea e-mailului:', error);
+      // Poți returna un răspuns de eroare sau gestiona eroarea conform necesităților tale
+      return false;
     }
-};
+  };
 
 
   const handleEmailChange = event => {
@@ -92,47 +108,62 @@ const QuestionsPage = () => {
     const exists = await checkEmail(email);
 
     if (exists) {
-        // Dacă e-mailul există, redirecționează utilizatorul către pagina `/email-exists` cu emailul ca parametru de interogare
-        window.location.href = `/email-exists?email=${encodeURIComponent(email)}`;
+      // Dacă e-mailul există, redirecționează utilizatorul către pagina `/email-exists` cu emailul ca parametru de interogare
+      window.location.href = `/email-exists?email=${encodeURIComponent(email)}`;
     } else {
-        // Dacă e-mailul nu există, continuă cu întrebările
-        setEmailValidated(true);
-        setShowEmailValidationButton(false);
+      // Dacă e-mailul nu există, continuă cu întrebările
+      setEmailValidated(true);
+      setShowEmailValidationButton(false);
 
-        // Începe timer-ul pentru prima întrebare dacă există
-        const firstQuestion = questions.find(question => question.timer > 0);
-        if (firstQuestion) {
-            const firstQuestionTimer = firstQuestion.timer || 0;
-            setTimeRemaining(firstQuestionTimer);
-            setCurrentQuestionId(firstQuestion.id);
-            setShowTimer(true);
-        }
+      // Începe timer-ul pentru prima întrebare dacă există
+      const firstQuestion = questions.find(question => question.timer > 0);
+      if (firstQuestion) {
+        const firstQuestionTimer = firstQuestion.timer || 0;
+        setTimeRemaining(firstQuestionTimer);
+        setCurrentQuestionId(firstQuestion.id);
+        setShowTimer(true);
+      }
     }
-};
+  };
 
 
   const handleResponseChange = (id, response) => {
     const updatedResponses = [...responses];
     const existingResponseIndex = updatedResponses.findIndex(item => item.id === id);
+
+    // Actualizează răspunsul curent
     if (existingResponseIndex !== -1) {
-      updatedResponses[existingResponseIndex] = { id, response };
+        updatedResponses[existingResponseIndex] = { id, response };
     } else {
-      updatedResponses.push({ id, response });
+        updatedResponses.push({ id, response });
     }
 
     setResponses(updatedResponses);
 
-    const unansweredQuestions = questions.filter(question => !updatedResponses.some(item => item.id === question.id));
-    const nextQuestion = unansweredQuestions.find(question => question.timer > 0);
-    if (nextQuestion) {
-      const nextQuestionTimer = nextQuestion.timer || 0;
-      setShowTimer(true);
-      setTimeRemaining(nextQuestionTimer);
-      setCurrentQuestionId(nextQuestion.id);
-    } else {
-      setShowTimer(false);
+    // Verifică întrebarea curentă
+    const currentQuestion = questions.find(question => question.id === id);
+
+    if (currentQuestion) {
+        // Dacă întrebarea are un timer și s-a răspuns la ea, oprește timerul
+        if (currentQuestion.timer > 0) {
+            setShowTimer(false);
+        }
     }
-  };
+
+    // Caută următoarea întrebare
+    const nextQuestionIndex = questions.findIndex(question => question.id === id) + 1;
+    if (nextQuestionIndex < questions.length) {
+        const nextQuestion = questions[nextQuestionIndex];
+
+        // Pornește timerul pentru următoarea întrebare dacă există și are timer
+        if (nextQuestion.timer > 0) {
+            setCurrentQuestionId(nextQuestion.id);
+            setTimeRemaining(nextQuestion.timer);
+            setShowTimer(true);
+        }
+    }
+};
+
 
   const goToNextPage = () => {
     setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages));
@@ -181,7 +212,7 @@ const QuestionsPage = () => {
           )}
         </div>
       )}
-  
+
       {/* Afișăm întrebările doar dacă e-mailul a fost validat */}
       {emailValidated && (
         <div className="questions-content">
@@ -196,7 +227,7 @@ const QuestionsPage = () => {
                     className={`question-image-${index}`}
                   />
                 )}
-  
+
                 {/* Temporizator */}
                 {showTimer && timeRemaining > 0 && question.id === currentQuestionId && (
                   <div className="timer-container">
@@ -205,7 +236,7 @@ const QuestionsPage = () => {
                     </p>
                   </div>
                 )}
-  
+
                 {/* Opțiuni de răspuns */}
                 <div className={`radio-container-${index}`}>
                   {question.responses.map((response, subIndex) => (
@@ -234,7 +265,7 @@ const QuestionsPage = () => {
               </div>
             </div>
           ))}
-  
+
           {/* Paginare */}
           <div className="pagination-container">
             <span className="pagination-text">
@@ -259,6 +290,6 @@ const QuestionsPage = () => {
       )}
     </div>
   );
-} 
+}
 
 export default QuestionsPage;

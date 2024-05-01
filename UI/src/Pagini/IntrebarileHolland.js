@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./IntrebariHolland.css";
+
 
 const IntrebariHolland = () => {
   const [intrebari, setIntrebari] = useState([]);

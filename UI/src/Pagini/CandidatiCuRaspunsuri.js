@@ -1,7 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBInput,
+  MDBInputGroup
+} from 'mdb-react-ui-kit';
+
 import { useTable, useSortBy } from 'react-table';
 import axios from 'axios';
-import './CandidatR.css';
+
 
 function CandidatiTable() {
   const [data, setData] = useState([]);
@@ -11,6 +18,7 @@ function CandidatiTable() {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   const fetchData = async () => {
@@ -47,17 +55,7 @@ function CandidatiTable() {
     }
   };
 
-  const handleUpdateCandidat = async (email, candidatNou) => {
-  try {
-    const endpoint = `http://127.0.0.1:8000/actualizareCandidat/${email}`;
-    const response = await axios.put(endpoint, candidatNou);
-    console.log('Candidatul a fost actualizat cu succes:', response.data.message);
-    // Reîncarcă datele după actualizare
-    fetchData();
-  } catch (error) {
-    console.error('Error updating candidat:', error);
-  }
-};
+
 
   const columns = useMemo(
     () => [
@@ -78,10 +76,13 @@ function CandidatiTable() {
       {
         Header: 'Acțiuni',
         Cell: ({ row }) => (
-          <button className="stergere" onClick={() => handleDelete(row.original.email)}>Șterge</button>
+          <MDBBtn rounded color="danger" onClick={() => handleDelete(row.original.email)} className="mt-2">
+            Șterge
+          </MDBBtn>
         ),
       },
     ],
+    // eslint-disable-next-line
     []
   );
 
@@ -106,21 +107,31 @@ function CandidatiTable() {
           <h1 style={{ textAlign: 'center', margin: '0' }}>Tabel Candidati</h1>
         </div>
         <div>
-          <button className="custom-button" onClick={() => window.location.href = '/'}>Homepage</button>
-          <button className="custom-button" onClick={() => window.location.href = '/Grafice'}>Inapoi</button>
+          <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/'}>
+            Homepage
+          </MDBBtn>
+          <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/Grafice'}>
+           Înapoi
+          </MDBBtn>
+
         </div>
       </div>
-      <div style={{ marginBottom: '10px' }}>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Cauta dupa email"
-          className="search-input"
-          style={{ marginRight: '10px' }}
-        />
-        <button className="search-button" onClick={handleSearch}>Cauta</button>
-      </div>
+      <MDBContainer>
+
+        <MDBInputGroup className='mb-3'>
+          <MDBInput className="me-4"
+            label="Caută după email:"
+            id="typeText"
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+
+          />
+          <MDBBtn rounded color="primary" onClick={handleSearch}>
+            Caută
+          </MDBBtn>
+        </MDBInputGroup>
+      </MDBContainer>
       <table {...getTableProps()} style={{ border: '1px solid #ccc', width: '100%', borderCollapse: 'collapse' }}>
         <thead style={{ background: '#f2f2f2' }}>
           {headerGroups.map((headerGroup) => (

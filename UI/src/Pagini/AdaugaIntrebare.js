@@ -1,13 +1,11 @@
-import React, { useState} from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
+import { MDBInput, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody } from 'mdb-react-ui-kit';
 import axios from "axios";
-import "./AdaugaIntrebare.css";
-
 
 const AdaugaIntrebare = () => {
-    const [categorie, setCategorie] = useState("")
     const navigate = useNavigate();
-    const inputRef = React.useRef();
+    const inputRef = useRef();
     const [intrebareNoua, setIntrebareNoua] = useState({
         text: "",
         text_poza: "",
@@ -18,13 +16,12 @@ const AdaugaIntrebare = () => {
     const [nextVariantIndex, setNextVariantIndex] = useState(0);
 
     const handleCategorieChange = (e) => {
-        setCategorie(e.target.value);
+        setIntrebareNoua({ ...intrebareNoua, categorie: e.target.value });
     };
 
     const handleAddNewVariant = () => {
         const updatedVariants = { ...intrebareNoua.variante_raspuns };
-        const newIndex = nextVariantIndex;
-        updatedVariants[newIndex] = { voturi: 0, raspuns_poza: "" };
+        updatedVariants[nextVariantIndex] = { voturi: 0, raspuns_poza: "" };
         setNextVariantIndex(nextVariantIndex + 1);
         setIntrebareNoua({ ...intrebareNoua, variante_raspuns: updatedVariants });
     };
@@ -42,41 +39,28 @@ const AdaugaIntrebare = () => {
                 text: intrebareNoua.text,
                 text_poza: "",
                 timer: intrebareNoua.timer,
-                categorie: categorie,
+                categorie: intrebareNoua.categorie,
                 variante_raspuns: intrebareNoua.variante_raspuns,
             };
 
             console.log("Date trimise:", requestBody);
             await axios.post("http://127.0.0.1:8000/adauga_intrebare/", requestBody);
             alert("Întrebare adăugată cu succes!");
-
-            navigate('/intrebariHolland')
-
+            navigate('/intrebariHolland');
         } catch (error) {
             console.error("Eroare la adăugarea întrebării:", error);
         }
     };
 
     const handleRenameKey = (oldKey, newKey) => {
-        // Asigură-te că cheia este diferită și că noua cheie nu este goală
         if (oldKey !== newKey && newKey.trim() !== "") {
             setIntrebareNoua((prevState) => {
-                // Creează o copie a stării curente
                 const updatedVariants = { ...prevState.variante_raspuns };
-    
-                // Copiază valoarea de la vechea cheie la noua cheie
                 updatedVariants[newKey] = updatedVariants[oldKey];
-                // Șterge vechea cheie
                 delete updatedVariants[oldKey];
-    
-                // Returnează starea actualizată
-                return {
-                    ...prevState,
-                    variante_raspuns: updatedVariants,
-                };
+                return { ...prevState, variante_raspuns: updatedVariants };
             });
-    
-            // Setează focusul pe input după actualizarea stării
+
             setTimeout(() => {
                 if (inputRef.current) {
                     try {
@@ -88,80 +72,104 @@ const AdaugaIntrebare = () => {
             }, 0);
         }
     };
-    
 
     return (
-        <div className="add-container">
-            <h2>Adăugare Întrebare</h2>
-            <div className="input-container">
-                <label>Text întrebare:</label>
-                <input
-                    type="text"
-                    value={intrebareNoua.text}
-                    onChange={(e) => setIntrebareNoua({ ...intrebareNoua, text: e.target.value })}
-                />
-                <label>Timer (secunde):</label>
-                <input
-                    type="number"
-                    value={intrebareNoua.timer}
-                    onChange={(e) => setIntrebareNoua({ ...intrebareNoua, timer: parseInt(e.target.value) || 0 })}
-                />
-                <label>Categorie</label>
-                <select value={categorie} onChange={handleCategorieChange}>
-                    <option value="artistic">Artistic</option>
-                    <option value="convențional">Conventional</option>
-                    <option value="întreprinzător">Întreprinzător</option>
-                    <option value="investigativ">Investigative</option>
-                    <option value="realist">Realist</option>
-                    <option value="social">Social</option>
-                </select>
-                {Object.entries(intrebareNoua.variante_raspuns).map(([key, responseData]) => (
-                    <div key={key}>
-                        <label>Textul răspunsului:</label>
-                        <input
-                            ref={inputRef}
-                            type="text"
-                            value={key}
-                            onChange={(e) => {
-                                const newKey = e.target.value;
-                                handleRenameKey(key, newKey);
-                            }}
-                        />
+        <MDBContainer className="mt-5">
+            <MDBCard>
+                <MDBCardBody>
+                    <h2 className="mb-4 text-center">Adăugare Întrebare</h2>
+                    <MDBRow>
+                        <MDBCol md="6" className="mb-4">
+                            <MDBInput
+                                label="Text întrebare:"
+                                id="typeText"
+                                type="text"
+                                value={intrebareNoua.text}
+                                onChange={(e) => setIntrebareNoua({ ...intrebareNoua, text: e.target.value })}
+                            />
+                            <label>Timer (secunde):</label>
+                            <MDBInput
+                                id="typeNumber"
+                                type="number"
+                                className="mb-4"
+                                value={intrebareNoua.timer}
+                                onChange={(e) => setIntrebareNoua({ ...intrebareNoua, timer: parseInt(e.target.value) || 0 })}
+                            />
 
-                        <label>Valoarea răspunsului:</label>
-                        <input
-                            type="number"
-                            value={responseData.voturi}
-                            onChange={(e) => {
-                                const newVotes = parseInt(e.target.value) || 0;
+                            <div className="mb-3">
+                                <label htmlFor="categorie" className="form-label">Categorie</label>
+                                <select
+                                    id="categorie"
+                                    className="form-select mb-4"
+                                    value={intrebareNoua.categorie}
+                                    onChange={handleCategorieChange}
+                                >
+                                    <option value="" disabled>Selectează categorie</option>
+                                    <option value="artistic">Artistic</option>
+                                    <option value="convențional">Convențional</option>
+                                    <option value="întreprinzător">Întreprinzător</option>
+                                    <option value="investigativ">Investigativ</option>
+                                    <option value="realist">Realist</option>
+                                    <option value="social">Social</option>
+                                </select>
+                            </div>
+                        </MDBCol>
+                        <MDBCol md="6" className="mb-4">
+                            {Object.entries(intrebareNoua.variante_raspuns).map(([key, responseData]) => (
+                                <div key={key} className="mb-3">
+                                    <label>Textul răspunsului</label>
+                                    <MDBInput
+                                        ref={inputRef}
+                                        type="text"
+                                        value={key}
+                                        onChange={(e) => {
+                                            const newKey = e.target.value;
+                                            handleRenameKey(key, newKey);
+                                        }}
+                                        
+                                        className="mb-2"
+                                    />
+                                    <label>Valoarea răspunsului</label>
+                                    <MDBInput
+                                        type="number"
+                                        value={responseData.voturi}
+                                        onChange={(e) => {
+                                            const newVotes = parseInt(e.target.value) || 0;
+                                            setIntrebareNoua((prevState) => ({
+                                                ...prevState,
+                                                variante_raspuns: {
+                                                    ...prevState.variante_raspuns,
+                                                    [key]: {
+                                                        ...responseData,
+                                                        voturi: newVotes,
+                                                    },
+                                                },
+                                            }));
+                                        }}
+                                        className="mb-2"
+                                    />
 
-                                setIntrebareNoua((prevState) => ({
-                                    ...prevState,
-                                    variante_raspuns: {
-                                        ...prevState.variante_raspuns,
-                                        [key]: {
-                                            ...responseData,
-                                            voturi: newVotes,
-                                        },
-                                    },
-                                }));
-                            }}
-                        />
+                                    <MDBBtn rounded color="danger" onClick={() => handleRemoveNewVariant(key)} className="mt-2">
+                                        Elimină
+                                    </MDBBtn>
+                                </div>
+                            ))}
 
-                        <button
-                            className="adaugareinput-btn"
-                            onClick={() => handleRemoveNewVariant(key)}
-                        >
-                            Elimină
-                        </button>
+                            <MDBBtn rounded color="success" onClick={handleAddNewVariant} className="mt-3">
+                                Adaugă variantă de răspuns
+                            </MDBBtn>
+                        </MDBCol>
+                    </MDBRow>
+
+                    <div className="d-flex justify-content-center mt-4">
+                        <MDBBtn rounded color="primary" onClick={adaugaIntrebare}>
+                            Adaugă întrebare
+                        </MDBBtn>
                     </div>
-                ))}
-
-
-                <button className="adaugareinput-btn" onClick={handleAddNewVariant}>Adaugă variantă de răspuns</button>
-                <button className="add-btn" onClick={adaugaIntrebare}>Adaugă întrebare</button>
-            </div>
-        </div>
+                </MDBCardBody>
+            </MDBCard>
+        </MDBContainer>
     );
 };
+
 export default AdaugaIntrebare;

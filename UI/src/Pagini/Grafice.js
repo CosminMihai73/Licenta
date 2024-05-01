@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { PieChart, Pie, Tooltip, Cell, BarChart, Bar, XAxis, YAxis, Tooltip as BarTooltip, Rectangle } from 'recharts';
-import { Link } from "react-router-dom";
-import './Grafice.css';
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardHeader, MDBTable, MDBTableHead, MDBTableBody, MDBBtn } from 'mdb-react-ui-kit';
+import { PieChart, Pie, Cell, Tooltip, BarChart, Bar, XAxis, YAxis, Rectangle } from 'recharts';
+import { Link } from 'react-router-dom';
 
 const Grafice = () => {
+    // Variabile de stare pentru datele grafice și tabel
     const [procente, setProcente] = useState([]);
     const [sumaPunctaje, setSumaPunctaje] = useState([]);
     const [modificari, setModificari] = useState([]);
 
+    // Efect pentru a prelua datele necesare de la API-uri
     useEffect(() => {
+        // Obținere date pentru grafice și tabel
         axios.get('http://127.0.0.1:8000/procente')
             .then(response => {
                 setProcente(response.data.procente);
@@ -41,7 +44,8 @@ const Grafice = () => {
             });
     }, []);
 
-    const getCategoryColor = categorie => {
+    // Funcții auxiliare
+    const getCategoryColor = (categorie) => {
         const colors = {
             "artistic": '#8884d8',
             "convențional": '#82ca9d',
@@ -57,85 +61,115 @@ const Grafice = () => {
         return word.charAt(0).toUpperCase() + word.slice(1);
     };
 
+    // Structura componentelor grafice
     return (
-        <div className="grafice-container">
-            <div className="grafice-section">
-                <h2>Categoriile exprimate în Procente</h2>
-                <PieChart width={500} height={500}>
-                    <Pie
-                        data={Object.entries(procente).map(([categorie, valoare]) => ({
-                            name: capitalizeFirstLetter(categorie),
-                            value: parseFloat(valoare),
-                            fill: getCategoryColor(categorie)
-                        }))}
-                        dataKey="value"
-                        nameKey="name"
-                        cx="50%"
-                        cy="50%"
-                        outerRadius={200}
-                        label={({percent}) => `${(percent * 100).toFixed(2)}%`}
-                        labelLine={false}
-                    >
-                        {Object.entries(procente).map(([categorie], index) => (
-                            <Cell key={`cell-${index}`} fill={getCategoryColor(categorie)}/>
-                        ))}
-                    </Pie>
-                    <Tooltip formatter={(value) => `${value}%`}/>
-                </PieChart>
+        <MDBContainer className="mt-4">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                <div>
+                    <h1 style={{ textAlign: 'center', margin: '0' }}>Panoul de control al chestionarului Holland</h1>
+                </div>
+                <div>
+                    <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/'}>
+                        Homepage
+                    </MDBBtn>
+                    <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/Grafice'}>
+                        Înapoi
+                    </MDBBtn>
+
+                </div>
             </div>
-            <div className="grafice-section">
-                <h2>Suma Categoriilor</h2>
-                <BarChart width={800} height={500} data={sumaPunctaje}>
-                    <XAxis dataKey="categorie" interval={0} angle={-45} textAnchor="end" height={120}/>
-                    <YAxis/>
-                    <Bar dataKey="suma" fill={(data) => data.fill}>
-                        {sumaPunctaje.map((entry, index) => (
-                            <Rectangle key={`rectangle-${index}`} x={entry.categorie} y={0} width={50} height={400}
-                                       fill="#fff" stroke="#8884d8" strokeWidth={1}/>
-                        ))}
-                    </Bar>
-                    <BarTooltip/>
-                </BarChart>
-            </div>
-            <div className="grafice-section table-container">
-                <h2>Cele mai noi raspunsuri</h2>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Id Candidat</th>
-                        <th>Email</th>
-                        <th>Punctaje Categorii</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {modificari.map((modificare, index) => (
-                        <tr key={index}>
-                            <td>{modificare.Data}</td>
-                            <td>{modificare.IdCandidat}</td>
-                            <td>{modificare.Email}</td>
-                            <td>{modificare["Punctaje Categorii"]}</td>
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
-            </div>
-            <div className="button-container">
-                <Link to="/" className="link-button">Înapoi la Pagina Principală</Link>
-            </div>
-            <div className="button-container">
-                <Link to="/CRaspunsuri" className="link-button">Raspunsuri Candidati</Link>
-            </div>
-            <div className="button-container">
-                <Link to="/intrebariHolland" className="link-button">Intrebari chestionar Holland</Link>
-            </div>
-            <div className="button-container">
-                <Link to="/pozeHolland" className="link-button">Poze chestionar Holland</Link>
-            </div>
-            <div className="button-container">
-                <Link to="/paginareH" className="link-button">Paginre chestionar Holland</Link>
-            </div>
-        </div>
+            {/* Secțiune de grafice */}
+            <MDBRow>
+                <MDBCol md="6">
+                    {/* Card pentru graficul pie */}
+                    <MDBCard>
+                        <MDBCardHeader>Categoriile exprimate în Procente</MDBCardHeader>
+                        <MDBCardBody>
+                            <PieChart width={500} height={400}>
+                                <Pie
+                                    data={Object.entries(procente).map(([categorie, valoare]) => ({
+                                        name: capitalizeFirstLetter(categorie),
+                                        value: parseFloat(valoare),
+                                        fill: getCategoryColor(categorie)
+                                    }))}
+                                    dataKey="value"
+                                    nameKey="name"
+                                    cx="50%"
+                                    cy="50%"
+                                    outerRadius={200}
+                                    label={({ percent }) => `${(percent * 100).toFixed(2)}%`}
+                                    labelLine={false}
+                                >
+                                    {Object.entries(procente).map(([categorie], index) => (
+                                        <Cell key={`cell-${index}`} fill={getCategoryColor(categorie)} />
+                                    ))}
+                                </Pie>
+                                <Tooltip formatter={(value) => `${value}%`} />
+                            </PieChart>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
+                <MDBCol md="6">
+                    {/* Card pentru graficul bar */}
+                    <MDBCard>
+                        <MDBCardHeader>Suma Categoriilor</MDBCardHeader>
+                        <MDBCardBody>
+                            <BarChart width={500} height={400} data={sumaPunctaje}>
+                                <XAxis dataKey="categorie" />
+                                <YAxis />
+                                <Bar dataKey="suma" fill={(data) => data.fill}>
+                                    {sumaPunctaje.map((entry, index) => (
+                                        <Rectangle key={`rectangle-${index}`} x={entry.categorie} y={0} width={50} height={400}
+                                            fill="#fff" stroke="#8884d8" strokeWidth={1} />
+                                    ))}
+                                </Bar>
+                                <Tooltip />
+                            </BarChart>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
+            </MDBRow>
+
+            {/* Secțiune pentru tabel */}
+            <MDBRow className="mt-4">
+                <MDBCol>
+                    <MDBCard>
+                        <MDBCardHeader>Cele mai noi răspunsuri</MDBCardHeader>
+                        <MDBCardBody>
+                            <MDBTable>
+                                <MDBTableHead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Id Candidat</th>
+                                        <th>Email</th>
+                                        <th>Punctaje Categorii</th>
+                                    </tr>
+                                </MDBTableHead>
+                                <MDBTableBody>
+                                    {modificari.map((modificare, index) => (
+                                        <tr key={index}>
+                                            <td>{modificare.Data}</td>
+                                            <td>{modificare.IdCandidat}</td>
+                                            <td>{modificare.Email}</td>
+                                            <td>{modificare["Punctaje Categorii"]}</td>
+                                        </tr>
+                                    ))}
+                                </MDBTableBody>
+                            </MDBTable>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
+            </MDBRow>
+
+            {/* Butoane pentru navigare */}
+            <MDBRow className="mt-4">
+                <MDBCol>
+                    <Link to="/CRaspunsuri" class="btn btn-primary btn-rounded">Răspunsuri Candidați</Link>
+                    <Link to="/intrebariHolland" class="btn btn-primary btn-rounded">Întrebări chestionar Holland</Link>
+                    <Link to="/paginareH" class="btn btn-primary btn-rounded">Paginare chestionar Holland</Link>
+                </MDBCol>
+            </MDBRow>
+        </MDBContainer>
     );
 };
 

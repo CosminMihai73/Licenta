@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { MDBContainer, MDBRow, MDBCol, MDBSpinner, MDBTypography, MDBBtn, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText } from 'mdb-react-ui-kit';
 import axios from 'axios';
+
 
 const EmailExistsPage = () => {
     const [interpretationResult, setInterpretationResult] = useState(null);
@@ -34,62 +36,82 @@ const EmailExistsPage = () => {
         }
     }, []);
 
-    if (loading) {
-        return <div>Se încarcă rezultatele...</div>;
-    }
-
-    if (error) {
-        return <div>O eroare a apărut: {error.message}</div>;
-    }
-
-    if (!interpretationResult) {
-        return <div>Rezultatele nu sunt disponibile.</div>;
-    }
-
-    const data = interpretationResult;
-
     return (
-        <div>
-            {data ? (
+        <MDBContainer>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
                 <div>
-                    <h2>{data.tip_dominant}</h2>
-                    <p>Descrierea categoriei: {data.descriere_dominanta}</p>
-                    <p>Meserii recomandate: {data.meserii_dominante.join(', ')}</p>
-                    <p>Facultăți recomandate:</p>
-                    {data.facultati_dominante.map((facultate, index) => (
-                        <div key={index}>
-                            <a href={facultate.link}>{facultate.nume}</a>
-                            <br />
-                        </div>
-                    ))}
-                    
-                    <h2>{data.tip_secundar_1}</h2>
-                    <p>Descrierea categoriei: {data.descriere_secundar_1}</p>
-                    <p>Meserii recomandate: {data.meserii_secundare_1.join(', ')}</p>
-                    <p>Facultăți recomandate:</p>
-                    {data.facultati_secundare_1.map((facultate, index) => (
-                        <div key={index}>
-                            <a href={facultate.link}>{facultate.nume}</a>
-                            <br />
-                        </div>
-                    ))}
-                    
-                    <h2>{data.tip_secundar_2}</h2>
-                    <p>Descrierea categoriei: {data.descriere_secundar_2}</p>
-                    <p>Meserii recomandate: {data.meserii_secundare_2.join(', ')}</p>
-                    <p>Facultăți recomandate:</p>
-                    {data.facultati_secundare_2.map((facultate, index) => (
-                        <div key={index}>
-                            <a href={facultate.link}>{facultate.nume}</a>
-                            <br />
-                        </div>
-                    ))}
-                    <p>Pentru întrebări legate de chestionar, vă rugăm să ne contactați la adresa: <a href="mailto:consiliere@unitbv.ro">consiliere@unitbv.ro</a></p>
+                    <h1 style={{ textAlign: 'center', margin: '0' }}>Rezultatul chestionarului Holland</h1>
                 </div>
-            ) : (
-                <p>Loading...</p>
+                <div>
+                    <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/'}>
+                        Homepage
+                    </MDBBtn>
+                    <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/Grafice'}>
+                        Înapoi
+                    </MDBBtn>
+
+                </div>
+            </div>
+            {loading && <MDBSpinner className="mt-5" />}
+            {error && (
+                <MDBRow className="mt-5">
+                    <MDBCol>
+                        <MDBTypography tag="div" className="text-danger">
+                            O eroare a apărut: {error.message}
+                        </MDBTypography>
+                    </MDBCol>
+                </MDBRow>
             )}
-        </div>
+            {interpretationResult && (
+                <MDBRow className="mt-5">
+                    <MDBCol>
+                        <MDBCard className="mb-4">
+                            <MDBCardBody>
+                                <MDBCardTitle>{interpretationResult.tip_dominant}</MDBCardTitle>
+                                <MDBCardText>Descrierea categoriei: {interpretationResult.descriere_dominanta}</MDBCardText>
+                                <MDBCardText>Meserii recomandate: {interpretationResult.meserii_dominante.join(', ')}</MDBCardText>
+                                <MDBCardText>Facultăți recomandate:</MDBCardText>
+                                {interpretationResult.facultati_dominante.map((facultate, index) => (
+                                    <MDBTypography key={index} tag="div">
+                                        <a href={facultate.link}>{facultate.nume}</a>
+                                    </MDBTypography>
+                                ))}
+                            </MDBCardBody>
+                        </MDBCard>
+                        {/* Puteți continua pentru tipurile secundare */}
+                        <MDBCard className="mb-4">
+                            <MDBCardBody>
+                                <MDBCardTitle>{interpretationResult.tip_secundar_1}</MDBCardTitle>
+                                <MDBCardText>Descrierea categoriei: {interpretationResult.descriere_secundar_1}</MDBCardText>
+                                <MDBCardText>Meserii recomandate: {interpretationResult.meserii_secundare_1.join(', ')}</MDBCardText>
+                                <MDBCardText>Facultăți recomandate:</MDBCardText>
+                                {interpretationResult.facultati_secundare_1.map((facultate, index) => (
+                                    <MDBTypography key={index} tag="div">
+                                        <a href={facultate.link}>{facultate.nume}</a>
+                                    </MDBTypography>
+                                ))}
+                            </MDBCardBody>
+                        </MDBCard>
+                        <MDBCard className="mb-4">
+                            <MDBCardBody>
+                                <MDBCardTitle>{interpretationResult.tip_secundar_2}</MDBCardTitle>
+                                <MDBCardText>Descrierea categoriei: {interpretationResult.descriere_secundar_2}</MDBCardText>
+                                <MDBCardText>Meserii recomandate: {interpretationResult.meserii_secundare_2.join(', ')}</MDBCardText>
+                                <MDBCardText>Facultăți recomandate:</MDBCardText>
+                                {interpretationResult.facultati_secundare_2.map((facultate, index) => (
+                                    <MDBTypography key={index} tag="div">
+                                        <a href={facultate.link}>{facultate.nume}</a>
+                                    </MDBTypography>
+                                ))}
+                            </MDBCardBody>
+                        </MDBCard>
+                        <MDBTypography tag="div">
+                            Pentru întrebări legate de chestionar, vă rugăm să ne contactați la adresa: <a href="mailto:consiliere@unitbv.ro">consiliere@unitbv.ro</a>
+                        </MDBTypography>
+                    </MDBCol>
+                </MDBRow>
+            )}
+        </MDBContainer>
     );
 };
 

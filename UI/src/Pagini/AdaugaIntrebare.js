@@ -75,9 +75,22 @@ const AdaugaIntrebare = () => {
 
     return (
         <MDBContainer className="mt-5">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                <div>
+                    <h1 style={{ textAlign: 'center', margin: '0' }}>Adăugare Întrebare</h1>
+                </div>
+                <div>
+                    <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/'}>
+                        Homepage
+                    </MDBBtn>
+                    <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/IntrebariHolland'}>
+                        Înapoi
+                    </MDBBtn>
+
+                </div>
+            </div>
             <MDBCard>
                 <MDBCardBody>
-                    <h2 className="mb-4 text-center">Adăugare Întrebare</h2>
                     <MDBRow>
                         <MDBCol md="6" className="mb-4">
                             <MDBInput
@@ -126,7 +139,7 @@ const AdaugaIntrebare = () => {
                                             const newKey = e.target.value;
                                             handleRenameKey(key, newKey);
                                         }}
-                                        
+
                                         className="mb-2"
                                     />
                                     <label>Valoarea răspunsului</label>

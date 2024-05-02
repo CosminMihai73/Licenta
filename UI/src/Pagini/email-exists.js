@@ -46,9 +46,6 @@ const EmailExistsPage = () => {
                     <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/'}>
                         Homepage
                     </MDBBtn>
-                    <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/Grafice'}>
-                        Înapoi
-                    </MDBBtn>
 
                 </div>
             </div>

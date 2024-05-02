@@ -2518,22 +2518,5 @@
                 "raspuns_poza": ""
             }
         }
-    },
-    {
-        "id": 121,
-        "text": "TEST",
-        "text_poza": "",
-        "timer": 5,
-        "categorie": "realist",
-        "variante_raspuns": {
-            "ASA": {
-                "voturi": 0,
-                "raspuns_poza": ""
-            },
-            "SAAAS": {
-                "voturi": 0,
-                "raspuns_poza": ""
-            }
-        }
     }
 ]

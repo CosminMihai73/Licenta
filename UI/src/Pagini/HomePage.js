@@ -14,12 +14,6 @@ const HomePage = () => {
           <button className="start-button">Start</button>
         </Link>
         <div className="button-container">
-          <Link to="/informatii">
-            <button className="info-button">Informații</button>
-          </Link>
-           <Link to="/IntrebariTest">
-            <button className="info-button">Teste</button>
-          </Link>
           <Link to="/Grafice">
             <button className="info-button">Rapoarte</button>
           </Link>

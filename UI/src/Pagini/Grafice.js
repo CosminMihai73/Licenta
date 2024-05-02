@@ -72,15 +72,13 @@ const Grafice = () => {
                     <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/'}>
                         Homepage
                     </MDBBtn>
-                    <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/Grafice'}>
-                        Înapoi
-                    </MDBBtn>
+
 
                 </div>
             </div>
             {/* Secțiune de grafice */}
             <MDBRow>
-                <MDBCol md="6">
+                <MDBCol md="5">
                     {/* Card pentru graficul pie */}
                     <MDBCard>
                         <MDBCardHeader>Categoriile exprimate în Procente</MDBCardHeader>
@@ -96,7 +94,7 @@ const Grafice = () => {
                                     nameKey="name"
                                     cx="50%"
                                     cy="50%"
-                                    outerRadius={200}
+                                    outerRadius={150}
                                     label={({ percent }) => `${(percent * 100).toFixed(2)}%`}
                                     labelLine={false}
                                 >
@@ -109,12 +107,12 @@ const Grafice = () => {
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
-                <MDBCol md="6">
+                <MDBCol md="7">
                     {/* Card pentru graficul bar */}
                     <MDBCard>
                         <MDBCardHeader>Suma Categoriilor</MDBCardHeader>
                         <MDBCardBody>
-                            <BarChart width={500} height={400} data={sumaPunctaje}>
+                            <BarChart width={635} height={400} data={sumaPunctaje}>
                                 <XAxis dataKey="categorie" />
                                 <YAxis />
                                 <Bar dataKey="suma" fill={(data) => data.fill}>

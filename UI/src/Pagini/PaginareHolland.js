@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBInput,
+  MDBListGroup,
+  MDBListGroupItem,
+  MDBIcon,
+  MDBCol,
+  MDBRow
+} from 'mdb-react-ui-kit';
 
 const PaginaHolland = () => {
   const [paginiHolland, setPaginiHolland] = useState(null);
@@ -9,7 +21,7 @@ const PaginaHolland = () => {
   const [intrebareNoua, setIntrebareNoua] = useState('');
   const [adaugareIntrebareLoading, setAdaugareIntrebareLoading] = useState(false);
   const [adaugareRegulaLoading, setAdaugareRegulaLoading] = useState(false);
-  const [modificareRegulaIndex, setModificareRegulaIndex] = useState(null); 
+  const [modificareRegulaIndex, setModificareRegulaIndex] = useState(null);
   const [modificareIntrebariRegula, setModificareIntrebariRegula] = useState(null);
 
   useEffect(() => {
@@ -75,7 +87,7 @@ const PaginaHolland = () => {
     } catch (error) {
       setError(' ');
     } finally {
-      setModificareRegulaIndex(null); 
+      setModificareRegulaIndex(null);
     }
   };
 
@@ -83,7 +95,9 @@ const PaginaHolland = () => {
     try {
       await axios.delete(`http://127.0.0.1:8000/sterge_intrebare_pagina/${numeRegula}/${numarIntrebare}`);
       const updatedData = { ...paginiHolland };
-      updatedData[numeRegula].intrebari_pe_pagina = updatedData[numeRegula].intrebari_pe_pagina.filter(intrebare => intrebare !== numarIntrebare);
+      updatedData[numeRegula].intrebari_pe_pagina = updatedData[numeRegula].intrebari_pe_pagina.filter(
+        (intrebare) => intrebare !== numarIntrebare
+      );
       setPaginiHolland(updatedData);
     } catch (error) {
       setError('Nu s-a putut șterge întrebarea de pe pagină.');
@@ -97,63 +111,145 @@ const PaginaHolland = () => {
   };
 
   return (
-    <div className="pagina-holland">
-      <button className="custom-button" onClick={() => window.location.href = '/'}>Homepage</button>
-      <button className="custom-button" onClick={() => window.location.href = '/Grafice'}>Inapoi</button>
-      <h1>Pagini Holland</h1>
-      <button className="btn-adauga-regula" onClick={adaugaRegulaPagina} disabled={adaugareRegulaLoading}>Adaugă Regulă Pagină</button>
-      {error && <p className="error-message">{error}</p>}
+    <MDBContainer className="pagina-holland mt-4">
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+        <div>
+          <h1 style={{ textAlign: 'center', margin: '0' }}>Paginarea chestionarului Holland</h1>
+        </div>
+        <div>
+          <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/'}>
+            Homepage
+          </MDBBtn>
+          <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/Grafice'}>
+           Înapoi
+          </MDBBtn>
+
+        </div>
+      </div>
+      
+      {/* Container pentru adăugarea unei reguli de pagină */}
+      <MDBRow>
+        <MDBCol md="6" className="mx-auto mb-4">
+          <MDBCard>
+            <MDBCardBody className="text-center">
+              <h5>Adaugă Regulă Pagină</h5>
+              <MDBBtn 
+                color="primary" 
+                onClick={adaugaRegulaPagina} 
+                disabled={adaugareRegulaLoading} 
+                style={{ marginTop: '10px', width: '100%' }}
+              >
+                <MDBIcon icon="plus" className="me-2" />
+                Adaugă Regulă
+              </MDBBtn>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+
+      {error && <p className="text-danger text-center">{error}</p>}
+      
       {paginiHolland && (
-        <ul className="lista-pagini">
+        <MDBRow>
           {Object.keys(paginiHolland).map((paginaKey, index) => (
-            <li key={index} className="pagina-item">
-              <h2>{numePersonalizatPagina(paginaKey)}</h2>
-              <button className="btn-adauga-intrebare" onClick={() => setAdaugareIntrebareIndex(index)}>Adaugă Întrebare</button>
-              <button className="btn-sterge-regula" onClick={() => stergeRegulaPagina(paginaKey)}>Șterge Regulă</button>
-              <button className="btn-modifica-intrebare" onClick={() => {
-                setModificareRegulaIndex(index);
-                setModificareIntrebariRegula(paginiHolland[paginaKey].intrebari_pe_pagina);
-              }}>Modificare întrebare</button>
-              <div className="intrebari-lista">
-                Intrebarile:
-                <ul className="lista-intrebari">
-                  {modificareRegulaIndex !== index && paginiHolland[paginaKey].intrebari_pe_pagina.map((intrebare, intrebareIndex) => (
-                    <li key={intrebareIndex} className="intrebare-item">{intrebare}</li>
-                  ))}
-                </ul>
-              </div>
-              {adaugareIntrebareIndex === index && (
-                <div className="adauga-intrebare">
-                  <input type="number" value={intrebareNoua} onChange={e => setIntrebareNoua(e.target.value)} />
-                  <button className="btn-adauga" onClick={() => adaugaIntrebarePagina(paginaKey)} disabled={adaugareIntrebareLoading}>Adaugă</button>
-                  <button className="btn-close" onClick={() => setAdaugareIntrebareIndex(null)}>X</button>
-                </div>
-              )}
-              {modificareRegulaIndex === index && (
-                <div className="modifica-intrebare">
-                  <ul className="lista-intrebari">
-                    {modificareIntrebariRegula.map((intrebare, intrebareIndex) => (
-                      <li key={intrebareIndex} className="intrebare-item">
-                        <div className="intrebare-container">
-                          <input type="number" value={intrebare} onChange={e => {
-                            const updatedIntrebari = [...modificareIntrebariRegula];
-                            updatedIntrebari[intrebareIndex] = e.target.value;
-                            setModificareIntrebariRegula(updatedIntrebari);
-                          }} />
-                          <button className="btn-save" onClick={() => modificaIntrebarePagina(paginaKey, intrebareIndex, modificareIntrebariRegula[intrebareIndex])}>Salvează</button>
-                          <button className="btn-close" onClick={() => setModificareRegulaIndex(null)}>X</button>
-                        </div>
-                        <button className="btn-sterge-intrebare" onClick={() => stergeIntrebarePagina(paginaKey, intrebare)}>Șterge Întrebare</button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </li>
+            <MDBCol md="6" key={index}>
+              <MDBCard className="mb-4">
+                <MDBCardBody>
+                  <MDBCardTitle>{numePersonalizatPagina(paginaKey)}</MDBCardTitle>
+                  <MDBRow>
+                    <MDBCol className="d-flex flex-wrap justify-content-center gap-2">
+                      <MDBBtn color="success" onClick={() => setAdaugareIntrebareIndex(index)}>
+                        Adaugă Întrebare
+                      </MDBBtn>
+                      <MDBBtn color="danger" onClick={() => stergeRegulaPagina(paginaKey)}>
+                        Șterge Regulă
+                      </MDBBtn>
+                      <MDBBtn color="info" onClick={() => {
+                        setModificareRegulaIndex(index);
+                        setModificareIntrebariRegula(paginiHolland[paginaKey].intrebari_pe_pagina);
+                      }}>
+                        Modificare Întrebare
+                      </MDBBtn>
+                    </MDBCol>
+                  </MDBRow>
+
+                  <div className="intrebari-lista mt-3">
+                    <p>Întrebările:</p>
+                    <MDBListGroup>
+                      {modificareRegulaIndex !== index && paginiHolland[paginaKey].intrebari_pe_pagina.map((intrebare, intrebareIndex) => (
+                        <MDBListGroupItem key={intrebareIndex}>{intrebare}</MDBListGroupItem>
+                      ))}
+                    </MDBListGroup>
+                  </div>
+                  
+                  {adaugareIntrebareIndex === index && (
+                    <div className="adauga-intrebare mt-3">
+                      <MDBInput
+                        type="number"
+                        value={intrebareNoua}
+                        onChange={(e) => setIntrebareNoua(e.target.value)}
+                        label="Întrebare Nouă"
+                      />
+                      <MDBRow>
+                        <MDBCol>
+                          <MDBBtn color="primary" onClick={() => adaugaIntrebarePagina(paginaKey)} disabled={adaugareIntrebareLoading}>
+                            Adaugă
+                          </MDBBtn>
+                        </MDBCol>
+                        <MDBCol>
+                          <MDBBtn color="secondary" onClick={() => setAdaugareIntrebareIndex(null)}>
+                            <MDBIcon icon="times" />
+                          </MDBBtn>
+                        </MDBCol>
+                      </MDBRow>
+                    </div>
+                  )}
+
+                  {modificareRegulaIndex === index && (
+                    <div className="modifica-intrebare mt-3">
+                      <MDBListGroup>
+                        {modificareIntrebariRegula.map((intrebare, intrebareIndex) => (
+                          <MDBListGroupItem key={intrebareIndex} className="d-flex align-items-center">
+                            <MDBInput
+                              type="number"
+                              value={intrebare}
+                              onChange={(e) => {
+                                const updatedIntrebari = [...modificareIntrebariRegula];
+                                updatedIntrebari[intrebareIndex] = e.target.value;
+                                setModificareIntrebariRegula(updatedIntrebari);
+                              }}
+                              label={`Întrebare ${intrebareIndex + 1}`}
+                            />
+                            <MDBRow className="ms-auto">
+                              <MDBCol>
+                                <MDBBtn color="success" onClick={() => modificaIntrebarePagina(paginaKey, intrebareIndex, modificareIntrebariRegula[intrebareIndex])}>
+                                  Salvează
+                                </MDBBtn>
+                              </MDBCol>
+                              <MDBCol>
+                                <MDBBtn color="secondary" onClick={() => setModificareRegulaIndex(null)}>
+                                  <MDBIcon icon="times" />
+                                </MDBBtn>
+                              </MDBCol>
+                              <MDBCol>
+                                <MDBBtn color="danger" onClick={() => stergeIntrebarePagina(paginaKey, intrebare)}>
+                                  Șterge Întrebare
+                                </MDBBtn>
+                              </MDBCol>
+                            </MDBRow>
+                          </MDBListGroupItem>
+                        ))}
+                      </MDBListGroup>
+                    </div>
+                  )}
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
           ))}
-        </ul>
+        </MDBRow>
       )}
-    </div>
+    </MDBContainer>
   );
-}
+};
+
 export default PaginaHolland;

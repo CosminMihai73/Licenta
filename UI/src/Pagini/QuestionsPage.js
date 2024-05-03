@@ -10,9 +10,6 @@ import {
   MDBInput,
   MDBContainer,
   MDBRadio,
-  MDBPagination,
-  MDBPaginationLink,
-  MDBPaginationItem,
   MDBRow, MDBCol
 } from 'mdb-react-ui-kit';
 
@@ -328,16 +325,27 @@ const QuestionsPage = () => {
                   {/* Opțiuni de răspuns */}
                   <div className="mb-3">
                     {question.responses.map((response, subIndex) => (
-                      <MDBRadio
-                        key={`${question.id}-${response.value}`}
-                        id={`${question.id}-${response.value}`}
-                        name={`response-${question.id}`}
-                        label={response.value}
-                        value={response.value}
-                        checked={responses.some(item => item.id === question.id && item.response === response.value)}
-                        onChange={() => handleResponseChange(question.id, response.value)}
-                        disabled={responses.some(item => item.id === question.id)}
-                      />
+                      <div key={`${question.id}-${response.value}`}>
+                        {/* Radio button */}
+                        <MDBRadio
+                          id={`${question.id}-${response.value}`}
+                          name={`response-${question.id}`}
+                          label={response.value}
+                          value={response.value}
+                          checked={responses.some(item => item.id === question.id && item.response === response.value)}
+                          onChange={() => handleResponseChange(question.id, response.value)}
+                          disabled={responses.some(item => item.id === question.id)}
+                        />
+
+                        {/* Imagine asociată răspunsului */}
+                        {response.response_image_url && (
+                          <img
+                            src={response.response_image_url}
+                            alt={`Imagine asociată răspunsului ${subIndex}`}
+                            className={`response-image-${subIndex}`}
+                          />
+                        )}
+                      </div>
                     ))}
                   </div>
                 </MDBCardBody>
@@ -347,28 +355,36 @@ const QuestionsPage = () => {
 
           {/* Paginare și trimitere răspunsuri */}
           <MDBCol md="12" className="text-center">
-            <MDBPagination className="justify-content-center mb-4">
-              <MDBPaginationItem>
-                <MDBPaginationLink disabled>{`Pagina ${currentPage} din ${totalPages}`}</MDBPaginationLink>
-              </MDBPaginationItem>
-              {currentPage < totalPages && (
-                <MDBPaginationItem>
-                  <MDBBtn color="primary" onClick={goToNextPage} disabled={!allQuestionsAnsweredOrTimerExpired}>
+            <div className="pagination-container">
+              <span className="pagination-text">
+                Pagina {currentPage} din {totalPages}
+              </span>
+              <div className="pagination-buttons">
+                {currentPage !== totalPages && (
+                  <MDBBtn onClick={goToNextPage} className="primary">
                     Pagina următoare
                   </MDBBtn>
-                </MDBPaginationItem>
-              )}
-            </MDBPagination>
+                )}
+                {currentPage === totalPages && (
+                  <div className="submit-container">
+                    <button className="submit-button" onClick={handleSubmit}>
+                      Trimite și vezi rezultate
+                    </button>
+                  </div>
+                )}
+              </div>
 
-            {currentPage === totalPages && (
-              <MDBBtn
-                color="primary"
-                disabled={!allQuestionsAnsweredOrTimerExpired}
-                onClick={handleSubmit}
-              >
-                Trimite răspunsurile
-              </MDBBtn>
-            )}
+              {currentPage === totalPages && (
+                <MDBBtn
+                  color="primary"
+                  disabled={!allQuestionsAnsweredOrTimerExpired}
+                  onClick={handleSubmit}
+                >
+                  Trimite răspunsurile
+                </MDBBtn>
+              )}
+
+            </div>
           </MDBCol>
         </MDBRow>
       )}

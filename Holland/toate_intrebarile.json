@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
-        "text": "Să cânți pe o scenă? ",
+        "text": "Să cânți pe o scenă?",
         "text_poza": "",
-        "timer": 0,
+        "timer": 60,
         "categorie": "artistic",
         "variante_raspuns": {
             "Nu îmi place ": {

@@ -431,6 +431,7 @@ const IntrebariHolland = () => {
 
                 {Object.keys(updatedVarianteRaspuns).map((variantKey) => (
                   <div key={variantKey}>
+                    <br></br>
                     <MDBInput
                       label="Variantă răspuns"
                       type="text"
@@ -461,7 +462,7 @@ const IntrebariHolland = () => {
                     />
                     Voturi
                     <MDBInput
-                     
+
                       type="number"
                       value={updatedVarianteRaspuns[variantKey].voturi}
                       onChange={(e) => setUpdatedVarianteRaspuns({
@@ -473,15 +474,6 @@ const IntrebariHolland = () => {
                       })}
                       className="mb-3"
                     />
-                    <MDBBtn
-                      color="danger"
-                      size="sm"
-                      onClick={() => stergereVariantaRaspuns(variantKey)}
-                      className="mb-2"
-                    >
-                      Șterge varianta de răspuns
-                    </MDBBtn>
-                      <br></br>
                     {!updatedVarianteRaspuns[variantKey].raspuns_poza && (
                       <MDBFile
                         label="Încărcați o imagine pentru varianta de răspuns"
@@ -492,13 +484,23 @@ const IntrebariHolland = () => {
                             ...updatedVarianteRaspuns,
                             [variantKey]: {
                               ...updatedVarianteRaspuns[variantKey],
-                              file: file, // Adaugă fișierul selectat la varianta de răspuns
+                              file: file, 
                             },
                           });
                         }}
                         className="mb-3"
                       />
                     )}
+                    <MDBBtn
+                      color="danger"
+                      size="sm"
+                      onClick={() => stergereVariantaRaspuns(variantKey)}
+                      className="mb-2"
+                    >
+                      Șterge varianta de răspuns
+                    </MDBBtn>
+                    <br></br>
+                  
 
                     {updatedVarianteRaspuns[variantKey].raspuns_poza && (
                       <div>
@@ -542,9 +544,9 @@ const IntrebariHolland = () => {
                 <p>Timer: {intrebare.timer} secunde</p>
                 <p>Categorie: {intrebare.categorie}</p>
 
-                <MDBListGroup>
+                <MDBListGroup style={{ border: "none" }}>
                   {Object.keys(intrebare.variante_raspuns).map((variantKey) => (
-                    <MDBListGroupItem key={variantKey}>
+                    <MDBListGroupItem key={variantKey} style={{ border: "none", textAlign: "left" }}>
                       <p>Variantă răspuns: {variantKey}</p>
                       <p>Voturi: {intrebare.variante_raspuns[variantKey].voturi}</p>
                       <p>Răspuns Poză: {intrebare.variante_raspuns[variantKey].raspuns_poza}</p>

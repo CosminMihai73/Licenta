@@ -10,6 +10,8 @@ import IntrebarileHolland from "./Pagini/IntrebarileHolland";
 import PaginareHolland from './Pagini/PaginareHolland'
 import AdaugaIntrebare from './Pagini/AdaugaIntrebare'
 import EmailExists from './Pagini/email-exists'
+import Contact from './Pagini/Contact';
+import Faculties from './Pagini/facultati';
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
           <Route path="/IntrebariHolland" element={<IntrebarileHolland/>}/>
           <Route path="/paginareH" element={<PaginareHolland/>}/>    
           <Route path="/AdaugaIntrebare" element={<AdaugaIntrebare/>}/>      
-          <Route path="/Email-exists" element={<EmailExists/>}/>            
+          <Route path="/Email-exists" element={<EmailExists/>}/>    
+          <Route path="/Contact" element={<Contact/>}/>    
+          <Route path='/facultati' element={<Faculties/>}/>    
         </Routes>
       </div>
     </Router>

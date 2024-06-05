@@ -104,7 +104,7 @@ function CandidatiTable() {
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
         <div>
-          <h1 style={{ textAlign: 'center', margin: '0' }}>Tabel Candidati</h1>
+          <h1 style={{ textAlign: 'center', margin: '0' }}>Răspunsurile candidaților la chestionarul Holland</h1>
         </div>
         <div>
           <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/'}>
@@ -138,18 +138,17 @@ function CandidatiTable() {
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
                 <th
-                  {...column.getHeaderProps(column.getSortByToggleProps())} // Adaugă proprietățile de sortare
+                  {...column.getHeaderProps(column.getSortByToggleProps())} 
                   style={{
                     padding: '10px',
                     borderBottom: '1px solid #ccc',
                     fontWeight: 'bold',
                     textAlign: 'left',
-                    cursor: 'pointer', // Adaugă stilul cursorului pentru indicarea că este clicabil
+                    cursor: 'pointer', 
                   }}
                 >
                   {column.render('Header')}
                   <span>
-                    {/* Indică direcția de sortare */}
                     {column.isSorted
                       ? column.isSortedDesc
                         ? ' ↓'

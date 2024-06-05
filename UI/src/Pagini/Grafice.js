@@ -5,14 +5,14 @@ import { PieChart, Pie, Cell, Tooltip, BarChart, Bar, XAxis, YAxis, Rectangle } 
 import { Link } from 'react-router-dom';
 
 const Grafice = () => {
-    // Variabile de stare pentru datele grafice și tabel
+ 
     const [procente, setProcente] = useState([]);
     const [sumaPunctaje, setSumaPunctaje] = useState([]);
     const [modificari, setModificari] = useState([]);
 
-    // Efect pentru a prelua datele necesare de la API-uri
+   
     useEffect(() => {
-        // Obținere date pentru grafice și tabel
+        
         axios.get('http://127.0.0.1:8000/procente')
             .then(response => {
                 setProcente(response.data.procente);
@@ -44,7 +44,7 @@ const Grafice = () => {
             });
     }, []);
 
-    // Funcții auxiliare
+  
     const getCategoryColor = (categorie) => {
         const colors = {
             "artistic": '#8884d8',
@@ -61,12 +61,12 @@ const Grafice = () => {
         return word.charAt(0).toUpperCase() + word.slice(1);
     };
 
-    // Structura componentelor grafice
+
     return (
         <MDBContainer className="mt-4">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
                 <div>
-                    <h1 style={{ textAlign: 'center', margin: '0' }}>Panoul de control al chestionarului Holland</h1>
+                    <h1 style={{ textAlign: 'center', margin: '0' }}>Pagina Admin</h1>
                 </div>
                 <div>
                     <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/'}>
@@ -76,10 +76,10 @@ const Grafice = () => {
 
                 </div>
             </div>
-            {/* Secțiune de grafice */}
+   
             <MDBRow>
                 <MDBCol md="5">
-                    {/* Card pentru graficul pie */}
+               
                     <MDBCard>
                         <MDBCardHeader>Categoriile exprimate în Procente</MDBCardHeader>
                         <MDBCardBody>
@@ -108,7 +108,7 @@ const Grafice = () => {
                     </MDBCard>
                 </MDBCol>
                 <MDBCol md="7">
-                    {/* Card pentru graficul bar */}
+             
                     <MDBCard>
                         <MDBCardHeader>Suma Categoriilor</MDBCardHeader>
                         <MDBCardBody>
@@ -128,7 +128,7 @@ const Grafice = () => {
                 </MDBCol>
             </MDBRow>
 
-            {/* Secțiune pentru tabel */}
+     
             <MDBRow className="mt-4">
                 <MDBCol>
                     <MDBCard>
@@ -159,7 +159,7 @@ const Grafice = () => {
                 </MDBCol>
             </MDBRow>
 
-            {/* Butoane pentru navigare */}
+          
             <MDBRow className="mt-4">
                 <MDBCol>
                     <Link to="/CRaspunsuri" class="btn btn-primary btn-rounded">Răspunsuri Candidați</Link>

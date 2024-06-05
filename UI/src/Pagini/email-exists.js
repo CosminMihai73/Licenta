@@ -8,13 +8,13 @@ const EmailExistsPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // Funcția pentru a obține adresa de e-mail din URL
+ 
     const getEmailFromURL = () => {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get('email');
     };
 
-    // Funcția pentru a face solicitarea HTTP și a obține datele
+
     const fetchInterpretation = async (email) => {
         try {
             const response = await axios.get(`http://localhost:8000/interpretare_si_atribuie_profesie_BD?email=${email}`);
@@ -75,7 +75,7 @@ const EmailExistsPage = () => {
                                 ))}
                             </MDBCardBody>
                         </MDBCard>
-                        {/* Puteți continua pentru tipurile secundare */}
+                     
                         <MDBCard className="mb-4">
                             <MDBCardBody>
                                 <MDBCardTitle>{interpretationResult.tip_secundar_1}</MDBCardTitle>

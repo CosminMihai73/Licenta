@@ -127,7 +127,7 @@ const PaginaHolland = () => {
         </div>
       </div>
       
-      {/* Container pentru adăugarea unei reguli de pagină */}
+  
       <MDBRow>
         <MDBCol md="6" className="mx-auto mb-4">
           <MDBCard>

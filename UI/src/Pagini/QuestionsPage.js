@@ -5,14 +5,12 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
-  MDBBtn,
   MDBInputGroup,
   MDBInput,
   MDBContainer,
   MDBRadio,
   MDBRow, MDBCol
 } from 'mdb-react-ui-kit';
-
 
 const QuestionsPage = () => {
   const [questions, setQuestions] = useState([]);
@@ -27,16 +25,15 @@ const QuestionsPage = () => {
   const [currentQuestionId, setCurrentQuestionId] = useState(null);
   const [timerExpired, setTimerExpired] = useState(false);
 
-
   useEffect(() => {
     if (showTimer && timeRemaining === 0) {
       setTimerExpired(true);
-      // Restul codului pentru tratarea expirării timerului
+    
     }
   }, [showTimer, timeRemaining]);
 
   useEffect(() => {
-    // Verificăm dacă e-mailul a fost validat
+  
     if (emailValidated) {
       const fetchData = async () => {
         try {
@@ -53,8 +50,7 @@ const QuestionsPage = () => {
     }
   }, [currentPage, responses, emailValidated]);
 
-
-  // Efect secundar pentru decrementarea timpului și gestionarea întrebărilor
+  
   useEffect(() => {
     if (showTimer && timeRemaining > 0) {
       const interval = setInterval(() => {
@@ -64,27 +60,26 @@ const QuestionsPage = () => {
       return () => clearInterval(interval);
     } else if (showTimer && timeRemaining === 0 && currentQuestionId) {
       handleResponseChange(currentQuestionId, '');
-      // Caută următoarea întrebare
+      
       const currentQuestionIndex = questions.findIndex(question => question.id === currentQuestionId);
       let nextQuestionIndex = currentQuestionIndex + 1;
 
-      // Caută următoarea întrebare cu timer, începând de la întrebarea următoare
       while (nextQuestionIndex < questions.length) {
         const nextQuestion = questions[nextQuestionIndex];
 
         if (nextQuestion.timer > 0) {
-          // Următoarea întrebare are timer
+         
           setCurrentQuestionId(nextQuestion.id);
           setTimeRemaining(nextQuestion.timer);
           setShowTimer(true);
           break;
         } else {
-          // Treci la următoarea întrebare
+         
           nextQuestionIndex++;
         }
       }
 
-      // Dacă nu există alte întrebări cu timer, oprește timerul
+      
       if (nextQuestionIndex >= questions.length) {
         setShowTimer(false);
       }
@@ -104,20 +99,18 @@ const QuestionsPage = () => {
 
   const checkEmail = async (email) => {
     try {
-      // Trimite o solicitare POST la endpointul "/check_email/"
       const response = await axios.post('http://localhost:8000/check_email/', {
         email: email,
       });
 
-      // Returnează răspunsul primit de la server
+      
       return response.data.exists;
     } catch (error) {
       console.error('Eroare la verificarea e-mailului:', error);
-      // Poți returna un răspuns de eroare sau gestiona eroarea conform necesităților tale
+      
       return false;
     }
   };
-
 
   const handleEmailChange = event => {
     setEmail(event.target.value);
@@ -127,14 +120,13 @@ const QuestionsPage = () => {
     const exists = await checkEmail(email);
 
     if (exists) {
-      // Dacă e-mailul există, redirecționează utilizatorul către pagina `/email-exists` cu emailul ca parametru de interogare
+     
       window.location.href = `/email-exists?email=${encodeURIComponent(email)}`;
     } else {
-      // Dacă e-mailul nu există, continuă cu întrebările
+    
       setEmailValidated(true);
       setShowEmailValidationButton(false);
 
-      // Începe timer-ul pentru prima întrebare dacă există
       const firstQuestion = questions.find(question => question.timer > 0);
       if (firstQuestion) {
         const firstQuestionTimer = firstQuestion.timer || 0;
@@ -145,12 +137,11 @@ const QuestionsPage = () => {
     }
   };
 
-
   const handleResponseChange = (id, response) => {
     const updatedResponses = [...responses];
     const existingResponseIndex = updatedResponses.findIndex(item => item.id === id);
 
-    // Actualizează răspunsul curent
+
     if (existingResponseIndex !== -1) {
       updatedResponses[existingResponseIndex] = { id, response };
     } else {
@@ -159,22 +150,21 @@ const QuestionsPage = () => {
 
     setResponses(updatedResponses);
 
-    // Verifică întrebarea curentă
+ 
     const currentQuestion = questions.find(question => question.id === id);
 
     if (currentQuestion) {
-      // Dacă întrebarea are un timer și s-a răspuns la ea, oprește timerul
+   
       if (currentQuestion.timer > 0) {
         setShowTimer(false);
       }
     }
 
-    // Caută următoarea întrebare
     const nextQuestionIndex = questions.findIndex(question => question.id === id) + 1;
     if (nextQuestionIndex < questions.length) {
       const nextQuestion = questions[nextQuestionIndex];
 
-      // Pornește timerul pentru următoarea întrebare dacă există și are timer
+     
       if (nextQuestion.timer > 0) {
         setCurrentQuestionId(nextQuestion.id);
         setTimeRemaining(nextQuestion.timer);
@@ -183,10 +173,11 @@ const QuestionsPage = () => {
     }
   };
 
-
   const goToNextPage = () => {
-    setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages));
-    window.scrollTo(0, 0);
+    setCurrentPage(prevPage => {
+      const nextPage = Math.min(prevPage + 1, totalPages);
+      return nextPage;
+    });
   };
 
   const handleSubmit = async () => {
@@ -225,37 +216,78 @@ const QuestionsPage = () => {
   const allQuestionsAnsweredOrTimerExpired = allQuestionsAnswered || timerExpired;
   const getColorBasedOnTimeRemaining = (timeRemaining) => {
     if (timeRemaining <= 10) {
-      // Dacă mai sunt 10 secunde sau mai puțin, culoarea este roșie
       return '#FF0000';
     } else if (timeRemaining <= 30) {
-      // Dacă mai sunt 30 de secunde sau mai puțin, culoarea este portocalie
       return '#FF8E00';
     } else if (timeRemaining <= 60) {
-      // Dacă mai este 1 minut sau mai puțin, culoarea este galbenă
       return '#FFD700';
     } else {
-      // Pentru mai mult de 1 minut, culoarea este verde
       return '#00C853';
     }
   };
 
   return (
     <MDBContainer className="my-5">
+      <style>
+        {`
+    .button {
+      background-color: #007bff; /* Albastru primar */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0056b3; /* Albastru mai închis pentru hover */
+    }
+
+    .button:disabled {
+      background-color: #cccccc; /* Gri pentru butoanele dezactivate */
+      cursor: not-allowed;
+    }
+
+    .submit-container {
+      text-align: center;
+    }
+
+    .pagination-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pagination-text {
+      margin-bottom: 10px;
+    }
+
+    .pagination-buttons {
+      display: flex;
+      justify-content: center;
+    }
+  `}
+      </style>
+
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
         <div>
           <h1 style={{ textAlign: 'center', margin: '0' }}>Chestionarul Holland</h1>
         </div>
         <div>
-          <MDBBtn rounded className='mx-2' color='secondary' onClick={() => window.location.href = '/'}>
+          <button className='btn btn-secondary mx-2' onClick={() => window.location.href = '/'}>
             Homepage
-          </MDBBtn>
-
+          </button>
         </div>
       </div>
-      {/* Card pentru validarea e-mailului */}
+   
       {currentPage === 1 && !emailValidated && (
         <MDBCard alignment="center" className="mb-4">
-
           <MDBCardBody>
             <MDBCardText>Introduceți o adresă de e-mail validă pentru a continua:</MDBCardText>
             <MDBInputGroup className="mb-3">
@@ -268,12 +300,11 @@ const QuestionsPage = () => {
                 required
               />
               {showEmailValidationButton && (
-                <MDBBtn color="primary" fullWidth onClick={handleEmailValidation}>
+                <button className="btn btn-primary" onClick={handleEmailValidation}>
                   Verificare E-mail
-                </MDBBtn>
+                </button>
               )}
             </MDBInputGroup>
-
             <MDBCardText style={{ textAlign: 'left' }}>
               <p>
                 Acest chestionar măsoară interesele tale, adică preferințele tale pentru anumite activități. Hai să vedem în ce măsură acestea îți plac și să descoperim împreună ce domeniu de studiu ți s-ar potrivi.
@@ -288,11 +319,11 @@ const QuestionsPage = () => {
                 Completează chestionarul gândindu-te dacă activitatea respectivă îți place sau nu îți place. Nu există răspuns corect sau răspuns greșit. Nu există limită de timp pentru a răspunde.
               </p>
             </MDBCardText>
-            {/* Sfârșitul textului adăugat */}
+          
           </MDBCardBody>
         </MDBCard>
       )}
-      {/* Afișarea întrebărilor */}
+   
       {emailValidated && (
         <MDBRow>
           {questions.map((question, index) => (
@@ -307,7 +338,6 @@ const QuestionsPage = () => {
                       className="img-fluid mb-3"
                     />
                   )}
-
                   {showTimer && timeRemaining > 0 && question.id === currentQuestionId && (
                     <div
                       className="timer-box mb-3"
@@ -320,13 +350,11 @@ const QuestionsPage = () => {
                       Timp rămas: {Math.floor(timeRemaining / 60)} minute și {timeRemaining % 60} secunde
                     </div>
                   )}
-
-
-                  {/* Opțiuni de răspuns */}
+                 
                   <div className="mb-3">
                     {question.responses.map((response, subIndex) => (
                       <div key={`${question.id}-${response.value}`}>
-                        {/* Radio button */}
+                       
                         <MDBRadio
                           id={`${question.id}-${response.value}`}
                           name={`response-${question.id}`}
@@ -336,8 +364,7 @@ const QuestionsPage = () => {
                           onChange={() => handleResponseChange(question.id, response.value)}
                           disabled={responses.some(item => item.id === question.id)}
                         />
-
-                        {/* Imagine asociată răspunsului */}
+                      
                         {response.response_image_url && (
                           <img
                             src={response.response_image_url}
@@ -352,8 +379,7 @@ const QuestionsPage = () => {
               </MDBCard>
             </MDBCol>
           ))}
-
-          {/* Paginare și trimitere răspunsuri */}
+      
           <MDBCol md="12" className="text-center">
             <div className="pagination-container">
               <span className="pagination-text">
@@ -361,29 +387,19 @@ const QuestionsPage = () => {
               </span>
               <div className="pagination-buttons">
                 {currentPage !== totalPages && (
-                  <MDBBtn onClick={goToNextPage} className="primary">
+                  <button onClick={() => { goToNextPage(); window.scrollTo(0, 0); }} className="button" disabled={!allQuestionsAnsweredOrTimerExpired}>
                     Pagina următoare
-                  </MDBBtn>
+                  </button>
+
                 )}
                 {currentPage === totalPages && (
                   <div className="submit-container">
-                    <button className="submit-button" onClick={handleSubmit}>
+                    <button className="button" onClick={handleSubmit} disabled={!allQuestionsAnsweredOrTimerExpired}>
                       Trimite și vezi rezultate
                     </button>
                   </div>
                 )}
               </div>
-
-              {currentPage === totalPages && (
-                <MDBBtn
-                  color="primary"
-                  disabled={!allQuestionsAnsweredOrTimerExpired}
-                  onClick={handleSubmit}
-                >
-                  Trimite răspunsurile
-                </MDBBtn>
-              )}
-
             </div>
           </MDBCol>
         </MDBRow>

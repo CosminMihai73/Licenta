@@ -7,17 +7,17 @@ router = APIRouter(tags=["Grafice Holland"])
 @router.get("/sumapunctaje")
 def calcul_suma_punctaje():
     try:
-        # Conectați-vă la baza de date folosind funcția din Conectare.py
+       
         conn = conectare_baza_date()
         cursor = conn.cursor()
 
-        # Execută interogarea pentru a obține toate punctajele
+       
         cursor.execute('SELECT Punctaje FROM Candidat')
         
-        # Extrageți toate punctajele din rezultatul interogării
+     
         punctaje = [json.loads(row[0].replace("'", '"')) for row in cursor.fetchall()]
 
-        # Inițializăm sumele pentru fiecare categorie
+      
         sume = {
             "artistic": 0,
             "convențional": 0,
@@ -27,7 +27,6 @@ def calcul_suma_punctaje():
             "social": 0
         }
 
-        # Adunăm punctajele pentru fiecare categorie pentru fiecare candidat
         for punctaj in punctaje:
             for categorie, valoare in punctaj.items():
                 sume[categorie] += valoare
@@ -43,17 +42,17 @@ def calcul_suma_punctaje():
 @router.get("/procente")
 def calcul_procente():
     try:
-        # Conectați-vă la baza de date folosind funcția din Conectare.py
+      
         conn = conectare_baza_date()
         cursor = conn.cursor()
 
-        # Execută interogarea pentru a obține toate punctajele
+     
         cursor.execute('SELECT Punctaje FROM Candidat')
 
-        # Extrage toate punctajele din rezultatul interogării
+      
         punctaje = [json.loads(row[0].replace("'", '"')) for row in cursor.fetchall()]
 
-        # Inițializăm sumele pentru fiecare categorie
+    
         sume = {
             "artistic": 0,
             "convențional": 0,
@@ -63,18 +62,18 @@ def calcul_procente():
             "social": 0
         }
 
-        # Adunăm punctajele pentru fiecare categorie pentru fiecare candidat
+       
         for punctaj in punctaje:
             for categorie, valoare in punctaj.items():
                 sume[categorie] += valoare
 
-        # Calculăm suma totală a punctajelor
+       
         suma_totala = sum(sume.values())
 
-        # Convertim sumele în procente
+        
         procente = {categorie: (valoare / suma_totala) * 100 for categorie, valoare in sume.items()}
 
-        # Formatăm procentele pentru a avea două zecimale și a adăuga simbolul procent la final
+        
         procente_formatate = {categorie: f"{valoare:.2f}%" for categorie, valoare in procente.items()}
 
         return {"procente": procente_formatate}
@@ -89,24 +88,23 @@ def calcul_procente():
 @router.get("/ultimele_modificari")
 async def ultimele_modificari():
     try:
-        # Conectarea la baza de date
+       
         conn = conectare_baza_date()
         cursor = conn.cursor()
 
-        # Interogarea pentru a obține ultimele 3 modificări
+        
         query = "SELECT TOP 3 * FROM Candidat ORDER BY Data_Modificarii DESC"
         cursor.execute(query)
 
-        # Extrage rezultatele interogării
+        
         modificari = []
         for row in cursor.fetchall():
-            # Deserializare șir JSON pentru punctaje și corectarea ghilimelelor simple cu duble
+           
             punctaje_json = json.loads(row[2].replace("'", '"'))
 
-            # Construirea unui șir pentru punctaje categorii
+           
             punctaje_str = ", ".join([f"{categorie.capitalize()}: {valoare}" for categorie, valoare in punctaje_json.items()])
 
-            # Construirea dicționarului pentru candidat
             modificare = {
                 "Data": row[4],
                 "IdCandidat": row[0],
@@ -114,15 +112,15 @@ async def ultimele_modificari():
                 "Punctaje Categorii": punctaje_str
             }
 
-            # Adăugarea modificării în lista de modificări
+            
             modificari.append(modificare)
 
-        # Închideți cursorul și conexiunea
+       
         cursor.close()
         conn.close()
 
         return {"ultimele_modificari": modificari}
 
     except Exception as e:
-        # Returnați un mesaj de eroare semnificativ în cazul unei excepții
+        
         return {"error": f"Eroare de server: {str(e)}"}

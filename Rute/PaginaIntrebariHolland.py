@@ -104,28 +104,27 @@ class RaspundeLaIntrebari(BaseModel):
 
 raspunsuri_stocate = []
 
-# Load questions and initial scores from JSON files
 with open("Holland/toate_intrebarile.json", "r",encoding="utf-8") as file:
     intrebari = json.load(file)
 
 with open("Holland/punctaje.json", "r",encoding="utf-8") as file:
     punctaje_initiale = json.load(file)
 
-# Create a list of Pydantic models for validating answers
+
 modele_intrebari = [RaspunsModel(id=intrebare["id"], categorie=intrebare["categorie"], raspuns="") for intrebare in intrebari]
 
 @router.post("/actualizeaza_si_calculeaza_punctaje")
 def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
     try:
-        # Verificăm dacă lista de răspunsuri este goală
+        
         if not raspunsuri.raspunsuri:
             raise HTTPException(status_code=400, detail="Nu există răspunsuri disponibile pentru a calcula punctajele.")
 
-        # Încărcăm întrebările din fișierul JSON
+       
         with open("Holland/toate_intrebarile.json", "r", encoding="utf-8") as file:
             intrebari = json.load(file)
 
-        # Inițializăm un dicționar pentru a stoca punctajele
+      
         punctaje = {
             "artistic": 0,
             "convențional": 0,
@@ -135,14 +134,14 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
             "social": 0
         }
 
-        # Parcurgem fiecare răspuns și actualizăm punctajele corespunzător
+       
         for raspuns in raspunsuri.raspunsuri:
             for intrebare in intrebari:
                 if intrebare["id"] == raspuns.id:
                     variante_raspuns = intrebare["variante_raspuns"]
                     punctaj = variante_raspuns.get(raspuns.raspuns)
                     if punctaj is not None:
-                        # Verificăm dacă punctajul este un număr întreg și îl adăugăm la totalul corespunzător
+                      
                         if isinstance(punctaj, dict) and "voturi" in punctaj:
                             raspuns.categorie = intrebare["categorie"]
                             raspuns.raspuns = str(punctaj["voturi"])
@@ -152,18 +151,18 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
                     else:
                         raise HTTPException(status_code=400, detail=f"Răspunsul '{raspuns.raspuns}' pentru întrebarea '{intrebare['text']}' nu este valid.")
 
-        # Adăugăm răspunsurile la lista de răspunsuri stocate
+      
         raspunsuri_stocate.extend(raspunsuri.raspunsuri)
 
-        # Salvăm răspunsurile în fișierul "raspunsuri.json" cu codificare UTF-8
+       
         with open("Holland/raspunsuri.json", "w", encoding="utf-8") as file:
             json.dump([raspuns.dict() for raspuns in raspunsuri.raspunsuri], file, ensure_ascii=False)
 
-        # Salvăm punctajele în fișierul "punctaje.json" cu codificare UTF-8
+        
         with open("Holland/punctaje.json", "w", encoding="utf-8") as file:
             json.dump(punctaje, file, ensure_ascii=False)
 
-        # Obținem email-ul și datele în format JSON pentru răspunsuri
+
         email = raspunsuri.email
         raspunsuri_json = []
         for raspuns in raspunsuri.raspunsuri:
@@ -178,17 +177,16 @@ def actualizeaza_si_calculeaza_punctaje(raspunsuri: RaspundeLaIntrebari):
 
         adauga_in_baza_de_date(email, punctaje, raspunsuri_json)
 
-        # Returnăm un răspuns HTTP cu informațiile necesare
         return {
             "message": "Răspunsuri actualizate și punctaje calculate cu succes.",
             "raspunsuri": [raspuns.dict() for raspuns in raspunsuri.raspunsuri],
             "email": raspunsuri.email
         }
     except HTTPException as http_exception:
-        # Dacă primim o excepție HTTP, o retransmitem
+
         raise http_exception
     except Exception as e:
-        # Dacă apare o altă excepție, returnăm un răspuns HTTP cu codul de eroare 500 și detalii despre acea excepție
+    
         raise HTTPException(status_code=500, detail=str(e))
 
 
@@ -205,18 +203,17 @@ async def interpretare_si_atribuie_profesie():
     punctaje = None
     profesii = None
 
-    # Deschidem și citim fișierele punctaje.json și profesii.json
+
     with open("Holland/punctaje.json", "r", encoding='utf-8') as file:
         punctaje = json.load(file)
 
     with open("Holland/profesii.json", "r", encoding='utf-8') as file:
         profesii = json.load(file)['tipuri_personalitate']
 
-    # Calculăm tipul dominant și tipurile secundare
     tip_dominant = max(punctaje, key=punctaje.get)
     tipuri_secundare = sorted(punctaje, key=punctaje.get, reverse=True)[1:3]
 
-    # Obținem informațiile despre profesii pentru tipul dominant și tipurile secundare
+
     profesie_dominanta = None
     profesii_secundare = []
 
@@ -226,12 +223,11 @@ async def interpretare_si_atribuie_profesie():
         elif profesie['tip'] in tipuri_secundare:
             profesii_secundare.append(profesie)
 
-    # Procesăm informațiile despre facultăți pentru a le integra în rezultatul final
     facultati_dominante = profesie_dominanta['facultati']
     facultati_secundare_1 = profesii_secundare[0]['facultati']
     facultati_secundare_2 = profesii_secundare[1]['facultati']
 
-    # Formatăm rezultatul în format JSON
+
     rezultat = {
         "tip_dominant": tipuri_holland[tip_dominant],
         "descriere_dominanta": profesie_dominanta['descriere'],
@@ -259,20 +255,18 @@ async def interpretare_si_atribuie_profesie_BD(email: str = Query(..., descripti
         'investigativ': 'Investigativ',
         'social': 'Social'
     }
-    # Deschideți conexiunea la baza de date
+
     conn = conectare_baza_date()
     cursor = conn.cursor()
-    
-    # Interogați baza de date pentru a obține punctajele candidatului
+ 
     query = f"SELECT Punctaje FROM Candidat WHERE email = '{email}'"
     cursor.execute(query)
     row = cursor.fetchone()
     
-    # Închideți cursorul și conexiunea
+
     cursor.close()
     conn.close()
-    
-    # Verificați dacă a fost găsit un candidat cu adresa de email dată
+  
     if row is None:
         raise HTTPException(status_code=404, detail="Candidat nu a fost găsit pentru adresa de email dată.")
     
@@ -281,15 +275,13 @@ async def interpretare_si_atribuie_profesie_BD(email: str = Query(..., descripti
     punctaje = json.loads(punctaje_json)
 
     
-    # Continuați cu procesarea punctajelor pentru a obține tipul dominant și tipurile secundare
     tip_dominant = max(punctaje, key=punctaje.get)
     tipuri_secundare = sorted(punctaje, key=punctaje.get, reverse=True)[1:3]
     
-    # Deschideți și citiți fișierul profesii.json
     with open("Holland/profesii.json", "r", encoding='utf-8') as file:
         profesii = json.load(file)['tipuri_personalitate']
     
-    # Obțineți informațiile despre profesii pentru tipul dominant și tipurile secundare
+  
     profesie_dominanta = None
     profesii_secundare = []
 
@@ -299,12 +291,12 @@ async def interpretare_si_atribuie_profesie_BD(email: str = Query(..., descripti
         elif profesie['tip'] in tipuri_secundare:
             profesii_secundare.append(profesie)
     
-    # Procesați informațiile despre facultăți pentru a le integra în rezultatul final
+
     facultati_dominante = profesie_dominanta['facultati']
     facultati_secundare_1 = profesii_secundare[0]['facultati']
     facultati_secundare_2 = profesii_secundare[1]['facultati']
     
-    # Formatți rezultatul într-un dicționar
+
     rezultat = {
         "tip_dominant": tipuri_holland[tip_dominant],
         "descriere_dominanta": profesie_dominanta['descriere'],
@@ -329,30 +321,30 @@ class EmailCheckRequest(BaseModel):
 async def check_email(request: EmailCheckRequest):
     email_to_check = request.email
 
-    # Conectează-te la baza de date
+
     conn = conectare_baza_date()
 
     try:
-        # Creează un cursor și execută interogarea SQL
+        
         cursor = conn.cursor()
         query = "SELECT COUNT(*) FROM Candidat WHERE email = ?"
         cursor.execute(query, email_to_check)
 
-        # Obține rezultatul interogării
+        
         result = cursor.fetchone()
         count = result[0]
 
-        # Închide cursorul și conexiunea
+        
         cursor.close()
         conn.close()
 
-        # Verifică dacă emailul există în baza de date
+        
         if count > 0:
             return {"exists": True}
         else:
             return {"exists": False}
 
     except Exception as e:
-        # Închide conexiunea în caz de excepție
+        
         conn.close()
         raise HTTPException(status_code=500, detail=str(e))

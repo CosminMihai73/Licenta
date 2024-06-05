@@ -41,7 +41,7 @@ Această aplicație este dezvoltată pentru a ajuta studenții să aleagă speci
 
 4. **Instalarea pachetelor frontend:**
     ```bash
-    cd ../frontend
+    cd ../ui
     npm install
     ```
 

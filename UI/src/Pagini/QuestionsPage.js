@@ -28,12 +28,12 @@ const QuestionsPage = () => {
   useEffect(() => {
     if (showTimer && timeRemaining === 0) {
       setTimerExpired(true);
-    
+
     }
   }, [showTimer, timeRemaining]);
 
   useEffect(() => {
-  
+
     if (emailValidated) {
       const fetchData = async () => {
         try {
@@ -50,7 +50,7 @@ const QuestionsPage = () => {
     }
   }, [currentPage, responses, emailValidated]);
 
-  
+
   useEffect(() => {
     if (showTimer && timeRemaining > 0) {
       const interval = setInterval(() => {
@@ -60,7 +60,7 @@ const QuestionsPage = () => {
       return () => clearInterval(interval);
     } else if (showTimer && timeRemaining === 0 && currentQuestionId) {
       handleResponseChange(currentQuestionId, '');
-      
+
       const currentQuestionIndex = questions.findIndex(question => question.id === currentQuestionId);
       let nextQuestionIndex = currentQuestionIndex + 1;
 
@@ -68,18 +68,18 @@ const QuestionsPage = () => {
         const nextQuestion = questions[nextQuestionIndex];
 
         if (nextQuestion.timer > 0) {
-         
+
           setCurrentQuestionId(nextQuestion.id);
           setTimeRemaining(nextQuestion.timer);
           setShowTimer(true);
           break;
         } else {
-         
+
           nextQuestionIndex++;
         }
       }
 
-      
+
       if (nextQuestionIndex >= questions.length) {
         setShowTimer(false);
       }
@@ -103,11 +103,11 @@ const QuestionsPage = () => {
         email: email,
       });
 
-      
+
       return response.data.exists;
     } catch (error) {
       console.error('Eroare la verificarea e-mailului:', error);
-      
+
       return false;
     }
   };
@@ -120,10 +120,10 @@ const QuestionsPage = () => {
     const exists = await checkEmail(email);
 
     if (exists) {
-     
+
       window.location.href = `/email-exists?email=${encodeURIComponent(email)}`;
     } else {
-    
+
       setEmailValidated(true);
       setShowEmailValidationButton(false);
 
@@ -150,11 +150,11 @@ const QuestionsPage = () => {
 
     setResponses(updatedResponses);
 
- 
+
     const currentQuestion = questions.find(question => question.id === id);
 
     if (currentQuestion) {
-   
+
       if (currentQuestion.timer > 0) {
         setShowTimer(false);
       }
@@ -164,7 +164,7 @@ const QuestionsPage = () => {
     if (nextQuestionIndex < questions.length) {
       const nextQuestion = questions[nextQuestionIndex];
 
-     
+
       if (nextQuestion.timer > 0) {
         setCurrentQuestionId(nextQuestion.id);
         setTimeRemaining(nextQuestion.timer);
@@ -178,6 +178,13 @@ const QuestionsPage = () => {
       const nextPage = Math.min(prevPage + 1, totalPages);
       return nextPage;
     });
+  };
+
+  const handleNextPageClick = () => {
+    goToNextPage();
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 500);
   };
 
   const handleSubmit = async () => {
@@ -285,7 +292,7 @@ const QuestionsPage = () => {
           </button>
         </div>
       </div>
-   
+
       {currentPage === 1 && !emailValidated && (
         <MDBCard alignment="center" className="mb-4">
           <MDBCardBody>
@@ -319,11 +326,11 @@ const QuestionsPage = () => {
                 Completează chestionarul gândindu-te dacă activitatea respectivă îți place sau nu îți place. Nu există răspuns corect sau răspuns greșit. Nu există limită de timp pentru a răspunde.
               </p>
             </MDBCardText>
-          
+
           </MDBCardBody>
         </MDBCard>
       )}
-   
+
       {emailValidated && (
         <MDBRow>
           {questions.map((question, index) => (
@@ -350,11 +357,11 @@ const QuestionsPage = () => {
                       Timp rămas: {Math.floor(timeRemaining / 60)} minute și {timeRemaining % 60} secunde
                     </div>
                   )}
-                 
+
                   <div className="mb-3">
                     {question.responses.map((response, subIndex) => (
                       <div key={`${question.id}-${response.value}`}>
-                       
+
                         <MDBRadio
                           id={`${question.id}-${response.value}`}
                           name={`response-${question.id}`}
@@ -364,7 +371,7 @@ const QuestionsPage = () => {
                           onChange={() => handleResponseChange(question.id, response.value)}
                           disabled={responses.some(item => item.id === question.id)}
                         />
-                      
+
                         {response.response_image_url && (
                           <img
                             src={response.response_image_url}
@@ -379,7 +386,7 @@ const QuestionsPage = () => {
               </MDBCard>
             </MDBCol>
           ))}
-      
+
           <MDBCol md="12" className="text-center">
             <div className="pagination-container">
               <span className="pagination-text">
@@ -387,14 +394,21 @@ const QuestionsPage = () => {
               </span>
               <div className="pagination-buttons">
                 {currentPage !== totalPages && (
-                  <button onClick={() => { goToNextPage(); window.scrollTo(0, 0); }} className="button" disabled={!allQuestionsAnsweredOrTimerExpired}>
+                  <button
+                    onClick={handleNextPageClick}
+                    className="button"
+                    disabled={!allQuestionsAnsweredOrTimerExpired}
+                  >
                     Pagina următoare
                   </button>
-
                 )}
                 {currentPage === totalPages && (
                   <div className="submit-container">
-                    <button className="button" onClick={handleSubmit} disabled={!allQuestionsAnsweredOrTimerExpired}>
+                    <button
+                      className="button"
+                      onClick={handleSubmit}
+                      disabled={!allQuestionsAnsweredOrTimerExpired}
+                    >
                       Trimite și vezi rezultate
                     </button>
                   </div>

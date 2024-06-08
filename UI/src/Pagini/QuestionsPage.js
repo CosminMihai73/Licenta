@@ -184,7 +184,7 @@ const QuestionsPage = () => {
     goToNextPage();
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 500);
+    }, 100);
   };
 
   const handleSubmit = async () => {
@@ -223,13 +223,13 @@ const QuestionsPage = () => {
   const allQuestionsAnsweredOrTimerExpired = allQuestionsAnswered || timerExpired;
   const getColorBasedOnTimeRemaining = (timeRemaining) => {
     if (timeRemaining <= 10) {
-      return '#FF0000';
+      return '#FF0000'; // roșu
     } else if (timeRemaining <= 30) {
-      return '#FF8E00';
+      return '#FF8E00'; // portocaliu
     } else if (timeRemaining <= 60) {
-      return '#FFD700';
+      return '#FFD700'; // galben
     } else {
-      return '#00C853';
+      return '#00C853'; // verde
     }
   };
 

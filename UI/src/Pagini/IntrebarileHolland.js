@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import {
   MDBBtn,
@@ -7,9 +7,17 @@ import {
   MDBInput,
   MDBInputGroup,
   MDBCol,
-  MDBRow, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon, MDBCardBody, MDBFile, MDBListGroup, MDBListGroupItem
-} from 'mdb-react-ui-kit';
-
+  MDBRow,
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem,
+  MDBIcon,
+  MDBCardBody,
+  MDBFile,
+  MDBListGroup,
+  MDBListGroupItem,
+} from "mdb-react-ui-kit";
 
 const IntrebariHolland = () => {
   const [intrebari, setIntrebari] = useState([]);
@@ -19,12 +27,21 @@ const IntrebariHolland = () => {
   const [updatedTimer, setUpdatedTimer] = useState(0);
   const [updatedCategorie, setUpdatedCategorie] = useState("");
   const [updatedVarianteRaspuns, setUpdatedVarianteRaspuns] = useState({});
-  const [selectedFile, setSelectedFile] = useState(null); // Stare pentru a stoca fișierul selectat
-  const inputRef = React.useRef();
+  const [selectedFile, setSelectedFile] = useState(null);
+  const inputRef = useRef();
 
   useEffect(() => {
     afiseazaIntrebari();
   }, []);
+
+  const afiseazaIntrebari = async () => {
+    try {
+      const response = await axios.get("http://127.0.0.1:8000/citeste_intrebari/");
+      setIntrebari(response.data);
+    } catch (error) {
+      console.error("Eroare la preluarea întrebărilor:", error);
+    }
+  };
 
   const cautaIntrebare = async () => {
     try {
@@ -42,15 +59,6 @@ const IntrebariHolland = () => {
       setIntrebari(response.data);
     } catch (error) {
       console.error("Eroare la căutarea întrebărilor pe categorii:", error);
-    }
-  };
-
-  const afiseazaIntrebari = async () => {
-    try {
-      const response = await axios.get("http://127.0.0.1:8000/citeste_intrebari/");
-      setIntrebari(response.data);
-    } catch (error) {
-      console.error("Eroare la preluarea întrebărilor:", error);
     }
   };
 
@@ -76,7 +84,6 @@ const IntrebariHolland = () => {
   const toggleUpdateForm = (intrebare) => {
     setShowUpdateForm(!showUpdateForm);
     setIntrebareId(intrebare.id);
-    // Setăm valorile inițiale ale formularului cu valorile curente ale întrebării
     setUpdatedText(intrebare.text);
     setUpdatedTimer(intrebare.timer);
     setUpdatedCategorie(intrebare.categorie);
@@ -88,9 +95,7 @@ const IntrebariHolland = () => {
 
     let textPoza = "";
 
-    // Verifică dacă există un fișier selectat pentru încărcare
     if (selectedFile) {
-      // Încarcă imaginea și obține calea acesteia
       textPoza = await uploadIntrebare(intrebareId, selectedFile);
       if (textPoza === null) {
         console.error("Eroare la încărcarea imaginii. Se anulează actualizarea.");
@@ -98,13 +103,10 @@ const IntrebariHolland = () => {
       }
     }
 
-    // Parcurgeți fiecare variantă de răspuns din `updatedVarianteRaspuns`
     for (const [variantKey, variant] of Object.entries(updatedVarianteRaspuns)) {
       if (variant.file) {
-        // Încărcați imaginea pentru varianta de răspuns
         const imagePath = await uploadResponseImage(intrebareId, variant.voturi, variant.file);
         if (imagePath !== null) {
-          // Actualizează proprietatea `raspuns_poza` a variantei de răspuns
           updatedVarianteRaspuns[variantKey].raspuns_poza = imagePath;
         } else {
           console.error(`Eroare la încărcarea imaginii pentru varianta ${variantKey}`);
@@ -112,24 +114,21 @@ const IntrebariHolland = () => {
       }
     }
 
-    // Construiește obiectul întrebării actualizate
     const updatedIntrebare = {
       id: intrebareId,
       text: updatedText,
-      text_poza: textPoza, // Include calea imaginii dacă este disponibilă
+      text_poza: textPoza,
       timer: updatedTimer,
       categorie: updatedCategorie,
       variante_raspuns: updatedVarianteRaspuns,
     };
 
     try {
-      // Trimite cererea PUT pentru a actualiza întrebarea
       const response = await axios.put(`http://127.0.0.1:8000/actualizeaza_intrebare/${intrebareId}`, updatedIntrebare);
 
-      // Dacă actualizarea a avut succes, reîncarcă întrebările și ascunde formularul de actualizare
       if (response.status === 200) {
-        afiseazaIntrebari(); // Reîncarcă lista de întrebări
-        setShowUpdateForm(false); // Ascunde formularul de actualizare
+        afiseazaIntrebari();
+        setShowUpdateForm(false);
       } else {
         console.error("Actualizarea întrebării a eșuat:", response.data);
       }
@@ -138,22 +137,17 @@ const IntrebariHolland = () => {
     }
   };
 
-
   const uploadIntrebare = async (questionId, file) => {
-    // Creează un obiect FormData și atașează fișierul
     const formData = new FormData();
     formData.append("file", file);
 
     try {
-      // Trimite o cerere POST pentru a încărca imaginea
       const response = await axios.post(`http://127.0.0.1:8000/uploadIntrebare/${questionId}/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      // Verifică dacă `filename` este prezent în răspuns
       if (response.data && response.data.filename) {
-        // Dacă backend-ul folosește un director prestabilit pentru imagini, creează calea completă
         const imageUrl = `poze/${response.data.filename}`;
         return imageUrl;
       } else {
@@ -166,22 +160,15 @@ const IntrebariHolland = () => {
     }
   };
 
-
-
   const stergeImagine = async (questionId) => {
     try {
-      // Trimite cererea HTTP DELETE la endpoint-ul serverului
       const response = await axios.delete(`http://127.0.0.1:8000/delete/image/${questionId}/`);
 
       if (response.data.message) {
-        // Dacă ștergerea este reușită, actualizează starea întrebărilor
         const actualizatIntrebari = intrebari.map((intrebare) => {
           if (intrebare.id === questionId) {
-            // Șterge referința imaginii
             intrebare.text_poza = "";
           }
-          window.location.reload();
-
           return intrebare;
         });
         setIntrebari(actualizatIntrebari);
@@ -194,12 +181,10 @@ const IntrebariHolland = () => {
   };
 
   const uploadResponseImage = async (questionId, voturi, file) => {
-    // Creează un obiect FormData și atașează fișierul
     const formData = new FormData();
     formData.append("file", file);
 
     try {
-      // Trimite o cerere POST pentru a încărca imaginea pentru varianta de răspuns
       const response = await axios.post(
         `http://127.0.0.1:8000/upload/${questionId}/varianta/${voturi}/`,
         formData,
@@ -210,9 +195,7 @@ const IntrebariHolland = () => {
         }
       );
 
-      // Verifică dacă `filename` este prezent în răspuns
       if (response.data && response.data.filename) {
-        // Returnează calea completă a imaginii
         const imageUrl = `poze/${response.data.filename}`;
         return imageUrl;
       } else {
@@ -227,18 +210,11 @@ const IntrebariHolland = () => {
 
   const deleteResponseImage = async (questionId, voturi) => {
     try {
-      // Trimite cererea DELETE la endpoint-ul serverului
       const response = await axios.delete(`http://127.0.0.1:8000/delete/image/${questionId}/variant/${voturi}/`);
 
       if (response.data.message) {
-        // Imaginea a fost ștearsă cu succes, actualizați starea sau afișați un mesaj de succes
         console.log(response.data.message);
-
-
-        window.location.reload();
-
       } else {
-        // Eroare în răspunsul serverului
         console.error(response.data.error);
       }
     } catch (error) {
@@ -247,26 +223,44 @@ const IntrebariHolland = () => {
   };
 
   const adaugareVariantaRaspuns = () => {
-    const key = Date.now().toString(); // Creează o cheie unică pentru varianta nouă
-    // Adaugă noua variantă de răspuns în starea `updatedVarianteRaspuns`
+    const key = Date.now().toString();
     setUpdatedVarianteRaspuns({
       ...updatedVarianteRaspuns,
       [key]: {
-        raspuns_text: '',
+        raspuns_text: "",
         voturi: 0,
-        raspuns_poza: ''
+        raspuns_poza: "",
       },
     });
   };
 
-  // Funcția pentru a șterge o variantă de răspuns
   const stergereVariantaRaspuns = (key) => {
-    // Creează o copie a stării `updatedVarianteRaspuns` fără varianta specificată
     const updatedVarianteRaspunsCopy = { ...updatedVarianteRaspuns };
-    delete updatedVarianteRaspunsCopy[key]; // Șterge varianta de răspuns
+    delete updatedVarianteRaspunsCopy[key];
     setUpdatedVarianteRaspuns(updatedVarianteRaspunsCopy);
   };
 
+  const handleVariantKeyChange = (oldKey, newKey) => {
+    if (newKey !== oldKey && !updatedVarianteRaspuns.hasOwnProperty(newKey)) {
+      const updatedVarianteRaspunsCopy = { ...updatedVarianteRaspuns };
+      updatedVarianteRaspunsCopy[newKey] = { ...updatedVarianteRaspunsCopy[oldKey] };
+      delete updatedVarianteRaspunsCopy[oldKey];
+      setUpdatedVarianteRaspuns(updatedVarianteRaspunsCopy);
+
+      // Set a timeout to focus the input after updating the state
+      setTimeout(() => {
+        if (inputRef.current) {
+          try {
+            inputRef.current.focus();
+          } catch (error) {
+            console.error("Error focusing input:", error);
+          }
+        }
+      }, 0);
+    } else {
+      console.warn("Cheia deja există sau nu a fost schimbată. Alege o cheie unică.");
+    }
+  };
 
 
   return (
@@ -275,18 +269,10 @@ const IntrebariHolland = () => {
         <MDBCardBody className="d-flex justify-content-between align-items-center">
           <h1>Întrebările Chestionarului Holland</h1>
           <div>
-            <MDBBtn
-              className="mx-2"
-              color="secondary"
-              onClick={() => (window.location.href = "/")}
-            >
+            <MDBBtn className="mx-2" color="secondary" onClick={() => (window.location.href = "/")}>
               Homepage
             </MDBBtn>
-            <MDBBtn
-              className="mx-2"
-              color="secondary"
-              onClick={() => (window.location.href = "/Grafice")}
-            >
+            <MDBBtn className="mx-2" color="secondary" onClick={() => (window.location.href = "/Grafice")}>
               Înapoi
             </MDBBtn>
           </div>
@@ -310,19 +296,13 @@ const IntrebariHolland = () => {
                     x
                   </MDBBtn>
                 )}
-                <MDBBtn
-                  className="primary"
-                  onClick={cautaIntrebare}
-                  style={{ marginLeft: "5px" }}
-                >
+                <MDBBtn className="primary" onClick={cautaIntrebare} style={{ marginLeft: "5px" }}>
                   <MDBIcon fas icon="search" />
                 </MDBBtn>
               </MDBInputGroup>
             </MDBCol>
             <MDBCol md="auto">
-              <MDBBtn onClick={() => (window.location.href = "/AdaugaIntrebare")}>
-                Adaugă întrebare nouă
-              </MDBBtn>
+              <MDBBtn onClick={() => (window.location.href = "/AdaugaIntrebare")}>Adaugă întrebare nouă</MDBBtn>
             </MDBCol>
             <MDBCol md="auto">
               <MDBDropdown>
@@ -330,24 +310,12 @@ const IntrebariHolland = () => {
                   Întrebări
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
-                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("artistic")}>
-                    Artistic
-                  </MDBDropdownItem>
-                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("convențional")}>
-                    Conventional
-                  </MDBDropdownItem>
-                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("întreprinzător")}>
-                    Întreprinzător
-                  </MDBDropdownItem>
-                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("investigativ")}>
-                    Investigativ
-                  </MDBDropdownItem>
-                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("realist")}>
-                    Realist
-                  </MDBDropdownItem>
-                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("social")}>
-                    Social
-                  </MDBDropdownItem>
+                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("artistic")}>Artistic</MDBDropdownItem>
+                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("convențional")}>Conventional</MDBDropdownItem>
+                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("întreprinzător")}>Întreprinzător</MDBDropdownItem>
+                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("investigativ")}>Investigativ</MDBDropdownItem>
+                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("realist")}>Realist</MDBDropdownItem>
+                  <MDBDropdownItem onClick={() => cautaIntrebariCategorie("social")}>Social</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBCol>
@@ -362,15 +330,8 @@ const IntrebariHolland = () => {
               <MDBBtn color="danger" size="sm" onClick={() => stergeIntrebare(intrebare.id)}>
                 Șterge întrebare
               </MDBBtn>
-              <MDBBtn
-                color="primary"
-                size="sm"
-                onClick={() => toggleUpdateForm(intrebare)}
-                className="ms-2"
-              >
-                {showUpdateForm && intrebareId === intrebare.id
-                  ? "Ascunde formularul de actualizare"
-                  : "Actualizează întrebare"}
+              <MDBBtn color="primary" size="sm" onClick={() => toggleUpdateForm(intrebare)} className="ms-2">
+                {showUpdateForm && intrebareId === intrebare.id ? "Ascunde formularul de actualizare" : "Actualizează întrebare"}
               </MDBBtn>
             </div>
 
@@ -391,10 +352,7 @@ const IntrebariHolland = () => {
                   className="mb-3"
                 />
                 <label>Categorie</label>
-                <select
-                  value={updatedCategorie}
-                  onChange={(e) => setUpdatedCategorie(e.target.value)}
-                >
+                <select value={updatedCategorie} onChange={(e) => setUpdatedCategorie(e.target.value)}>
                   <option value="artistic">Artistic</option>
                   <option value="convențional">Conventional</option>
                   <option value="întreprinzător">Întreprinzător</option>
@@ -402,7 +360,7 @@ const IntrebariHolland = () => {
                   <option value="realist">Realist</option>
                   <option value="social">Social</option>
                 </select>
-                <br></br>
+                <br />
 
                 {!intrebare.text_poza && (
                   <MDBFile
@@ -419,11 +377,7 @@ const IntrebariHolland = () => {
                 {intrebare.text_poza && (
                   <div>
                     <p>Text Poză: {intrebare.text_poza}</p>
-                    <MDBBtn
-                      color="danger"
-                      size="sm"
-                      onClick={() => stergeImagine(intrebare.id)}
-                    >
+                    <MDBBtn color="danger" size="sm" onClick={() => stergeImagine(intrebare.id)}>
                       Șterge imagine
                     </MDBBtn>
                   </div>
@@ -431,47 +385,28 @@ const IntrebariHolland = () => {
 
                 {Object.keys(updatedVarianteRaspuns).map((variantKey) => (
                   <div key={variantKey}>
-                    <br></br>
+                    <br />
                     <MDBInput
-                      label="Variantă răspuns"
-                      type="text"
                       ref={inputRef}
+                      label="Text variantă răspuns"
+                      type="text"
                       value={variantKey}
-                      onChange={(e) => {
-                        const newKey = e.target.value;
-
-                        if (newKey !== variantKey) {
-                          if (!updatedVarianteRaspuns.hasOwnProperty(newKey)) {
-                            const variantData = updatedVarianteRaspuns[variantKey];
-                            const entries = Object.entries(updatedVarianteRaspuns);
-                            entries[variantKey] = [newKey, variantData];
-                            const newVarianteRaspuns = Object.fromEntries(entries);
-                            setUpdatedVarianteRaspuns(newVarianteRaspuns);
-
-                            setTimeout(() => {
-                              if (inputRef.current) {
-                                inputRef.current.focus();
-                              }
-                            }, 0);
-                          } else {
-                            console.warn("Cheia deja există. Alege o cheie unică.");
-                          }
-                        }
-                      }}
+                      onChange={(e) => handleVariantKeyChange(variantKey, e.target.value)}
                       className="mb-3"
                     />
-                    Voturi
                     <MDBInput
-
+                      label="Voturi"
                       type="number"
                       value={updatedVarianteRaspuns[variantKey].voturi}
-                      onChange={(e) => setUpdatedVarianteRaspuns({
-                        ...updatedVarianteRaspuns,
-                        [variantKey]: {
-                          ...updatedVarianteRaspuns[variantKey],
-                          voturi: parseInt(e.target.value),
-                        }
-                      })}
+                      onChange={(e) =>
+                        setUpdatedVarianteRaspuns({
+                          ...updatedVarianteRaspuns,
+                          [variantKey]: {
+                            ...updatedVarianteRaspuns[variantKey],
+                            voturi: parseInt(e.target.value),
+                          },
+                        })
+                      }
                       className="mb-3"
                     />
                     {!updatedVarianteRaspuns[variantKey].raspuns_poza && (
@@ -484,23 +419,17 @@ const IntrebariHolland = () => {
                             ...updatedVarianteRaspuns,
                             [variantKey]: {
                               ...updatedVarianteRaspuns[variantKey],
-                              file: file, 
+                              file: file,
                             },
                           });
                         }}
                         className="mb-3"
                       />
                     )}
-                    <MDBBtn
-                      color="danger"
-                      size="sm"
-                      onClick={() => stergereVariantaRaspuns(variantKey)}
-                      className="mb-2"
-                    >
+                    <MDBBtn color="danger" size="sm" onClick={() => stergereVariantaRaspuns(variantKey)} className="mb-2">
                       Șterge varianta de răspuns
                     </MDBBtn>
-                    <br></br>
-                  
+                    <br />
 
                     {updatedVarianteRaspuns[variantKey].raspuns_poza && (
                       <div>
@@ -517,20 +446,10 @@ const IntrebariHolland = () => {
                     )}
                   </div>
                 ))}
-                <MDBBtn
-                  color="primary"
-                  size="sm"
-                  onClick={adaugareVariantaRaspuns}
-                  className="mb-3"
-                >
+                <MDBBtn color="primary" size="sm" onClick={adaugareVariantaRaspuns} className="mb-3">
                   Adaugă variantă răspuns
                 </MDBBtn>
-                <MDBBtn
-                  color="success"
-                  size="sm"
-                  onClick={actualizeazaIntrebare}
-                  className="mb-3"
-                >
+                <MDBBtn color="success" size="sm" onClick={actualizeazaIntrebare} className="mb-3">
                   Actualizează
                 </MDBBtn>
               </div>

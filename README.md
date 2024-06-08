@@ -23,8 +23,8 @@ Această aplicație este dezvoltată pentru a ajuta studenții să aleagă speci
 
 1. **Clonează repository-ul:**
     ```bash
-    git clone https://github.com/username/repository-name.git
-    cd repository-name
+    git clone https://github.com/CosminMihai73/Licenta.git
+    cd Licenta
     ```
 
 2. **Instalarea pachetelor backend:**
